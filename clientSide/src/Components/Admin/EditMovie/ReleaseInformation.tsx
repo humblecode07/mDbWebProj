@@ -100,28 +100,28 @@ const ReleaseInformation = ({ movieData, setMovieData }) => {
   if (!releaseDates) return null;
 
   return (
-    <div className="relative">
-      <div className="flex items-center justify-end mb-4">
+    <div className="release-information--container">
+      <div className="flex--container">
         <button
           onClick={toggleAddReleaseDateModal}
-          className="flex items-center justify-center gap-[.5rem] px-4 py-3 bg-[#CC511D] text-white rounded-md hover:bg-[#FF7031] transition duration-200"
+          className="add-button"
         >
           <AddIcon />
-          <span className='text-[.75rem] font-semibold'>Add New Release</span>
+          <span>Add New Release</span>
         </button>
       </div>
-      <div className="overflow-x-auto">
-        <table className="min-w-full table-auto bg-[#111111] text-white rounded-lg">
+      <div className="table-container">
+        <table>
           <thead>
-            <tr className="border-b border-[#444444]">
-              <th className="px-4 py-2 text-left">Country</th>
-              <th className="px-4 py-2 text-left">Language</th>
-              <th className="px-4 py-2 text-left">Date</th>
-              <th className="px-4 py-2 text-left">Certification</th>
-              <th className="px-4 py-2 text-left">Descriptors</th>
-              <th className="px-4 py-2 text-left">Type</th>
-              <th className="px-4 py-2 text-left">Note</th>
-              <th className="px-4 py-2 text-left">Action</th>
+            <tr>
+              <th>Country</th>
+              <th>Language</th>
+              <th>Date</th>
+              <th>Descriptors</th>
+              <th>Certification</th>
+              <th>Type</th>
+              <th>Note</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -129,32 +129,31 @@ const ReleaseInformation = ({ movieData, setMovieData }) => {
               releaseCountry.release_dates.map((releaseDate, dateIndex) => (
                 <tr
                   key={`${countryIndex}-${dateIndex}`}
-                  className="border-b border-[#444444] hover:bg-[#222222]"
                 >
-                  <td className="px-4 py-2">{releaseCountry.iso_3166_1}</td>
-                  <td className="px-4 py-2">{releaseDate.iso_639_1}</td>
-                  <td className="px-4 py-2">
+                  <td>{releaseCountry.iso_3166_1}</td>
+                  <td>{releaseDate.iso_639_1}</td>
+                  <td>
                     {new Date(releaseDate.release_date).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric'
                     })}
                   </td>
-                  <td className="px-4 py-2">{releaseDate.certification}</td>
-                  <td className="px-4 py-2">
+                  <td>{releaseDate.certification}</td>
+                  <td>
                     {releaseDate.descriptors.join(', ')}
                   </td>
-                  <td className="px-4 py-2">{releaseDate.type}</td>
-                  <td className="px-4 py-2">{releaseDate.note}</td>
-                  <td className="px-4 py-3 flex gap-2">
+                  <td>{releaseDate.type}</td>
+                  <td>{releaseDate.note}</td>
+                  <td className="action-buttons">
                     <button
-                      className="w-[1.5625rem] h-[1.5625rem] bg-[#CC511D] flex items-center justify-center rounded-full hover:bg-[#FF7031] transition duration-200"
+                      className="edit-button"
                       onClick={handleEditReleaseDate}
                     >
                       <EditIcon />
                     </button>
                     <button
-                      className="w-[1.5625rem] h-[1.5625rem] bg-[#FF3333] flex items-center justify-center rounded-full hover:bg-[#e50000] transition duration-200"
+                      className="delete-button"
                       onClick={handleDeleteReleaseDate}
                     >
                       <DeleteIconWhite />

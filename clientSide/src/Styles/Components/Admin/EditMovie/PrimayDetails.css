@@ -1,0 +1,22 @@
+.primary-details--container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-bottom: 5rem;
+}
+.primary-details--container .section {
+  width: 51.6875rem;
+  display: flex;
+  gap: 0.75rem;
+}
+.primary-details--container .section--button {
+  justify-content: end;
+}
+.primary-details--container .section--button button {
+  height: 2.125rem;
+  padding: 0 1.5625rem;
+  background-color: #CC5110;
+  font-size: 0.875rem;
+  font-weight: bold;
+  border-radius: 0.625rem;
+}/*# sourceMappingURL=PrimayDetails.css.map */

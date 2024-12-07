@@ -82,44 +82,44 @@ const Videos = ({ movieData, setMovieData }) => {
   }, [movieData]);
 
   return (
-    <div className="relative">
-      <div className="flex items-center justify-end mb-4">
+    <div className="videos--container">
+      <div className="video-header">
         <button
           onClick={toggleAddVideoModal}
-          className="flex items-center justify-center gap-[.5rem] px-4 py-3 bg-[#CC511D] text-white rounded-md hover:bg-[#FF7031] transition duration-200"
+          className="add-video-button"
         >
           <AddIcon />
           <span className='text-[.75rem] font-semibold'>Add a Video</span>
         </button>
       </div>
-      <div className="overflow-x-auto">
-        <table className="min-w-full table-auto bg-[#111111] text-white rounded-lg">
+      <div className="table-container">
+        <table>
           <thead>
-            <tr className="border-b border-[#444444]">
-              <th className="px-4 py-2 text-left">Type</th>
-              <th className="px-4 py-2 text-left">Quality</th>
-              <th className="px-4 py-2 text-left">Source Key</th>
-              <th className="px-4 py-2 text-left">Name</th>
-              <th className="px-4 py-2 text-left">Action</th>
+            <tr>
+              <th>Type</th>
+              <th>Quality</th>
+              <th>Source Key</th>
+              <th>Name</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             {Object.entries(videos || {}).map(([type, typeVideos]) => (
               typeVideos.map((video, index) => (
-                <tr key={index} className="border-b border-[#444444] hover:bg-[#222222]">
-                  <td className="px-4 py-2">{type}</td>
-                  <td className="px-4 py-2">{video.size}p</td>
-                  <td className="px-4 py-2">{video.key}</td>
-                  <td className="px-4 py-2">{video.youtubeData?.snippet?.title}</td>
-                  <td className="px-4 py-3 flex gap-2">
+                <tr key={index}>
+                  <td>{type}</td>
+                  <td>{video.size}p</td>
+                  <td>{video.key}</td>
+                  <td>{video.youtubeData?.snippet?.title}</td>
+                  <td className="action-buttons">
                     <button
-                      className="w-[1.5625rem] h-[1.5625rem] bg-[#CC511D] flex items-center justify-center rounded-full hover:bg-[#FF7031] transition duration-200"
+                      className="edit-button"
                       onClick={handleEditVideoDetails}
                     >
                       <EditIcon />
                     </button>
                     <button
-                      className="w-[1.5625rem] h-[1.5625rem] bg-[#FF3333] flex items-center justify-center rounded-full hover:bg-[#e50000] transition duration-200"
+                      className="delete-button"
                       onClick={handleDeleteVideoDetails}
                     >
                       <DeleteIconWhite />

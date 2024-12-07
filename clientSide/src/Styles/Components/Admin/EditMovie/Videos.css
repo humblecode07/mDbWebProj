@@ -1,0 +1,157 @@
+.videos--container {
+  position: relative;
+}
+.videos--container .video-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+.videos--container .video-header .add-video-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #CC511D;
+  color: white;
+  border-radius: 0.375rem;
+  transition: background-color 200ms;
+}
+.videos--container .video-header .add-video-button:hover {
+  background-color: #FF7031;
+}
+.videos--container .video-header .add-video-button span {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.videos--container .table-container {
+  overflow-x: auto;
+}
+.videos--container .table-container table {
+  min-width: 100%;
+  table-layout: auto;
+  background-color: #111111;
+  color: white;
+  border-radius: 0.5rem;
+}
+.videos--container .table-container table thead tr {
+  border-bottom: 1px solid #444444;
+}
+.videos--container .table-container table thead th {
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+.videos--container .table-container table tbody tr {
+  border-bottom: 1px solid #444444;
+}
+.videos--container .table-container table tbody tr:hover {
+  background-color: #222222;
+}
+.videos--container .table-container table tbody td {
+  padding: 0.5rem 1rem;
+}
+.videos--container .table-container table tbody td:last-child {
+  display: flex;
+  gap: 0.5rem;
+}
+.videos--container .table-container table tbody .action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+.videos--container .table-container table tbody .action-buttons .edit-button,
+.videos--container .table-container table tbody .action-buttons .delete-button {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 200ms;
+}
+.videos--container .table-container table tbody .action-buttons .edit-button {
+  background-color: #CC511D;
+}
+.videos--container .table-container table tbody .action-buttons .edit-button:hover {
+  background-color: #FF7031;
+}
+.videos--container .table-container table tbody .action-buttons .delete-button {
+  background-color: #FF3333;
+}
+.videos--container .table-container table tbody .action-buttons .delete-button:hover {
+  background-color: #e50000;
+}
+.videos--container .video-details-container > div {
+  margin-bottom: 1rem;
+}
+.videos--container .video-details-container .input-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.videos--container .video-details-container .input-group .select-wrapper {
+  width: 100%;
+  height: 2.3125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 0.125rem;
+}
+.videos--container .video-details-container .input-group .select-wrapper .select-container {
+  width: 39.625rem;
+}
+.videos--container .video-details-container .input-group .select-wrapper .select-container select {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.videos--container .video-details-container .input-group .select-wrapper .select-container select option {
+  color: white;
+  background-color: #111111;
+}
+.videos--container .video-details-container .input-group .source-key-input {
+  width: 100%;
+  background-color: #2C2C2C;
+  border: 1px solid #444444;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  color: white;
+}
+.videos--container .video-details-container .input-group .source-key-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #CC511D;
+}
+.videos--container .video-details-container .button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.videos--container .video-details-container .button-container .cancel-button {
+  padding: 0.5rem 1rem;
+  background-color: #444444;
+  color: white;
+  border-radius: 0.375rem;
+  transition: background-color 200ms;
+}
+.videos--container .video-details-container .button-container .cancel-button:hover {
+  background-color: #555555;
+}
+.videos--container .video-details-container .button-container .save-button {
+  padding: 0.5rem 1rem;
+  background-color: #CC511D;
+  color: white;
+  border-radius: 0.375rem;
+  transition: background-color 200ms;
+}
+.videos--container .video-details-container .button-container .save-button:hover {
+  background-color: #FF7031;
+}/*# sourceMappingURL=Videos.css.map */

@@ -1,0 +1,25 @@
+.primary-details--container {
+   display: flex;
+   flex-direction: column;
+   gap: 1.25rem;
+   padding-bottom: 5rem;
+
+   .section {
+      width: 51.6875rem;
+      display: flex;
+      gap: 0.75rem;
+   }
+
+   .section--button {
+      justify-content: end;
+
+      button {
+         height: 2.125rem;
+         padding: 0 1.5625rem;
+         background-color: #CC5110;
+         font-size: .875rem;
+         font-weight: bold;
+         border-radius: .625rem;
+      }
+   }
+}

@@ -99,58 +99,55 @@ const ImageUploadModal = ({
 
   return (
     isModalOpen && (
-      <div className="absolute inset-0 z-[200] overflow-y-auto">
-        <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-          <div className="inline-block align-bottom bg-[#1E1E1E] rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-            <div className="bg-[#1E1E1E] px-6 pt-6 pb-4">
-              <div className="flex justify-between items-center mb-4">
+      <div className="modal-wrapper">
+        <div className="modal-content">
+          <div className="modal">
+            <div className="modal-header">
+              <div className="header-content">
                 <h2 className="text-xl font-bold text-[#CC511D]">
                   Add {selectedImageType.charAt(0).toUpperCase() + selectedImageType.slice(1)}
                 </h2>
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="text-white hover:text-[#CC511D] transition duration-200"
                 >
                   ✕
                 </button>
               </div>
-
-              <div className="space-y-4">
+              <div className="images-modal--container">
                 {error && (
-                  <div className="bg-red-600 bg-opacity-20 border border-red-600 text-red-300 p-3 rounded-md">
+                  <div className="error-message">
                     {error}
                   </div>
                 )}
-                <div className="border-2 border-dashed border-[#444444] rounded-lg p-6 text-center">
+                <div className="file-upload-container">
                   <input
                     type="file"
                     id="imageUpload"
                     accept="image/jpeg,image/png"
                     onChange={handleFileChange}
-                    className="hidden"
                   />
                   <label
                     htmlFor="imageUpload"
-                    className="cursor-pointer block"
+
                   >
                     {selectedFile ? (
                       <div>
-                        <p className="text-white">Selected File: {selectedFile.name}</p>
+                        <p className="file-info">Selected File: {selectedFile.name}</p>
                         {imageDimensions.width > 0 && (
-                          <p className="text-[#888888] text-sm">
+                          <p>
                             Dimensions: {imageDimensions.width}x{imageDimensions.height} pixels
                           </p>
                         )}
                         <img
                           src={URL.createObjectURL(selectedFile)}
                           alt="Preview"
-                          className="max-h-[200px] mx-auto mt-4 rounded-lg"
+                          className="image-preview"
                         />
                       </div>
                     ) : (
-                      <div className="flex flex-col items-center justify-center">
+                      <div className="empty-state">
                         <ImageIcon />
-                        <p className="text-white">Click to Select {selectedImageType.charAt(0).toUpperCase() + selectedImageType.slice(1)}</p>
+                        <p>Click to Select {selectedImageType.charAt(0).toUpperCase() + selectedImageType.slice(1)}</p>
                         {renderSizeGuidelines()}
                       </div>
                     )}

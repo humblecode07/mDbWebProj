@@ -146,16 +146,16 @@ const Images = ({ movieData, setMovieData }) => {
                 : null
               }
               {dropdownOpen === index && (
-                <div className="absolute top-[2rem] mt-[.5rem] right-[0.5rem] bg-white border border-gray-300 rounded-md shadow-lg w-[150px] p-2">
+                <div className="dropdown-menu">
                   <ul>
                     <li
-                      className="text-black text-[.75rem] py-2 px-4 hover:bg-gray-200 cursor-pointer"
+                      className="dropdown-item "
                       onClick={() => setAsDisplayImage(image)}
                     >
                       Set as display {selectedImageType}
                     </li>
                     <li
-                      className="text-black text-[.75rem] py-2 px-4 hover:bg-gray-200 cursor-pointer"
+                      className="dropdown-item"
                       onClick={() => deleteImage(image)}>
                       Delete
                     </li>
@@ -165,7 +165,7 @@ const Images = ({ movieData, setMovieData }) => {
               <img
                 src={`http://localhost:3000/images/${image.file_path}`}
                 alt={`${selectedImageType} ${index + 1}`}
-                className={`w-full h-full object-cover`}
+                className={`image`}
               />
             </div>
           )) : `No ${selectedImageType}s has been added. Start adding now!`}
