@@ -1,0 +1,109 @@
+.details--cast-container {
+  width: 38.4375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4375rem;
+}
+.details--cast-container .cast-nav {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.details--cast-container .cast-nav .cast-title {
+  font-weight: bold;
+  font-size: 1.875rem;
+  position: relative;
+}
+.details--cast-container .cast-nav .cast-title:before {
+  content: "";
+  width: 4px;
+  height: 2.5rem;
+  border: 0.125rem solid #ff8731;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+.details--cast-container .cast-nav .cast-count {
+  display: flex;
+  gap: 0.3125rem;
+  align-items: center;
+}
+.details--cast-container .cast-nav .cast-count span {
+  font-size: 0.875rem;
+}
+.details--cast-container .cast-list {
+  display: flex;
+  gap: 0.9375rem;
+  flex-wrap: wrap;
+}
+.details--cast-container .cast-list .cast-item {
+  width: 18.75rem;
+  display: flex;
+  gap: 0.9375rem;
+  align-items: center;
+}
+.details--cast-container .cast-list .cast-item .cast-avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.details--cast-container .cast-list .cast-item .cast-details {
+  width: 11.8125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+.details--cast-container .cast-list .cast-item .cast-details .cast-name {
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.details--cast-container .cast-list .cast-item .cast-details .cast-character {
+  color: #8e8e8e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.details--cast-container .additional-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8125rem;
+}
+.details--cast-container .additional-info .info-row {
+  display: flex;
+  gap: 1.4375rem;
+  align-items: center;
+}
+.details--cast-container .additional-info .info-row.writers-info {
+  justify-content: space-between;
+}
+.details--cast-container .additional-info .info-row.writers-info .info-column {
+  display: flex;
+  gap: 1.4375rem;
+}
+.details--cast-container .additional-info .info-row.writers-info .info-column .writers-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.details--cast-container .additional-info .info-row .info-label {
+  font-weight: bold;
+}
+.details--cast-container .additional-info .info-row .info-value {
+  color: #4397fa;
+  text-decoration: none;
+}
+.details--cast-container .additional-info .info-row .info-missing {
+  color: #ff8731;
+}
+.details--cast-container .additional-info .creators-list,
+.details--cast-container .additional-info .writers-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.details--cast-container .additional-info .all-cast {
+  justify-content: space-between;
+}/*# sourceMappingURL=Casts.css.map */

@@ -31,12 +31,12 @@ const Medias = ({ data }) => {
 
   if (data) {
     return (
-      <div className='w-[66.5rem] flex py-[3.3125rem] gap-[3.6875rem]'>
-        <ul className='w-[15.9375rem] h-full flex flex-col flex-grow-0 gap-[1.1875rem] py-[2.5625rem] px-[1.625rem] rounded-md border-solid border-[#1A1A1A] border-[1px]'>
+      <div className="details--medias-wrapper">
+        <ul className="language-list">
           {Object.keys(data).map(language => (
             <li
               key={language}
-              className='w-[12.6875rem] font-light text-[0.9375rem] flex justify-between cursor-pointer'
+              className="language-item"
               onClick={() => setSelectedLang(language)}
             >
               <span>{language}</span>
@@ -44,18 +44,16 @@ const Medias = ({ data }) => {
             </li>
           ))}
         </ul>
-        <div className={`w-[46.875rem] h-full flex flex-grow-0 flex-wrap ${gapClass}`}>
-          {data[selectedLang].map((image, index) => {
-            return (
-              <img
-                src={`https://image.tmdb.org/t/p/original${image.file_path}`}
-                onError={(e) => e.target.src = `http://localhost:3000/images/${image.file_path}`}
-                className={`${widthClass} ${heightClass} object-contain`}
-                alt="Movie Poster"
-              />
-
-            )
-          })}
+        <div className={`image-container ${gapClass}`}>
+          {data[selectedLang].map((image, index) => (
+            <img
+              key={index}
+              src={`https://image.tmdb.org/t/p/original${image.file_path}`}
+              onError={(e) => e.target.src = `http://localhost:3000/images/${image.file_path}`}
+              className={`${widthClass} ${heightClass} object-contain`}
+              alt="Movie Poster"
+            />
+          ))}
         </div>
       </div>
     )

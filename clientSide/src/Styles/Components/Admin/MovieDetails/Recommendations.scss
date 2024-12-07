@@ -1,0 +1,80 @@
+.recommendations-container {
+   width: 100%;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+
+   .recommendations-header {
+      width: 100%;
+      height: 2.1875rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+
+      .recommendations-title {
+         font-size: 1.875rem;
+         font-weight: bold;
+      }
+
+      .recommendations-divider {
+         width: 48rem;
+      }
+   }
+
+   .recommendations-content {
+      width: 100%;
+      height: 24.1875rem;
+      display: flex;
+      gap: 1.3125rem;
+      position: relative;
+
+      .recommendation-card {
+         width: 9.9375rem;
+         height: 24.1875rem;
+         display: flex;
+         flex-direction: column;
+         background-color: #1a1a1a;
+         overflow: hidden;
+         border-radius: 0.625rem;
+
+         &-image {
+            width: 9.9375rem;
+            height: 13.1875rem;
+            object-fit: cover;
+         }
+
+         &-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7375rem;
+            padding: 0.9375rem 0.625rem;
+
+            .card-rating {
+               display: flex;
+               justify-content: space-around;
+
+               .rating-item {
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+               }
+            }
+
+            .card-title {
+               font-size: 1rem;
+            }
+
+            .trailer-button {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               background-color: #1a1a1a;
+               gap: 0.5rem;
+               cursor: pointer;
+            }
+         }
+      }
+   }
+}

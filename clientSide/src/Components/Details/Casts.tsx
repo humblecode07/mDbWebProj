@@ -7,92 +7,92 @@ import { NavLink } from 'react-router-dom'
 const Casts = ({ data }) => {
    if (data) {
       return (
-         <div className='w-[38.4375rem] flex flex-col gap-[1.4375rem]'>
-            <NavLink
-               to={'cast'}
-               className='flex gap-[0.75rem] items-center'
-            >
-               <span className="font-bold text-[1.875rem] before:w-[4px] before:h-[2.5rem] before:border-[0.125rem] before:rounded-md before:mr-[0.5rem] before:border-[#FF8731]">Top Cast</span>
-               <div className='flex gap-[0.3125rem] items-center'>
-                  <span className='text-[0.875rem]'>{data.casts.length}</span>
+         <div className="details--cast-container">
+            <NavLink to="cast" className="cast-nav">
+               <span className="cast-title">Top Cast</span>
+               <div className="cast-count">
+                  <span>{data.casts.length}</span>
                   <RightIconTwo />
                </div>
             </NavLink>
-            <div className='flex gap-[0.9375rem] flex-wrap'>
+            <div className="cast-list">
                {data.casts.map((cast, index) => {
                   if (index < 18) {
                      return (
-                        <a key={cast.cast_id} className='w-[18.75rem] flex gap-[0.9375rem] items-center'>
+                        <a key={cast.cast_id} className="cast-item">
                            <img
-                              className="rounded-full w-[6rem] h-[6rem] object-cover"
+                              className="cast-avatar"
                               src={cast.profile_path ? `https://image.tmdb.org/t/p/original/${cast.profile_path}` : 'https://placehold.co/96x96'}
                               alt=""
                            />
-                           <div className='w-[11.8125rem] flex flex-col gap-[0.125rem]'>
-                              <span className='font-bold truncate'>{cast.name}</span>
-                              <span className='text-[#8E8E8E] truncate'>{cast.character}</span>
+                           <div className="cast-details">
+                              <span className="cast-name">{cast.name}</span>
+                              <span className="cast-character">{cast.character}</span>
                            </div>
                         </a>
-                     )
+                     );
                   }
                })}
             </div>
-            <div className='flex flex-col gap-[0.8125rem]'>
+            <div className="additional-info">
                {data.type === 'movie' ? (
                   <>
                      <DividerTwo />
-                     <div className='flex gap-[1.4375rem]'>
-                        <span className='font-bold'>Director</span>
-                        {data.director
-                           ? <a className='text-[#4397FA]'>{data.director.name}</a>
-                           : <a className='text-[#FF8731]'>N/A</a>
-                        }
+                     <div className="info-row">
+                        <span className="info-label">Director</span>
+                        {data.director ? (
+                           <a className="info-value">{data.director.name}</a>
+                        ) : (
+                           <a className="info-missing">N/A</a>
+                        )}
                      </div>
                      <DividerTwo />
-                     <div className='flex gap-[1.4375rem] justify-between'>
-                        <div className='flex gap-[1.4375rem]'>
-                           <span className='font-bold'>Writers</span>
-                           <div className='w-[30rem] flex flex-wrap gap-[0.5rem]'>
-                              {data.writers && data.writers.length > 0
-                                 ? data.writers.map((writer, index) => (
+                     <div className="info-row writers-info">
+                        <div className="info-column">
+                           <span className="info-label">Writers</span>
+                           <div className="writers-list">
+                              {data.writers && data.writers.length > 0 ? (
+                                 data.writers.map((writer, index) => (
                                     <>
-                                       <span key={index} className='flex items-center'>
-                                          <a className='text-[#4397FA]'>{writer}</a>
+                                       <span key={index} className="writer-item">
+                                          <a className="info-value">{writer}</a>
                                        </span>
                                        {index < data.writers.length - 1 && <span> • </span>}
                                     </>
                                  ))
-                                 : <span className='text-[#ff8731]'>N/A</span>
-                              }
+                              ) : (
+                                 <span className="info-missing">N/A</span>
+                              )}
                            </div>
                         </div>
                         <RightIconTwoS />
                      </div>
                   </>
-               ) :
+               ) : (
                   <>
                      <DividerTwo />
-                     <div className='flex gap-[1.4375rem]'>
-                        <span className='font-bold'>Created By</span>
-                        <div className='w-[30rem] flex flex-wrap gap-[0.5rem]'>
-                           {data.created_by && data.created_by.length > 0
-                              ? data.created_by.map((creator, index) => (
+                     <div className="info-row">
+                        <span className="info-label">Created By</span>
+                        <div className="creators-list">
+                           {data.created_by && data.created_by.length > 0 ? (
+                              data.created_by.map((creator, index) => (
                                  <>
-                                    <span key={index} className='flex items-center'>
-                                       <a className='text-[#4397FA]'>{creator}</a>
+                                    <span key={index} className="creator-item">
+                                       <a className="info-value">{creator}</a>
                                     </span>
                                     {index < data.created_by.length - 1 && <span> • </span>}
                                  </>
                               ))
-                              : <span className='text-[#ff8731]'>N/A</span>
-                           }
+                           ) : (
+                              <span className="info-missing">N/A</span>
+                           )}
                         </div>
                      </div>
                   </>
-               }
+               )}
                <DividerTwo />
-               <div className='flex gap-[1.4375rem] items-center justify-between'>
-                  <span className='font-bold'>All Cast & Crew</span>
+               <div className="info-row all-cast">
+                  <span className="info-label">All Cast & Crew</span>
                   <RightIconTwoS />
                </div>
                <DividerTwo />

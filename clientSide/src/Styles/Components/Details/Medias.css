@@ -1,0 +1,44 @@
+.details--medias-wrapper {
+  width: 66.5rem;
+  display: flex;
+  padding-top: 3.3125rem;
+  gap: 3.6875rem;
+}
+
+.language-list {
+  width: 15.9375rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  gap: 1.1875rem;
+  padding: 2.5625rem 1.625rem;
+  border: 1px solid #1A1A1A;
+  border-radius: 0.375rem;
+}
+
+.language-item {
+  width: 12.6875rem;
+  font-weight: 300;
+  font-size: 0.9375rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.image-container {
+  width: 46.875rem;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 0;
+}
+.image-container.gapClass {
+  gap: inherit; /* Assuming gapClass will adjust the gap value */
+}
+
+img {
+  object-fit: contain;
+  width: inherit; /* widthClass applies here */
+  height: inherit; /* heightClass applies here */
+}/*# sourceMappingURL=Medias.css.map */

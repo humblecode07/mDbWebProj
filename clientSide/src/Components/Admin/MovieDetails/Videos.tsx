@@ -65,20 +65,19 @@ const Videos = ({ movieData }) => {
    console.log(data);
 
    return (
-      <div className='w-full flex flex-col gap-[2rem]'>
-         <div className='w-full h-[2.1875rem] flex items-center justify-between gap-[1rem]'>
-            <span className='text-[1.875rem] font-bold'>Videos</span>
-            <div className='w-[58.0375rem]'>
+      <div className="movie-details--videos-container">
+         <div className="videos-header">
+            <span className="videos-title">Videos</span>
+            <div className="videos-divider">
                <DividerTwo />
             </div>
          </div>
-         <div className='w-full max-h-[50rem] flex gap-[1.5625rem]'>
-            <ul className='w-[15.9375rem] h-fit flex flex-col flex-grow-0 gap-[1.1875rem] py-[2.5625rem] px-[1.625rem] rounded-md border-solid border-[#1A1A1A] border-[1px]'>
+         <div className="videos-content">
+            <ul className="video-types-list">
                {videoType.map((type) => (
                   <li
                      key={type}
-                     className={`w-[12.6875rem] font-light text-[0.9375rem] flex justify-between cursor-pointer ${selectedType === type ? 'text-blue-500' : ''
-                        }`}
+                     className={`video-type-item ${selectedType === type ? 'selected-type' : ''}`}
                      onClick={() => setSelectedType(type)}
                   >
                      <span>{type}</span>
@@ -86,19 +85,19 @@ const Videos = ({ movieData }) => {
                   </li>
                ))}
             </ul>
-            <div className={`w-[47.9375rem] h-full flex flex-grow-0 flex-wrap gap-[1.7rem] overflow-auto scrollbar-none`}>
+            <div className="videos-display scrollbar-none">
                {data?.[selectedType] && data?.[selectedType].length > 0 ? (
                   data?.[selectedType].map((video, index) => (
-                     <div className='h-fit flex gap-[1.5625rem]' key={index}>
+                     <div className="video-card" key={index}>
                         <img
                            src={`https://i.ytimg.com/vi/${video.key}/hqdefault.jpg`}
-                           className={`w-[22.5625rem] h-[12.691375rem] object-cover flex-shrink-0`}
+                           className="video-thumbnail"
                            alt={video.name}
                         />
-                        <section className='flex flex-col justify-between'>
-                           <div className='flex flex-col gap-[0.4375rem]'>
-                              <span className='font-bold text-[1.09375rem]'>{video.name}</span>
-                              <div className='flex gap-[0.375rem] font-light text-[0.9375rem]'>
+                        <section className="video-details">
+                           <div className="video-info">
+                              <span className="video-title">{video.name}</span>
+                              <div className="video-meta">
                                  <span>{video.type}</span>
                                  <span>•</span>
                                  <span>{convertDuration(video.youtubeData.contentDetails.duration)}</span>
@@ -106,9 +105,9 @@ const Videos = ({ movieData }) => {
                                  <span>{formatDate(video.youtubeData.snippet.publishedAt)}</span>
                               </div>
                            </div>
-                           <div className='flex items-center gap-[0.6875rem] pb-[1rem]'>
+                           <div className="video-channel">
                               <YoutubeIcon />
-                              <span className='font-light text-[0.9375rem]'>{video.youtubeData.snippet.channelTitle}</span>
+                              <span>{video.youtubeData.snippet.channelTitle}</span>
                            </div>
                         </section>
                      </div>
