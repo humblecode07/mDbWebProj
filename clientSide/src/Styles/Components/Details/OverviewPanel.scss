@@ -1,0 +1,360 @@
+.overlay {
+   position: fixed;
+   inset: 0;
+   background-color: black;
+   transition: opacity 0.5s ease-in-out;
+
+   &.visible {
+      opacity: 0.5;
+      z-index: 1;
+   }
+
+   &.hidden {
+      opacity: 0;
+      z-index: -1;
+   }
+}
+
+.info-panel {
+   width: 24.6875rem;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   background-color: #111111;
+   position: fixed;
+   top: 0;
+   right: 0;
+   transition: all 0.5s ease-in-out;
+   transform: translateX(100%);
+   opacity: 0;
+   z-index: 0;
+
+   &.visible {
+      opacity: 1;
+      z-index: 10;
+      transform: translateX(0);
+   }
+
+   &.hidden {
+      opacity: 0;
+      z-index: 0;
+      transform: translateX(100%);
+   }
+}
+
+.content-panel {
+   width: 20.9375rem;
+   padding-top: 3.25rem;
+   padding-bottom: 2rem;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   overflow-y: auto;
+}
+
+.action-panel {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+
+   .view-details {
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+         filter: brightness(1.25);
+      }
+
+      span {
+         color: #7066ff;
+         text-decoration: underline;
+      }
+   }
+
+   .action-links {
+      display: flex;
+      gap: 1.4375rem;
+
+      .edit-link,
+      .delete-link {
+         display: flex;
+         align-items: center;
+         gap: 0.625rem;
+         cursor: pointer;
+         transition: all 0.3s ease-in-out;
+
+         &:hover {
+            filter: brightness(1.25);
+         }
+      }
+
+      .delete-link {
+         color: #ff3333;
+      }
+   }
+}
+
+.video-player {
+   border-radius: 1rem;
+   flex-shrink: 0;
+}
+
+.full-container {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   align-items: center;
+
+   .genre-container {
+      display: flex;
+      gap: 0.5rem;
+
+      .genre {
+         padding: 0.25rem 0.71875rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 0.4375rem;
+         background-color: #909090;
+         font-size: 0.625rem;
+         border-radius: 9999px;
+
+         .dot {
+            width: 0.3125rem;
+            height: 0.3125rem;
+            background-color: #111111;
+            border-radius: 9999px;
+         }
+      }
+   }
+
+   .title {
+      font-weight: bold;
+      text-align: center;
+
+      &.small {
+         font-size: 1rem;
+      }
+
+      &.medium {
+         font-size: 1.25rem;
+      }
+
+      &.large {
+         font-size: 2rem;
+      }
+   }
+
+   .certifications-wrapper {
+      display: flex;
+      gap: 1.3125rem;
+
+      .certifications {
+         border: 1px solid white;
+         padding: 2px 5px;
+      }
+
+      .rating-wrapper {
+         display: flex;
+         gap: 0.3125rem;
+         align-items: center;
+
+         .star-icon {
+            // Adjust according to the StarLIcon styles
+         }
+
+         .rating-details {
+            display: flex;
+            gap: 0.1875rem;
+
+            .rating-value {
+               font-size: 1.25rem;
+               font-weight: bold;
+            }
+
+            .vote-count {
+               font-size: 0.75rem;
+               color: #8F8F8F;
+               font-weight: 600;
+            }
+         }
+
+         .rating-out-of {
+            font-weight: 600;
+            color: #8F8F8F;
+         }
+      }
+   }
+
+   .tagline {
+      font-size: 0.875rem;
+      font-style: italic;
+      text-align: center;
+   }
+
+   .overview {
+      font-size: 0.875rem;
+      text-align: center;
+   }
+
+   .details-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .director-container {
+         display: flex;
+         gap: 1.25rem;
+
+         .label {
+            font-weight: bold;
+         }
+
+         .director-link {
+            color: #4397FA;
+         }
+
+         .director-na {
+            color: #ff8731;
+         }
+      }
+   }
+
+   .writers-container {
+      display: flex;
+      gap: 1.25rem;
+
+      .label {
+         font-weight: bold;
+      }
+
+      .writers-list {
+         display: flex;
+         gap: 0.875rem;
+
+         .writer-item {
+            display: flex;
+            align-items: center;
+
+            .writer-link {
+               color: #4397FA;
+            }
+         }
+
+         .separator {
+            margin-left: 0.25rem;
+            margin-right: 0.25rem;
+         }
+      }
+
+      .no-writers {
+         color: #ff8731;
+      }
+   }
+
+   .stars-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9375rem;
+
+      .stars-header {
+         display: flex;
+         gap: 1.4375rem;
+
+         .label {
+            font-weight: bold;
+         }
+      }
+
+      .stars-list {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 0.875rem;
+
+         .star-item {
+            display: flex;
+            align-items: center;
+
+            .star-link {
+               color: #4397FA;
+               word-wrap: break-word;
+            }
+         }
+
+         .separator {
+            margin-left: 0.25rem;
+            margin-right: 0.25rem;
+         }
+      }
+
+      .no-stars {
+         color: #ff8731;
+      }
+   }
+
+   .links-container {
+      display: flex;
+      gap: 1.4375rem;
+      align-items: center;
+
+      .label {
+         font-weight: bold;
+      }
+
+      .links-list {
+         display: flex;
+         gap: 1rem;
+         align-items: center;
+
+         .link-item {
+            display: flex;
+            align-items: center;
+
+            a {
+               display: inline-block;
+               transition: transform 0.3s ease;
+
+               &:hover {
+                  transform: scale(1.1);
+               }
+            }
+         }
+
+         .no-links {
+            color: #ff8731;
+         }
+      }
+   }
+
+   .status-container {
+      display: flex;
+      gap: 1.4375rem;
+
+      .status-label {
+         font-weight: bold;
+      }
+
+      .status-text {
+         color: #12ad18;
+      }
+   }
+
+   .runtime-container,
+   .revenue-container {
+      display: flex;
+      gap: 1.25rem;
+
+      .label {
+         font-weight: bold;
+      }
+
+      .value {
+         &.not-available {
+            color: #ff8731;
+         }
+      }
+   }
+
+}

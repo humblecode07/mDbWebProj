@@ -1,0 +1,105 @@
+.watch-provider--container {
+  color: white;
+  font-family: "Roboto";
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.watch-provider--container .watch-providers-section {
+  display: flex;
+  align-items: center;
+  gap: 1.6875rem;
+}
+.watch-provider--container .watch-providers-section .watch-providers-title {
+  color: #ff8731;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+.watch-provider--container .watch-providers-section .dropdown-container {
+  position: relative;
+}
+.watch-provider--container .watch-providers-section .dropdown-container .dropdown-button {
+  width: 12.125rem;
+  height: 2rem;
+  background-color: #1c252f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+.watch-provider--container .watch-providers-section .dropdown-container .dropdown-button:hover {
+  background-color: #2a3542;
+}
+.watch-provider--container .watch-providers-section .dropdown-container .dropdown-button .dropdown-label {
+  font-size: 0.75rem;
+}
+.watch-provider--container .watch-providers-section .dropdown-container .dropdown-list {
+  width: 12.125rem;
+  max-height: 12rem;
+  background-color: #1c252f;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  position: absolute;
+  overflow: auto;
+  z-index: 3;
+}
+.watch-provider--container .watch-providers-section .dropdown-container .dropdown-list .dropdown-item {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+.watch-provider--container .watch-providers-section .dropdown-container .dropdown-list .dropdown-item:hover {
+  background-color: #ff8731;
+}
+.watch-provider--container .watch-provider-list {
+  display: flex;
+  gap: 1.375rem;
+  flex-wrap: wrap;
+}
+.watch-provider--container .watch-provider-list .watch-provider-item {
+  width: 3.125rem;
+  height: 3.125rem;
+  cursor: pointer;
+  border-radius: 0.625rem;
+  user-select: none;
+  transition: background-color 0.3s ease, opacity 0.3s ease, border 0.3s ease;
+  background-color: #1c252f;
+}
+.watch-provider--container .watch-provider-list .watch-provider-item.selected {
+  background-color: #ff8731;
+  border: 2px solid #ff8731;
+}
+.watch-provider--container .watch-provider-list .watch-provider-item .provider-icon-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.watch-provider--container .watch-provider-list .watch-provider-item .provider-icon-container.selected {
+  opacity: 1;
+}
+.watch-provider--container .watch-provider-list .watch-provider-item .provider-icon-container.not-selected {
+  opacity: 0.5;
+}
+.watch-provider--container .watch-provider-list .watch-provider-item .provider-icon-container img {
+  border-radius: 0.625rem;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.watch-provider--container .watch-provider-list .watch-provider-item .provider-icon-container .check-icon-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}/*# sourceMappingURL=WatchProvider.css.map */

@@ -1,0 +1,119 @@
+.overview-media--video-container {
+   width: 27.1875rem;
+   flex-shrink: 0;
+
+   .video-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+.overview-media--poster-container {
+   width: 10.1875rem;
+   flex-shrink: 0;
+
+   .poster-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+.overview-media--backdrop-container {
+   width: 27.1875rem;
+   flex-shrink: 0;
+
+   .backdrop-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+.overview-media--logo-container {
+   width: 20.1875rem;
+   flex-shrink: 0;
+
+   .logo-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+   }
+}
+
+.overview-media--container {
+   width: 44.0625rem;
+   display: flex;
+   flex-direction: column;
+   gap: 1.4375rem;
+
+   .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .media-container {
+         display: flex;
+         align-items: center;
+         gap: 2.5rem;
+
+         .media-title {
+            font-weight: bold;
+            font-size: 1.875rem;
+         }
+
+         .media-list {
+            display: flex;
+            font-weight: bold;
+            font-size: 1.0625rem;
+            gap: 1.0625rem;
+            transition: all 0.3s;
+
+            .media-item {
+               cursor: pointer;
+               position: relative;
+
+               &::after {
+                  content: '';
+                  display: block;
+                  width: 100%;
+                  height: 1px;
+                  border: 2px solid #FF8731;
+                  border-radius: 4px;
+                  opacity: 0;
+                  transition: opacity 0.3s;
+               }
+
+               &.active::after {
+                  opacity: 1;
+               }
+
+               .media-count {
+                  font-size: 0.9625rem;
+                  color: #9c9c9c;
+               }
+            }
+         }
+      }
+
+      .navigate-link {
+         font-weight: bold;
+         color: #6BBFCB;
+         padding-right: 1.25rem;
+      }
+   }
+
+   .media-wrapper {
+      width: 44.0625rem;
+      height: 15.1875rem;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    
+      .media-overlay {
+        position: absolute;
+        inset: 0;
+      }
+    }
+}

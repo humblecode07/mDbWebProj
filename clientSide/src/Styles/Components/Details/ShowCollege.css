@@ -1,0 +1,183 @@
+.show-collage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 37.125rem;
+  height: 45.25rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.show-collage .video-iframe {
+  border-radius: 10px;
+}
+
+.content {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.poster {
+  width: 13.4375rem;
+  height: 23.625rem;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.grid .top {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.media-link, .backdrop-link {
+  width: 11.3125rem;
+  height: 11.5625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.media-link:hover, .backdrop-link:hover {
+  outline: dotted;
+}
+.media-link--disabled {
+  cursor: default;
+  pointer-events: none;
+}
+.media-link__image-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.media-link__image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  transition: transform 200ms ease-in-out;
+}
+.media-link__image .show-collage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 37.125rem;
+  height: 45.25rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.media-link__image .show-collage__iframe {
+  border-radius: 10px;
+}
+.media-link__image .show-collage__content {
+  display: flex;
+  gap: 0.5rem;
+}
+.media-link__image .show-collage__poster {
+  width: 13.4375rem;
+  height: 23.625rem;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.media-link__image .show-collage__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.media-link__image .show-collage__grid-top {
+  display: flex;
+  gap: 0.5rem;
+}
+.media-link__image .show-collage .media-link, .media-link__image .show-collage .backdrop-link {
+  width: 11.3125rem;
+  height: 11.5625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.media-link__image .show-collage .media-link:hover, .media-link__image .show-collage .backdrop-link:hover {
+  outline: dotted;
+}
+.media-link__image .show-collage .media-link--disabled {
+  cursor: default;
+  pointer-events: none;
+}
+.media-link__image .show-collage .media-link__image-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.media-link__image .show-collage .media-link__image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  transition: transform 300ms ease-in-out;
+}
+.media-link__image .show-collage .media-link:hover .media-link__image .show-collage .media-link__image, .media-link__image .show-collage .backdrop-link:hover .media-link__image .show-collage .media-link__image {
+  transform: scale(1.1);
+}
+.media-link__image .show-collage .media-link__overlay {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background-color: black;
+  opacity: 0.7;
+  transition: opacity 300ms ease-in-out;
+}
+.media-link__image .show-collage .media-link__overlay:hover {
+  opacity: 0.6;
+}
+.media-link__image .show-collage .media-link__overlay:active {
+  opacity: 0.4;
+}
+.media-link__image .show-collage .media-link__icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4375rem;
+  position: relative;
+  z-index: 3;
+}
+.media-link:hover .media-link__image, .backdrop-link:hover .media-link__image {
+  transform: scale(1.1);
+}
+.media-link__overlay {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background-color: black;
+  opacity: 0.7;
+  transition: opacity 300ms ease-in-out;
+}
+.media-link__overlay:hover {
+  opacity: 0.6;
+}
+.media-link__overlay:active {
+  opacity: 0.4;
+}
+.media-link__icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4375rem;
+  position: relative;
+  z-index: 3;
+}
+
+.backdrop-link {
+  width: 23.125rem;
+  height: 11.5625rem;
+}/*# sourceMappingURL=ShowCollege.css.map */

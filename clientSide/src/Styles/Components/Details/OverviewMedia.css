@@ -1,0 +1,104 @@
+.overview-media--video-container {
+  width: 27.1875rem;
+  flex-shrink: 0;
+}
+.overview-media--video-container .video-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overview-media--poster-container {
+  width: 10.1875rem;
+  flex-shrink: 0;
+}
+.overview-media--poster-container .poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overview-media--backdrop-container {
+  width: 27.1875rem;
+  flex-shrink: 0;
+}
+.overview-media--backdrop-container .backdrop-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overview-media--logo-container {
+  width: 20.1875rem;
+  flex-shrink: 0;
+}
+.overview-media--logo-container .logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.overview-media--container {
+  width: 44.0625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4375rem;
+}
+.overview-media--container .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.overview-media--container .wrapper .media-container {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.overview-media--container .wrapper .media-container .media-title {
+  font-weight: bold;
+  font-size: 1.875rem;
+}
+.overview-media--container .wrapper .media-container .media-list {
+  display: flex;
+  font-weight: bold;
+  font-size: 1.0625rem;
+  gap: 1.0625rem;
+  transition: all 0.3s;
+}
+.overview-media--container .wrapper .media-container .media-list .media-item {
+  cursor: pointer;
+  position: relative;
+}
+.overview-media--container .wrapper .media-container .media-list .media-item::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  border: 2px solid #FF8731;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.overview-media--container .wrapper .media-container .media-list .media-item.active::after {
+  opacity: 1;
+}
+.overview-media--container .wrapper .media-container .media-list .media-item .media-count {
+  font-size: 0.9625rem;
+  color: #9c9c9c;
+}
+.overview-media--container .wrapper .navigate-link {
+  font-weight: bold;
+  color: #6BBFCB;
+  padding-right: 1.25rem;
+}
+.overview-media--container .media-wrapper {
+  width: 44.0625rem;
+  height: 15.1875rem;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+.overview-media--container .media-wrapper .media-overlay {
+  position: absolute;
+  inset: 0;
+}/*# sourceMappingURL=OverviewMedia.css.map */

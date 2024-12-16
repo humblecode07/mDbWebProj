@@ -28,7 +28,7 @@ const SearchKeywords = ({ setKeywordResults }) => {
    return (
       <input
          type="text"
-         className="text-[.75rem] bg-transparent text-white focus:outline-none"
+         className="search-keyword--input"
          value={searchKeyword}
          onChange={(e) => setSearchKeyword(e.target.value)}
       />

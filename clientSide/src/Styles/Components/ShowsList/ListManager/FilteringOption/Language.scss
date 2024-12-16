@@ -1,0 +1,58 @@
+.fo-language--container {
+   color: white;
+   font-family: "Roboto", sans-serif;
+   display: flex;
+   flex-direction: column;
+   gap: 0.875rem;
+
+   .language-title {
+      color: #ff8731;
+      font-weight: bold;
+      font-size: 0.75rem;
+   }
+
+   .language-dropdown-container {
+      position: relative;
+
+      .language-dropdown {
+         width: 16.375rem;
+         height: 2rem;
+         background-color: #1c252f;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 0 1rem;
+         border-radius: 5px;
+         cursor: pointer;
+         user-select: none;
+
+         .dropdown-text {
+            font-size: 0.75rem;
+         }
+      }
+
+      .language-options {
+         width: 16.375rem;
+         max-height: 12rem;
+         background-color: #1c252f;
+         border-radius: 5px;
+         margin-top: 0.5rem;
+         position: absolute;
+         overflow-y: auto;
+         z-index: 3;
+
+         .language-option {
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            border-radius: 5px;
+            user-select: none;
+            transition: background-color 0.3s;
+
+            &:hover {
+               background-color: #ff8731;
+            }
+         }
+      }
+   }
+}

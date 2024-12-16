@@ -141,8 +141,6 @@ export const useShowsList = (type) => {
       try {
         const data = await apiFetch(`/discover/${type}?${params}`);
 
-        console.log(data)
-
         setItems(prevItems => {
           if (currentPage === 1) return data.results;
           const existingItemIds = new Set(prevItems.map(item => item.id));

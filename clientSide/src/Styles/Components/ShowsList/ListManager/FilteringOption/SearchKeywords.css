@@ -1,0 +1,8 @@
+.search-keyword--input {
+  font-size: 0.75rem;
+  background-color: transparent;
+  color: white;
+}
+.search-keyword--input:focus {
+  outline: none;
+}/*# sourceMappingURL=SearchKeywords.css.map */

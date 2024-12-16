@@ -1,0 +1,76 @@
+.fo-certification--container {
+  color: white;
+  font-family: "Roboto";
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.fo-certification--container .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.6875rem;
+}
+.fo-certification--container .wrapper .filter-title {
+  color: #ff8731;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+.fo-certification--container .wrapper .item-container {
+  position: relative;
+}
+.fo-certification--container .wrapper .item-container .dropdown-container {
+  width: 5.125rem;
+  height: 2rem;
+  background-color: #1C252F;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+.fo-certification--container .wrapper .item-container .dropdown-container .dropdown-text {
+  font-size: 0.75rem;
+}
+.fo-certification--container .wrapper .item-container .dropdown-menu {
+  position: absolute;
+  margin-top: 0.5rem;
+  background-color: #1C252F;
+  border-radius: 5px;
+  width: 100%;
+  height: 15rem;
+  overflow: auto;
+  z-index: 10;
+  font-size: 0.75rem;
+}
+.fo-certification--container .wrapper .item-container .dropdown-menu .dropdown-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.fo-certification--container .wrapper .item-container .dropdown-menu .dropdown-item:hover {
+  background-color: #374151;
+}
+.fo-certification--container .certification-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6875rem;
+}
+.fo-certification--container .certification-container .certification-button {
+  padding: 0.4375rem 1rem;
+  border-radius: 9999px;
+  /* Fully rounded for pills */
+  font-size: 0.75rem;
+  background-color: #1C252F;
+  transition: transform 0.2s;
+}
+.fo-certification--container .certification-container .certification-button:hover {
+  background-color: #2d3748;
+  transform: scale(1.05);
+}
+.fo-certification--container .certification-container .certification-button.selected {
+  background-color: #ff8731;
+}
+.fo-certification--container .certification-container .certification-button span {
+  display: inline-block;
+}/*# sourceMappingURL=Certification.css.map */

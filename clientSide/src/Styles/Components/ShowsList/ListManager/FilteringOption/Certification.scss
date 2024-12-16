@@ -1,0 +1,91 @@
+.fo-certification--container {
+   color: white;
+   font-family: 'Roboto';
+   display: flex;
+   flex-direction: column;
+   gap: 0.875rem;
+
+   .wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1.6875rem;
+
+      .filter-title {
+         color: #ff8731;
+         font-weight: bold;
+         font-size: .75rem;
+      }
+
+      .item-container {
+         position: relative;
+
+         .dropdown-container {
+            width: 5.125rem;
+            height: 2rem;
+            background-color: #1C252F;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+
+            .dropdown-text {
+               font-size: 0.75rem;
+            }
+
+
+         }
+
+         .dropdown-menu {
+            position: absolute;
+            margin-top: 0.5rem;
+            background-color: #1C252F;
+            border-radius: 5px;
+            width: 100%;
+            height: 15rem;
+            overflow: auto;
+            z-index: 10;
+            font-size: 0.75rem;
+
+            .dropdown-item {
+               padding: 0.5rem 1rem;
+               cursor: pointer;
+
+               &:hover {
+                  background-color: #374151;
+               }
+            }
+         }
+      }
+   }
+
+   .certification-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6875rem;
+
+      .certification-button {
+         padding: 0.4375rem 1rem;
+         border-radius: 9999px;
+         /* Fully rounded for pills */
+         font-size: 0.75rem;
+         background-color: #1C252F;
+         transition: transform 0.2s;
+
+         &:hover {
+            background-color: #2d3748;
+            transform: scale(1.05);
+         }
+
+         &.selected {
+            background-color: #ff8731;
+         }
+
+         span {
+            display: inline-block;
+         }
+      }
+   }
+}

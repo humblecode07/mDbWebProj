@@ -1,0 +1,9 @@
+.search-keyword--input {
+   font-size: .75rem;
+   background-color: transparent;
+   color: white;
+   
+   &:focus {
+      outline: none;
+   }
+}

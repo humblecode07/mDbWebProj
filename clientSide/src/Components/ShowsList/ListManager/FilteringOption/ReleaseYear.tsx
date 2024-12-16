@@ -14,11 +14,10 @@ const ReleaseYear = () => {
 
   const handleReleaseYearChange = (e, type) => {
     const inputValue = e.target.value;
-    const parsedValue = parseInt(inputValue, 10);
 
     const updatedReleaseYear = {
       ...releaseYear,
-      [type]: convertYearToDate(parsedValue)
+      [type]: inputValue
     };
 
     setReleaseYear(updatedReleaseYear);
@@ -26,38 +25,41 @@ const ReleaseYear = () => {
     setCurrentPage(1);
   };
 
-  function convertYearToDate(year) {
-    if (year && !isNaN(year) && year > 0 && year < 10000) {
-      return `${year}-12-31`;
-    }
-    return '';
-  }
+  // function convertYearToDate(year) {
+  //   if (year && !isNaN(year) && year > 0 && year < 10000) {
+  //     return `${year}-12-31`;
+  //   }
+  //   return '';
+  // }
 
-  // console.log(releaseYear)
+  console.log(releaseYear)
 
   return (
-    <div className='text-white font-roboto flex flex-col gap-[0.875rem]'>
-      <span className='text-[#ff8731] font-bold text-[.75rem]'>{streamType === "movie" ? "RELEASE YEAR" : "AIR RELEASE YEAR"}</span>
-      <div className='flex items-center gap-[.6rem]'>
-        <div className="w-[16.875rem] h-[2.5rem] border-2 border-white rounded-md flex items-center px-3 hover:border-[#ff8731] focus-within:border-[#ff8731] transition duration-300 ease-in-out">
+    <div className="release-year-section">
+      <span className="release-year-title">
+        {streamType === "movie" ? "RELEASE YEAR" : "AIR RELEASE YEAR"}
+      </span>
+      <div className="release-year-inputs">
+        <div className="release-year-input-container">
           <input
-            type="number"
-            className="w-full h-full text-[.75rem] bg-transparent text-white placeholder-gray-500 focus:outline-none"
+            type="date"
+            className="release-year-input"
             value={releaseYear.gteYear}
-            onChange={(e) => handleReleaseYearChange(e, 'gteYear')}
+            onChange={(e) => handleReleaseYearChange(e, "gteYear")}
           />
         </div>
-        <span className='text-[.75rem]'>to</span>
-        <div className="w-[16.875rem] h-[2.5rem] border-2 border-white rounded-md flex items-center px-3 hover:border-[#ff8731] focus-within:border-[#ff8731] transition duration-300 ease-in-out">
+        <span className="release-year-separator">to</span>
+        <div className="release-year-input-container">
           <input
-            type="number"
-            className="w-full h-full text-[.75rem] bg-transparent text-white placeholder-gray-500 focus:outline-none"
+            type="date"
+            className="release-year-input"
             value={releaseYear.lteYear}
-            onChange={(e) => handleReleaseYearChange(e, 'lteYear')}
+            onChange={(e) => handleReleaseYearChange(e, "lteYear")}
           />
         </div>
       </div>
     </div>
+
   )
 }
 

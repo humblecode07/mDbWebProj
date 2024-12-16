@@ -1,0 +1,89 @@
+.details--videos--container {
+   width: 66.5rem;
+   display: flex;
+   padding: 3.3125rem 0rem;
+   gap: 3.6875rem;
+
+   .ul-container {
+      width: 15.9375rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 0;
+      gap: 1.1875rem;
+      padding: 2.5625rem 1.625rem;
+      border-radius: 0.375rem; // For rounded-md
+      border: 1px solid #1A1A1A;
+
+      .li-item {
+         width: 12.6875rem;
+         font-weight: 300; // For font-light (Light weight is typically 300)
+         font-size: 0.9375rem;
+         display: flex;
+         justify-content: space-between;
+         cursor: pointer;
+      }
+   }
+
+   .container {
+      width: 46.875rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 0;
+      flex-wrap: wrap;
+      gap: 1.7rem;
+
+      .video-item {
+         display: flex;
+         gap: 1.5625rem;
+
+         img {
+            width: 22.5625rem;
+            height: 12.691375rem;
+            object-fit: cover;
+         }
+
+         section {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .video-info {
+               display: flex;
+               flex-direction: column;
+               gap: 0.4375rem;
+
+               .video-name {
+                  font-weight: bold;
+                  font-size: 1.09375rem;
+               }
+
+               .video-type {
+                  font-weight: bold;
+                  font-size: 1.09375rem;
+               }
+
+               .video-metadata  {
+                  display: flex;
+                  gap: 0.375rem;
+                  font-weight: 300;
+                  font-size: 0.9375rem;
+               }
+            }
+
+            .video-metadata--two {
+               display: flex;
+               align-items: center;
+               gap: .6875rem;
+               padding-bottom: 1rem;
+
+               span {
+                  font-weight: 300;
+                  font-size: .9375rem;
+               }
+            }
+         }
+      }
+   }
+}

@@ -16,6 +16,8 @@ const ReleaseInformation = ({ movieData, setMovieData }) => {
 
   const { movieId } = useParams();
 
+
+
   const handleAddReleaseDate = async (data) => {
     try {
       const releaseDateData = {
@@ -97,8 +99,6 @@ const ReleaseInformation = ({ movieData, setMovieData }) => {
     alert('This function not yet available!');
   }
 
-  if (!releaseDates) return null;
-
   return (
     <div className="release-information--container">
       <div className="flex--container">
@@ -125,7 +125,7 @@ const ReleaseInformation = ({ movieData, setMovieData }) => {
             </tr>
           </thead>
           <tbody>
-            {releaseDates.map((releaseCountry, countryIndex) => (
+            {releaseDates?.map((releaseCountry, countryIndex) => (
               releaseCountry.release_dates.map((releaseDate, dateIndex) => (
                 <tr
                   key={`${countryIndex}-${dateIndex}`}

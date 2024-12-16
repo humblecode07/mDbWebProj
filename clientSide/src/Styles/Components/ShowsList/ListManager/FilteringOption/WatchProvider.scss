@@ -1,0 +1,127 @@
+.watch-provider--container {
+   color: white;
+   font-family: 'Roboto';
+   display: flex;
+   flex-direction: column;
+   gap: .875rem;
+
+   .watch-providers-section {
+      display: flex;
+      align-items: center;
+      gap: 1.6875rem;
+
+      .watch-providers-title {
+         color: #ff8731;
+         font-weight: bold;
+         font-size: 0.75rem;
+      }
+
+      .dropdown-container {
+         position: relative;
+
+         .dropdown-button {
+            width: 12.125rem;
+            height: 2rem;
+            background-color: #1c252f;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+               background-color: #2a3542; // Optionally change the background color on hover
+            }
+
+            .dropdown-label {
+               font-size: 0.75rem;
+            }
+
+            .arrow-icon {
+               // Style for your arrow icon
+            }
+         }
+
+         .dropdown-list {
+            width: 12.125rem;
+            max-height: 12rem;
+            background-color: #1c252f;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            position: absolute;
+            overflow: auto;
+            z-index: 3;
+
+            .dropdown-item {
+               padding: 0.5rem 1rem;
+               font-size: 0.75rem;
+               cursor: pointer;
+               user-select: none;
+               transition: background-color 0.3s ease;
+
+               &:hover {
+                  background-color: #ff8731;
+               }
+            }
+         }
+      }
+   }
+
+   .watch-provider-list {
+      display: flex;
+      gap: 1.375rem;
+      flex-wrap: wrap;
+
+      .watch-provider-item {
+         width: 3.125rem;
+         height: 3.125rem;
+         cursor: pointer;
+         border-radius: 0.625rem;
+         user-select: none;
+         transition: background-color 0.3s ease, opacity 0.3s ease, border 0.3s ease;
+         background-color: #1c252f; // Default background
+
+         &.selected {
+            background-color: #ff8731;
+            border: 2px solid #ff8731;
+         }
+
+         .provider-icon-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &.selected {
+               opacity: 1;
+            }
+
+            &.not-selected {
+               opacity: 0.5;
+            }
+
+            img {
+               border-radius: 0.625rem;
+               width: 100%;
+               height: 100%;
+               object-fit: contain; // Keeps the image ratio intact
+            }
+
+            .check-icon-container {
+               position: absolute;
+               inset: 0;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               z-index: 1;
+            }
+         }
+      }
+   }
+
+}

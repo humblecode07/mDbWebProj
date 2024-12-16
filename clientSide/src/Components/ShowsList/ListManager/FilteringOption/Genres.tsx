@@ -3,7 +3,7 @@ import { apiFetch } from '../../../../api/api';
 import { ContextMovies } from '../../../../pages/Lists/MovieList';
 import { ContextTvShows } from '../../../../pages/Lists/TvList';
 
-const Genres = () => {  
+const Genres = () => {
   const [genres, setGenres] = useState([]);
   const moviesContext = useContext(ContextMovies);
   const tvShowsContext = useContext(ContextTvShows);
@@ -15,14 +15,14 @@ const Genres = () => {
     const getGenres = async () => {
       try {
         const results = await apiFetch(`genre/${streamType}/list?language=en`);
-  
+
         setGenres(results.genres);
       }
       catch (error) {
         console.log("Error during fetching of movie's genres", error)
       }
     }
-  
+
     getGenres();
   }, [streamType])
 
@@ -33,21 +33,20 @@ const Genres = () => {
 
     setLocalGenres(updatedGenres);
     setCurrentPage(1);
-    handleFilterChange('genres', updatedGenres); 
+    handleFilterChange('genres', updatedGenres);
   }
 
   return (
-    <div className='text-white font-roboto flex flex-col gap-[0.875rem]'>
-      <span className='text-[#ff8731] font-bold text-[.75rem]'>GENRES</span>
-      <div className='flex flex-wrap gap-[0.6875rem]'>
+    <div className="genre-container">
+      <span className="genre-title">GENRES</span>
+      <div className="genre-buttons">
         {genres.map((genre) => {
           const isSelected = localGenres.includes(genre.id);
 
           return (
             <button
               key={genre.id}
-              className={`px-[1rem] py-[0.4375rem] rounded-full text-[.75rem] ${isSelected ? 'bg-[#ff8731]' : 'bg-[#1C252F] hover:bg-[#2d3748]'
-                } hover:scale-105 transition-transform`}
+              className={`genre-button ${isSelected ? 'selected' : ''}`}
               onClick={() => handleGenreToggle(genre.id)}
             >
               {genre.name}
@@ -56,6 +55,7 @@ const Genres = () => {
         })}
       </div>
     </div>
+
   )
 }
 

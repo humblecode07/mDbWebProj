@@ -1,0 +1,45 @@
+.runtime-section {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.runtime-section .runtime-title {
+  color: #ff8731;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+.runtime-section .runtime-inputs {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.runtime-section .runtime-inputs .runtime-input-container {
+  width: 16.875rem;
+  height: 2.5rem;
+  border: 2px solid white;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  transition: border-color 0.3s ease-in-out;
+}
+.runtime-section .runtime-inputs .runtime-input-container:hover, .runtime-section .runtime-inputs .runtime-input-container:focus-within {
+  border-color: #ff8731;
+}
+.runtime-section .runtime-inputs .runtime-input-container .runtime-input {
+  width: 100%;
+  height: 100%;
+  font-size: 0.75rem;
+  background: transparent;
+  color: white;
+  outline: none;
+  border: none;
+}
+.runtime-section .runtime-inputs .runtime-input-container .runtime-input::placeholder {
+  color: #6b7280;
+}
+.runtime-section .runtime-inputs .runtime-separator {
+  font-size: 0.75rem;
+}/*# sourceMappingURL=Runtime.css.map */

@@ -1,0 +1,54 @@
+.user-rating-section {
+   color: white;
+   font-family: "Roboto", sans-serif;
+   display: flex;
+   flex-direction: column;
+   gap: 0.875rem;
+ 
+   .user-rating-title {
+     color: #ff8731;
+     font-weight: bold;
+     font-size: 0.75rem;
+   }
+ 
+   .user-rating-inputs {
+     display: flex;
+     align-items: center;
+     gap: 0.6rem;
+ 
+     .user-rating-input-container {
+       width: 16.875rem;
+       height: 2.5rem;
+       border: 2px solid white;
+       border-radius: 0.375rem;
+       display: flex;
+       align-items: center;
+       padding: 0 0.75rem;
+       transition: border-color 0.3s ease-in-out;
+ 
+       &:hover,
+       &:focus-within {
+         border-color: #ff8731;
+       }
+ 
+       .user-rating-input {
+         width: 100%;
+         height: 100%;
+         font-size: 0.75rem;
+         background: transparent;
+         color: white;
+         outline: none;
+         border: none;
+ 
+         &::placeholder {
+           color: #6b7280; // Tailwind's gray-500 equivalent
+         }
+       }
+     }
+ 
+     .user-rating-separator {
+       font-size: 0.75rem;
+     }
+   }
+ }
+ 

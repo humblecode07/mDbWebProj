@@ -1,0 +1,31 @@
+.genre-container {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.genre-container .genre-title {
+  color: #ff8731;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+.genre-container .genre-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6875rem;
+}
+.genre-container .genre-buttons .genre-button {
+  padding: 0.4375rem 1rem;
+  border-radius: 9999px; /* Fully rounded for pill shape */
+  font-size: 0.75rem;
+  background-color: #1C252F;
+  transition: transform 0.2s;
+}
+.genre-container .genre-buttons .genre-button:hover {
+  background-color: #2d3748;
+  transform: scale(1.05);
+}
+.genre-container .genre-buttons .genre-button.selected {
+  background-color: #ff8731;
+}/*# sourceMappingURL=Genres.css.map */
