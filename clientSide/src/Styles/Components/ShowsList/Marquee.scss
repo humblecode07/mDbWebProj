@@ -1,0 +1,61 @@
+$image-url: 'https://image.tmdb.org/t/p/w500';
+
+.marquee {
+  display: flex;
+  width: 66.5625rem;
+  height: 6.125rem;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    background: linear-gradient(90deg, rgba(17, 17, 17, 1) 0%, rgba(35, 29, 24, 0) 25%, rgba(30, 25, 22, 0) 75%, rgba(17, 17, 17, 1) 100%);
+  }
+
+  &__title {
+    font-family: 'Roboto Flex', sans-serif; // Ensure you have this font imported
+    font-size: 3.75rem;
+    font-weight: 800; // Extra bold
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+
+    .highlight {
+      color: #FF8731;
+    }
+  }
+
+  &__marquee {
+    display: flex;
+
+    &--slide {
+      height: 100%;
+      min-width: 22.1875rem;
+      filter: brightness(0.75); // Adjust brightness for the first marquee
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &--slide-bright {
+      height: 100%;
+      min-width: 22.1875rem;
+      filter: brightness(0.5); // Adjust brightness for the second marquee
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

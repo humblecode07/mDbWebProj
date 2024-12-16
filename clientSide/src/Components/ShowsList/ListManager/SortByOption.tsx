@@ -36,22 +36,22 @@ const SortByOption = ({ stream, selectedSorting, setSelectedSorting, resetCurren
   }
 
   return (
-    <div className='flex items-center gap-[0.6875rem] font-roboto text-[1rem] text-white'>
-      <span className='font-bold'>Sort Results By</span>
-      <div className='relative'>
+    <div className="sort-results-container">
+      <span className="sort-label">Sort Results By</span>
+      <div className="dropdown-wrapper">
         <button
-          className='w-[14.5rem] h-[2.25rem] flex justify-between items-center gap-[0.8125rem] text-white bg-[#1C252F] rounded-[0.625rem] text-[0.875rem] px-3 transition-colors hover:bg-[#2C3E50] focus:outline-none'
+          className="dropdown-button"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
           <span>{selectedSorting.label}</span>
           <ArrowIcon />
         </button>
         {isDropdownOpen && (
-          <div className='absolute top-full left-0 w-full mt-2 bg-[#1C252F] rounded-md shadow-lg z-[3]'>
+          <div className="dropdown-menu">
             {stream === "movie" && sortByMovie.map((option) => (
               <div
                 key={option.value}
-                className='px-4 py-2 text-white cursor-pointer hover:bg-[#2C3E50] transition-colors'
+                className="dropdown-item"
                 onClick={() => handleSelectedSortBy(option.value, option.label)}
               >
                 {option.label}
@@ -60,7 +60,7 @@ const SortByOption = ({ stream, selectedSorting, setSelectedSorting, resetCurren
             {stream === "tv" && sortByTv.map((option) => (
               <div
                 key={option.value}
-                className='px-4 py-2 text-white cursor-pointer hover:bg-[#2C3E50] transition-colors'
+                className="dropdown-item"
                 onClick={() => handleSelectedSortBy(option.value, option.label)}
               >
                 {option.label}
@@ -70,7 +70,7 @@ const SortByOption = ({ stream, selectedSorting, setSelectedSorting, resetCurren
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default SortByOption

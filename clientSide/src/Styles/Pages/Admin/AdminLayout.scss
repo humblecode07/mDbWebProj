@@ -1,0 +1,12 @@
+.admin-layout--container {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   color: white; // Ensure text color is applied to all content inside
+
+   .content {
+      width: 74.8125rem;
+      display: flex;
+      gap: 3.25rem;
+   }
+}

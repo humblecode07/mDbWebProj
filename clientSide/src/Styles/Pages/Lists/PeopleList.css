@@ -1,0 +1,11 @@
+.people-list--main-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif; /* Ensure to include the font in your project */
+}
+.people-list--main-container .content {
+  width: 66.5625rem;
+  display: flex;
+  justify-content: space-between;
+}/*# sourceMappingURL=PeopleList.css.map */

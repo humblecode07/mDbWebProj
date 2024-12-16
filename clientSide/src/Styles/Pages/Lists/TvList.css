@@ -1,0 +1,16 @@
+.tv-list--main-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif; /* Ensure to include the font in your project */
+}
+.tv-list--main-container .content {
+  width: 66.5625rem;
+  display: flex;
+  justify-content: space-between;
+}
+.tv-list--main-container .content .filtering-options {
+  display: flex;
+  align-items: center;
+  gap: 2.5625rem;
+}/*# sourceMappingURL=TvList.css.map */

@@ -51,7 +51,7 @@ const MovieCredits = () => {
    if (credits) {
       return (
          <>
-            <main className='text-white flex flex-col gap-[2.75rem] font-roboto p-0'>
+            <main className='movie-credits--container'>
                <Section data={credits.section} />
                <Credits data={credits.credits} />
             </main>

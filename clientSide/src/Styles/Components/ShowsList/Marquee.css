@@ -1,0 +1,51 @@
+.marquee {
+  display: flex;
+  width: 66.5625rem;
+  height: 6.125rem;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+.marquee__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: linear-gradient(90deg, rgb(17, 17, 17) 0%, rgba(35, 29, 24, 0) 25%, rgba(30, 25, 22, 0) 75%, rgb(17, 17, 17) 100%);
+}
+.marquee__title {
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 3.75rem;
+  font-weight: 800;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+.marquee__title .highlight {
+  color: #FF8731;
+}
+.marquee__marquee {
+  display: flex;
+}
+.marquee__marquee--slide {
+  height: 100%;
+  min-width: 22.1875rem;
+  filter: brightness(0.75);
+}
+.marquee__marquee--slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.marquee__marquee--slide-bright {
+  height: 100%;
+  min-width: 22.1875rem;
+  filter: brightness(0.5);
+}
+.marquee__marquee--slide-bright img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}/*# sourceMappingURL=Marquee.css.map */

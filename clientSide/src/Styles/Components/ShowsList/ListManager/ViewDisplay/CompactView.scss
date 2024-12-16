@@ -1,0 +1,99 @@
+.streams-container {
+   display: flex;
+   width: 66.5625rem;
+   gap: 1.375rem;
+   flex-wrap: wrap;
+ 
+   .stream-link {
+     width: 21.2708rem;
+     height: 6.25rem;
+     background-color: #1A1A1A;
+     display: flex;
+     flex-direction: column;
+     gap: 0.9375rem;
+     position: relative;
+     cursor: pointer;
+     z-index: 2;
+     transition: transform 0.2s ease;
+ 
+     &:hover {
+       transform: scale(1.02);
+     }
+ 
+     .stream-image {
+       position: absolute;
+       height: 100%;
+       width: 100%;
+       border-radius: 0.625rem;
+       object-fit: cover;
+     }
+ 
+     .stream-gradient {
+       position: absolute;
+       inset: 0;
+       border-radius: 0.625rem;
+       background: linear-gradient(to right, #111111, transparent, rgba(17, 17, 17, 0));
+     }
+ 
+     .stream-content {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       display: flex;
+       align-items: flex-end;
+ 
+       .stream-details {
+         width: 100%;
+         display: flex;
+         align-items: center;
+         justify-content: space-around;
+         padding-bottom: 0.5rem;
+ 
+         .stream-info {
+           display: flex;
+           flex-direction: column;
+           width: 65%;
+ 
+           .stream-title {
+             font-size: 1.125rem;
+             font-weight: 500;
+             overflow: hidden;
+             text-overflow: ellipsis;
+             white-space: nowrap;
+           }
+ 
+           .stream-metadata {
+             display: flex;
+             gap: 1rem;
+             font-weight: 300;
+ 
+             .stream-rating {
+               display: flex;
+               gap: 0.5rem;
+             }
+           }
+         }
+ 
+         .stream-actions {
+           display: flex;
+           gap: 0.6975rem;
+ 
+           .action-button {
+             height: 2rem;
+             width: 2rem;
+             border-radius: 50%;
+             background-color: #1C252F;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             transition: background-color 0.2s;
+ 
+             &:hover {
+               background-color: #2b3947;
+             }
+           }
+         }
+       }
+     }
+   }
+ }

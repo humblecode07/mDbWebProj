@@ -1,0 +1,11 @@
+.admin-layout--container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.admin-layout--container .content {
+  width: 74.8125rem;
+  display: flex;
+  gap: 3.25rem;
+}/*# sourceMappingURL=AdminLayout.css.map */

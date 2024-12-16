@@ -1,0 +1,26 @@
+.create-movie--form-container {
+  width: 51.6875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8125rem;
+  padding-bottom: 5rem;
+}
+.create-movie--form-container .button-group {
+  width: 100%;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+.create-movie--form-container .button-group .button {
+  height: 2.125rem;
+  padding: 0 1.5625rem;
+  background-color: #CC511D;
+  font-size: 0.875rem;
+  font-weight: bold;
+  border-radius: 0.625rem;
+  cursor: pointer;
+}
+.create-movie--form-container .button-group .button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}/*# sourceMappingURL=CreateMovie.css.map */

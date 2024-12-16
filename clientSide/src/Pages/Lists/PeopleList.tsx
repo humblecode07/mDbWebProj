@@ -11,7 +11,7 @@ const PeopleList = () => {
 
    useEffect(() => {
       document.title = 'tskr! Movie Database Website';
-      
+
       const fetchPeopleList = async () => {
          try {
             const data = await peopleList(currentPage);
@@ -53,9 +53,9 @@ const PeopleList = () => {
 
    return (
       <>
-         <main className='text-white flex flex-col font-roboto'>
+         <main className="people-list--main-container">
             <Marquee display={"people"} />
-            <div className='w-[66.5625rem] flex justify-between'>
+            <div className="content">
                <GridView people={people} />
             </div>
          </main>

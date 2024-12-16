@@ -1,0 +1,34 @@
+.sidebar {
+  width: 5.1875rem;
+  min-height: 34.315rem;
+  height: 76.85dvh;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, #CC511D, black);
+}
+.sidebar__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.525rem;
+}
+.sidebar__section--top {
+  padding-top: 2.375rem;
+}
+.sidebar__section--bottom {
+  padding-bottom: 2.375rem;
+}
+.sidebar__button {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+.sidebar__button:hover {
+  background-color: #CC511D;
+}/*# sourceMappingURL=Sidebar.css.map */

@@ -21,19 +21,19 @@ const FilteringOption = () => {
    return (
       <>
          <button
-            className='w-[10.5rem] h-[2.25rem] flex items-center justify-center gap-[0.8125rem] text-white bg-[#1C252F] rounded-[0.625rem] text-[0.875rem] transition-colors hover:bg-[#2C3E50] focus:outline-none'
+            className='filter-button'
             onClick={openModal}
          >
             <FilterIcon />
             <span>Filtering Options</span>
          </button>
          {openFilterModal &&
-            <div className='w-screen h-screen top-0 left-0 right-0 bottom-0 fixed z-[10] flex items-center justify-center'>
-               <div className='w-screen h-screen top-0 left-0 right-0 bottom-0 fixed bg-[#111111] opacity-50'></div>
-               <div className='w-[41.5rem] h-[45rem] bg-[#1b1b1b] z-[10] relative rounded-[5px] overflow-auto'>
-                  <div className='h-full w-full relative py-[2rem] px-[2.8125rem]'>
+            <div className='filter-modal-overlay'>
+               <div className='modal-background'></div>
+               <div className='modal-container'>
+                  <div className='modal-content'>
                      <button
-                        className='w-9 h-9 bg-[#414141] rounded-full flex items-center justify-center absolute top-[1rem] right-[1rem] z-10'
+                        className='close-button'
                         onClick={openModal}
                      >
                         <XIcon />
@@ -44,7 +44,7 @@ const FilteringOption = () => {
                      <Divider />
                      <Certification />
                      <Divider />
-                     <div className='flex gap-[1.8rem]'>
+                     <div className='filter-sections'>
                         <Language />
                         <Keywords />
                      </div>

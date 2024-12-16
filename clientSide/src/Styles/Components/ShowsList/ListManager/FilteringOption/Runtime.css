@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
+  padding-bottom: 2rem;
 }
 .runtime-section .runtime-title {
   color: #ff8731;

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { apiFetch } from '../../api/api';
 
-const imageURL = 'https://image.tmdb.org/t/p/w500'
+const imageURL = 'https://image.tmdb.org/t/p/w500';
 
 const marquee = {
    initial: {
@@ -48,49 +48,41 @@ const Marquee = ({ display }) => {
    }, [display]);
 
    return (
-      <section className='flex w-[66.5625rem] h-[6.125rem] overflow-hidden relative border-t-[1px] border-b-[1px]'>
-         <div className='absolute inset-0 z-[4]' style={{
-            background: 'linear-gradient(90deg, rgba(17,17,17,1) 0%, rgba(35,29,24,0) 25%, rgba(30,25,22,0) 75%, rgba(17,17,17,1) 100%)'
-         }} />
-         <div className='font-robotoFlex text-[3.75rem] font-extrabold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[4]'>
-            {display}<span className='text-[#FF8731]'>!</span>
+      <section className='marquee'>
+         <div className='marquee__overlay' />
+         <div className='marquee__title'>
+            {display}<span className='highlight'>!</span>
          </div>
          <motion.div
-            className='flex '
+            className='marquee__marquee'
             initial="initial"
             animate="animate"
             variants={marquee}
          >
-            {marqueeSlide.map((data, index) => {
-               return (
-                  <div className='h-full min-w-[22.1875rem] brightness-75' key={index}>
-                     <img 
-                        className='h-full w-full object-cover' 
-                        src={`${imageURL}${data.backdrop_path || data.profile_path}`}
-                        alt={data.original_title} />
-                  </div>
-               )
-            })}
+            {marqueeSlide.map((data, index) => (
+               <div className='marquee__marquee--slide' key={index}>
+                  <img
+                     src={`${imageURL}${data.backdrop_path || data.profile_path}`}
+                     alt={data.original_title} />
+               </div>
+            ))}
          </motion.div>
          <motion.div
-            className='flex'
+            className='marquee__marquee'
             initial="initial"
             animate="animate"
             variants={marquee}
          >
-            {marqueeSlide.map((data, index) => {
-               return (
-                  <div className='h-full min-w-[22.1875rem] brightness-50' key={index}>
-                     <img 
-                        className='h-full w-full object-cover' 
-                        src={`${imageURL}${data.backdrop_path || data.profile_path}`}
-                        alt={data.original_title} />
-                  </div>
-               )
-            })}
+            {marqueeSlide.map((data, index) => (
+               <div className='marquee__marquee--slide-bright' key={index}>
+                  <img
+                     src={`${imageURL}${data.backdrop_path || data.profile_path}`}
+                     alt={data.original_title} />
+               </div>
+            ))}
          </motion.div>
       </section>
    )
 }
 
-export default Marquee
+export default Marquee;

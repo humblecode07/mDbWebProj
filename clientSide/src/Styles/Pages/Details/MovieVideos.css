@@ -1,0 +1,8 @@
+.details--movie-videos--container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font-family: "Roboto";
+  padding: 0;
+}/*# sourceMappingURL=MovieVideos.css.map */

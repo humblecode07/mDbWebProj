@@ -1,0 +1,449 @@
+.admin-movie-details-container {
+  width: 66.1875rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 5rem;
+}
+.admin-movie-details-container .hero-section {
+  width: 100%;
+  height: 30.6875rem;
+  position: relative;
+}
+.admin-movie-details-container .hero-section .backdrop-container {
+  width: 100%;
+  height: 26.6875rem;
+  position: absolute;
+  z-index: 5;
+}
+.admin-movie-details-container .hero-section .backdrop-container .backdrop-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(17, 17, 17, 0), rgb(17, 17, 17));
+}
+.admin-movie-details-container .hero-section .backdrop-container .backdrop-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.admin-movie-details-container .hero-section .backdrop-container .edit-button {
+  height: 3.0625rem;
+  position: absolute;
+  top: 1.8125rem;
+  right: 1.8125rem;
+  padding: 0 1.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: 9999px;
+  background-color: #CC511D;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+.admin-movie-details-container .hero-section .backdrop-container .edit-button:hover {
+  background-color: #FF6B35;
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+.admin-movie-details-container .hero-section .movie-info-container {
+  width: 60.0625rem;
+  height: 16.375rem;
+  position: absolute;
+  bottom: 0;
+  z-index: 7;
+  display: flex;
+  gap: 1.625rem;
+  padding: 0 3.0625rem;
+}
+.admin-movie-details-container .hero-section .movie-info-container .poster-container {
+  width: 11.8125rem;
+  height: 16.375rem;
+  border-radius: 0.75rem;
+}
+.admin-movie-details-container .hero-section .movie-info-container .poster-container .poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details {
+  width: 46.6875rem;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .title {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .movie-metadata {
+  display: flex;
+  gap: 1.3125rem;
+  align-items: center;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .movie-metadata .certification {
+  border: 1px solid white;
+  padding: 2px 5px;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .movie-metadata .genres span {
+  margin-right: 0.25rem;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .rating-section {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 0.875rem;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .rating-section .rating-details {
+  display: flex;
+  gap: 0.3125rem;
+  align-items: center;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .rating-section .rating-details .rating-numbers {
+  display: flex;
+  gap: 0.1875rem;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .rating-section .rating-details .rating-numbers .rating-wrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .rating-section .rating-details .rating-numbers .vote-average {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .rating-section .rating-details .rating-numbers .vote-count {
+  font-size: 0.75rem;
+  color: #8F8F8F;
+  font-weight: 600;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .rating-section .rating-details .rating-numbers .max-rating {
+  font-weight: 600;
+  color: #8F8F8F;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .rating-section .action-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .rating-section .action-buttons .rate-button {
+  display: flex;
+  gap: 0.375rem;
+  align-items: center;
+  color: #396BEA;
+  font-weight: 600;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .rating-section .action-buttons .icon-buttons {
+  display: flex;
+  gap: 1.5625rem;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .rating-section .action-buttons .icon-buttons button {
+  width: 1.875rem;
+  height: 1.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1C252F;
+  border-radius: 9999px;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .tagline {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 0.875rem;
+  padding-top: 0.5625rem;
+}
+.admin-movie-details-container .hero-section .movie-info-container .movie-details .overview {
+  font-size: 0.875rem;
+  padding-top: 0.5625rem;
+}
+.admin-movie-details-container .video-trailer-section {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  gap: 1.77875rem;
+  flex-shrink: 0;
+}
+.admin-movie-details-container .video-trailer-section .trailer-iframe {
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+.admin-movie-details-container .cast-crew-section {
+  width: 100%;
+  height: 35.5625rem;
+  display: flex;
+  gap: 1.5rem;
+}
+.admin-movie-details-container .cast-crew-section .cast-container,
+.admin-movie-details-container .cast-crew-section .crew-container {
+  width: 32.3125rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: auto;
+}
+.admin-movie-details-container .cast-crew-section .cast-container .section-header,
+.admin-movie-details-container .cast-crew-section .crew-container .section-header {
+  width: 100%;
+  height: 2.1875rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.admin-movie-details-container .cast-crew-section .cast-container .section-header .section-title,
+.admin-movie-details-container .cast-crew-section .crew-container .section-header .section-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+.admin-movie-details-container .cast-crew-section .cast-container .section-header .section-count,
+.admin-movie-details-container .cast-crew-section .crew-container .section-header .section-count {
+  color: #B1B1B1;
+  font-size: 0.875rem;
+}
+.admin-movie-details-container .cast-crew-section .cast-container .member-list,
+.admin-movie-details-container .cast-crew-section .crew-container .member-list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: auto;
+}
+.admin-movie-details-container .cast-crew-section .cast-container .member-list .member-item,
+.admin-movie-details-container .cast-crew-section .crew-container .member-list .member-item {
+  display: flex;
+  gap: 1.1875rem;
+}
+.admin-movie-details-container .cast-crew-section .cast-container .member-list .member-item .member-image,
+.admin-movie-details-container .cast-crew-section .crew-container .member-list .member-item .member-image {
+  width: 4.125rem;
+  height: 4.125rem;
+  border-radius: 9999px;
+  object-fit: cover;
+}
+.admin-movie-details-container .cast-crew-section .cast-container .member-list .member-item .member-details,
+.admin-movie-details-container .cast-crew-section .crew-container .member-list .member-item .member-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.admin-movie-details-container .cast-crew-section .cast-container .member-list .member-item .member-details .member-name,
+.admin-movie-details-container .cast-crew-section .crew-container .member-list .member-item .member-details .member-name {
+  font-weight: bold;
+}
+.admin-movie-details-container .cast-crew-section .cast-container .member-list .member-item .member-details .member-role,
+.admin-movie-details-container .cast-crew-section .crew-container .member-list .member-item .member-details .member-role {
+  color: #8E8E8E;
+}
+.admin-movie-details-container .images-section,
+.admin-movie-details-container .videos-section,
+.admin-movie-details-container .recommendations-section {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.data-container {
+  width: 30.0625rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.data-container .details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+  padding: 0.9375rem 0;
+}
+.data-container .details-container .info-row {
+  display: flex;
+  gap: 1.4375rem;
+}
+.data-container .details-container .info-row .label {
+  font-weight: bold;
+}
+.data-container .director-container {
+  display: flex;
+  gap: 1.4375rem;
+  padding: 0.9375rem 0;
+}
+.data-container .director-container .label {
+  font-weight: bold;
+}
+.data-container .director-container .link {
+  color: #4397FA;
+  text-decoration: none;
+}
+.data-container .director-container .na {
+  color: #ff8731;
+}
+.data-container .writers-container {
+  display: flex;
+  gap: 1.4375rem;
+  padding: 0.9375rem 0;
+}
+.data-container .writers-container .label {
+  font-weight: bold;
+}
+.data-container .writers-container .writers-list {
+  display: flex;
+  gap: 0.875rem;
+}
+.data-container .writers-container .writers-list .writer {
+  display: flex;
+  align-items: center;
+}
+.data-container .writers-container .writers-list .writer .link {
+  color: #4397FA;
+  text-decoration: none;
+}
+.data-container .writers-container .writers-list .na {
+  color: #ff8731;
+}
+.data-container .stars-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+  padding: 0.9375rem 0;
+}
+.data-container .stars-container .info-row {
+  display: flex;
+  gap: 1.4375rem;
+}
+.data-container .stars-container .info-row .label {
+  font-weight: bold;
+}
+.data-container .stars-container .info-row .stars-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+}
+.data-container .stars-container .info-row .stars-list .star {
+  display: flex;
+  align-items: center;
+}
+.data-container .stars-container .info-row .stars-list .star .link {
+  color: #4397FA;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+.data-container .stars-container .info-row .stars-list .na {
+  color: #ff8731;
+}
+.data-container .links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+  padding: 0.9375rem 0;
+}
+.data-container .links-container .info-row {
+  display: flex;
+  gap: 1.4375rem;
+  align-items: center;
+}
+.data-container .links-container .info-row .label {
+  font-weight: bold;
+}
+.data-container .links-container .info-row .links-list {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.data-container .links-container .info-row .links-list .na {
+  color: #ff8731;
+}
+.data-container .links-container .info-row .links-list a {
+  text-decoration: none;
+}
+.data-container .status-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+  padding: 0.9375rem 0;
+}
+.data-container .status-container .info-row {
+  display: flex;
+  gap: 1.4375rem;
+}
+.data-container .status-container .info-row .label {
+  font-weight: bold;
+}
+.data-container .status-container .info-row .status {
+  color: #12AD18;
+}
+.data-container .budget-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+  padding: 0.9375rem 0;
+}
+.data-container .budget-container .info-row {
+  display: flex;
+  gap: 1.4375rem;
+}
+.data-container .budget-container .info-row .label {
+  font-weight: bold;
+}
+.data-container .budget-container .info-row .na {
+  color: #ff8731;
+}
+.data-container .revenue-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+  padding: 0.9375rem 0;
+}
+.data-container .revenue-container .info-row {
+  display: flex;
+  gap: 1.4375rem;
+}
+.data-container .revenue-container .info-row .label {
+  font-weight: bold;
+}
+.data-container .revenue-container .info-row .na {
+  color: #ff8731;
+}
+
+.divider-width--one {
+  width: 25rem;
+}
+
+.admin-movie-details--department-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.admin-movie-details--department-container .department-title {
+  font-size: 1rem;
+  color: #9E9E9E;
+  font-weight: bold;
+}
+.admin-movie-details--department-container .members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5625rem;
+}
+.admin-movie-details--department-container .members-list .member-item {
+  display: flex;
+  gap: 1.1875rem;
+}
+.admin-movie-details--department-container .members-list .member-item .profile-image {
+  width: 4.125rem;
+  height: 4.125rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.admin-movie-details--department-container .members-list .member-item .member-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.admin-movie-details--department-container .members-list .member-item .member-info .member-name {
+  font-weight: bold;
+}
+.admin-movie-details--department-container .members-list .member-item .member-info .member-job {
+  color: #8E8E8E;
+}/*# sourceMappingURL=AdminMovieDetails.css.map */

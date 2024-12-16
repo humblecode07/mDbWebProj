@@ -1,0 +1,76 @@
+.filter-button {
+  width: 10.5rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8125rem;
+  color: white;
+  background-color: #1C252F;
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  transition: background-color 0.3s ease;
+}
+.filter-button:hover {
+  background-color: #2C3E50;
+}
+.filter-button:focus {
+  outline: none;
+}
+
+.filter-modal-overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filter-modal-overlay .modal-background {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: #111111;
+  opacity: 0.5;
+}
+.filter-modal-overlay .modal-container {
+  width: 41.5rem;
+  height: 45rem;
+  background-color: #1b1b1b;
+  z-index: 10;
+  position: relative;
+  border-radius: 5px;
+  overflow: auto;
+}
+.filter-modal-overlay .modal-container .modal-content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 2rem 2.8125rem;
+}
+.filter-modal-overlay .modal-container .modal-content .close-button {
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: #414141;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+.filter-modal-overlay .modal-container .modal-content .filter-sections {
+  display: flex;
+  gap: 1.8rem;
+}/*# sourceMappingURL=FilteringOption.css.map */

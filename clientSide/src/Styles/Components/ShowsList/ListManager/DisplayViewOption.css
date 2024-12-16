@@ -1,0 +1,28 @@
+.view-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: white;
+}
+.view-selector .view-label {
+  font-weight: bold;
+}
+.view-selector .view-button {
+  height: 2.25rem;
+  width: 2.25rem;
+  background-color: #1C252F;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.view-selector .view-button:hover {
+  transform: scale(1.1);
+  background-color: #2C3E50;
+}
+.view-selector .view-button:focus {
+  outline: none;
+}/*# sourceMappingURL=DisplayViewOption.css.map */

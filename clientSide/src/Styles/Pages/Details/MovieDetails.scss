@@ -1,0 +1,49 @@
+.movie-details--main-container {
+   color: white;
+   display: flex;
+   flex-direction: column;
+   gap: 0;
+   font-family: 'Roboto', sans-serif;
+   padding: 0;
+
+   .background-section {
+      width: 100%;
+      height: 52.9375rem;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      .overlay {
+         position: absolute;
+         z-index: 1;
+         inset: 0;
+         background-color: black;
+         opacity: .9;
+      }
+
+      .data--container {
+         position: relative;
+         z-index: 2;
+         display: flex;
+         width: 66.5625rem;
+         padding-top: 3.3125rem;
+         gap: 1.125rem;
+      }
+   }
+
+   .details-section {
+      width: 66.5625rem;
+      display: flex;
+      gap: 1rem;
+      padding-bottom: 2.875rem;
+      padding-top: 1.3125rem;
+
+      .left-column {
+         display: flex;
+         flex-direction: column;
+         gap: 1.8125rem;
+      }
+   }
+}
