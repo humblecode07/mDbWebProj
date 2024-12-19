@@ -98,6 +98,7 @@
 }
 .full-container .genre-container {
   display: flex;
+  flex-flow: row wrap;
   gap: 0.5rem;
 }
 .full-container .genre-container .genre {

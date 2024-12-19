@@ -108,6 +108,7 @@
 
    .genre-container {
       display: flex;
+      flex-flow: row wrap;
       gap: 0.5rem;
 
       .genre {
@@ -159,10 +160,6 @@
          display: flex;
          gap: 0.3125rem;
          align-items: center;
-
-         .star-icon {
-            // Adjust according to the StarLIcon styles
-         }
 
          .rating-details {
             display: flex;
@@ -356,5 +353,4 @@
          }
       }
    }
-
 }
