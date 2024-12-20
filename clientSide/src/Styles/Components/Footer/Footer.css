@@ -6,6 +6,10 @@
   align-items: center;
   background-color: #FF8731;
   color: #ffffff;
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+  bottom: 0;
 }
 .dark .footer {
   background-color: #070707;

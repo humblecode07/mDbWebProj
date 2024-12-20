@@ -48,4 +48,16 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+@keyframes marqueePlier {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.animate-marquee {
+  animation: marqueePlier var(--duration, 20s) linear infinite;
 }/*# sourceMappingURL=Marquee.css.map */

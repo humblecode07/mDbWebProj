@@ -59,3 +59,12 @@ $image-url: 'https://image.tmdb.org/t/p/w500';
     }
   }
 }
+
+@keyframes marqueePlier {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marqueePlier var(--duration, 20s) linear infinite;
+}
