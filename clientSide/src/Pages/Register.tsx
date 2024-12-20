@@ -35,69 +35,72 @@ const Register = () => {
   };
 
   return (
-    <main className="min-h-[41.25rem] text-black flex flex-col gap-0 p-0">
+    <main className="register--container">
       {/* <Marquees /> */}
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div className='w-[66.5625rem] h-[35.875rem] flex gap-[3.4375rem] relative z-[2] mt-[2.5625rem]'>
-          <div className='w-[30.3125rem] flex flex-col font-passionOne font-bold self-end text-white'>
-            <span className='text-[3.125rem]'>Discover movies.</span>
-            <span className='text-[7.5rem]'>Join tskr<span className='text-[#FF8731]'>!</span></span>
+      <form onSubmit={handleSubmit} className="form">
+        <div className="form-container">
+          <div className="text-section">
+            <span className="text-title">Discover movies.</span>
+            <span className="text-highlight">
+              Join tskr<span className="highlight">!</span>
+            </span>
           </div>
           <div
-            className='w-[32.8125rem] h-[35.875rem] text-white rounded-[2rem] backdrop-blur-md flex flex-col justify-center items-center'
+            className="form-section"
             style={{ backgroundColor: 'rgba(0, 0, 0, .2)' }}
           >
-            <div className='w-[26.15625rem] h-[29.875rem] flex flex-col items-center gap-[3.375rem]'>
-              <span className='font-roboto font-bold text-[1.75rem]'>CREATE ACCOUNT</span>
-              <div className='w-full h-[2.5625rem] border-solid border-b-[1px] border-white flex items-center'>
-                <div className='flex items-center gap-[.875rem] pl-[.4375rem]'>
+            <div className="form-inner">
+              <span className="title">CREATE ACCOUNT</span>
+              <div className="input-group">
+                <div className="input-wrapper">
                   <UserIcon />
                   <input
                     id="full_name"
-                    type='text'
-                    name='full_name'
+                    type="text"
+                    name="full_name"
                     value={userDetails.full_name}
                     onChange={handleChange}
                     placeholder="Full Name"
-                    className='w-[22.5rem] bg-transparent outline-none'
+                    className="input"
                   />
                 </div>
               </div>
-              <div className='w-full h-[2.5625rem] border-solid border-b-[1px] border-white flex'>
-                <div className='flex items-center gap-[.875rem] pl-[.4375rem]'>
+              <div className="input-group">
+                <div className="input-wrapper">
                   <EmailIcon />
                   <input
-                    type='email'
-                    name='email'
+                    type="email"
+                    name="email"
                     placeholder="Email"
                     value={userDetails.email}
                     onChange={handleChange}
-                    className='w-[22.5rem] bg-transparent outline-none'
+                    className="input"
                   />
                 </div>
               </div>
-              <div className='w-full h-[2.5625rem] border-solid border-b-[1px] border-white flex items-center'>
-                <div className='flex items-center gap-[.875rem] pl-[.4375rem]'>
+              <div className="input-group">
+                <div className="input-wrapper">
                   <KeyIcon />
                   <input
                     id="password"
-                    type='password'
-                    name='password'
+                    type="password"
+                    name="password"
                     value={userDetails.password}
                     onChange={handleChange}
                     placeholder="Password"
-                    className='w-[22.5rem] bg-transparent outline-none'
+                    className="input"
                   />
                 </div>
               </div>
               <button
                 type="submit"
-                className='w-[16.75rem] h-[3.25rem] text-[#FF8731] border-solid border-[2px] border-[#FF8731] rounded-full'
+                className="submit-button"
               >
                 Register
               </button>
-              <span className='font-roboto'> Already have an account?
-                <NavLink to="/signin" className="text-blue-600 hover:underline pl-1">
+              <span className="login-prompt">
+                Already have an account?
+                <NavLink to="/signin" className="login-link">
                   Login
                 </NavLink>
               </span>

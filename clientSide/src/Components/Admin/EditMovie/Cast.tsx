@@ -71,7 +71,7 @@ const Cast = ({ movieData, setMovieData }) => {
 
   if (castData) {
     return (
-      <div className="cast">
+      <div className="cast--container">
         <div className="add-btn--container ">
           <button
             onClick={toggleAddCastMemberModal}

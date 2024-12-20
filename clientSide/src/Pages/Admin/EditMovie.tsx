@@ -60,8 +60,8 @@ const EditMovie = () => {
    // console.log(movieData);
 
    return (
-      <div className="edit-container">
-         <span className="title">
+      <div className="edit-movie-container">
+         <span className="edit-movie-title">
             Edit {movieData.title || movieData.original_title}
          </span>
          <div className="tab-container" ref={scrollRef}>
@@ -79,13 +79,13 @@ const EditMovie = () => {
          </div>
          <div className="content-container">
             <div
-               className="content"
+               className="content-slider"
                style={{
                   transform: `translateX(-${activeIndex * 100}%)`,
                }}
             >
                {tabContent.map((tab) => (
-                  <div key={tab.name} className="tab-content">
+                  <div key={tab.name} className="content-item">
                      {tab.component}
                   </div>
                ))}

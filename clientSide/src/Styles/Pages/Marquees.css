@@ -1,1 +1,41 @@
-/*# sourceMappingURL=Marquees.css.map */
+.section-container--marquee {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  overflow: hidden;
+}
+.section-container--marquee .row {
+  display: flex;
+  gap: 0.6875rem;
+  margin-top: 0.6875rem;
+}
+.section-container--marquee .row .motion-container {
+  display: flex;
+}
+.section-container--marquee .row .motion-container .movie-group {
+  display: flex;
+  gap: 0.6875rem;
+}
+.section-container--marquee .row .motion-container .movie-group .movie-card {
+  display: flex;
+}
+.section-container--marquee .row .motion-container .movie-group .movie-card img {
+  min-width: 22.25rem;
+  height: 12.0625rem;
+  object-fit: cover;
+}
+.section-container--marquee .overlay {
+  position: fixed;
+  inset: 0;
+  background-color: black;
+  opacity: 0.75;
+  z-index: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+.section-container--marquee .overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(50px);
+}/*# sourceMappingURL=Marquees.css.map */

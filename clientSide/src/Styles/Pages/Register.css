@@ -1,1 +1,109 @@
-/*# sourceMappingURL=Register.css.map */
+.register--container {
+  min-height: 41.25rem;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}
+.register--container form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.register--container form .form-container {
+  width: 66.5625rem;
+  height: 35.875rem;
+  display: flex;
+  gap: 3.4375rem;
+  position: relative;
+  z-index: 2;
+  margin-top: 2.5625rem;
+}
+.register--container form .form-container .text-section {
+  width: 30.3125rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "Passion One", sans-serif;
+  font-weight: bold;
+  align-self: flex-end;
+  color: white;
+}
+.register--container form .form-container .text-section span:first-child {
+  font-size: 3.125rem;
+}
+.register--container form .form-container .text-section span:last-child {
+  font-size: 7.5rem;
+}
+.register--container form .form-container .text-section span:last-child .highlight {
+  color: #FF8731;
+}
+.register--container form .form-container .form-section {
+  width: 32.8125rem;
+  height: 35.875rem;
+  color: white;
+  border-radius: 2rem;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.register--container form .form-container .form-section .form-inner {
+  width: 26.15625rem;
+  height: 29.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.375rem;
+}
+.register--container form .form-container .form-section .form-inner .title {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 1.75rem;
+}
+.register--container form .form-container .form-section .form-inner .input-group {
+  width: 100%;
+  height: 2.5625rem;
+  border-bottom: 1px solid white;
+  display: flex;
+  align-items: center;
+}
+.register--container form .form-container .form-section .form-inner .input-group .input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding-left: 0.4375rem;
+}
+.register--container form .form-container .form-section .form-inner .input-group .input-wrapper input {
+  width: 22.5rem;
+  background: transparent;
+  outline: none;
+}
+.register--container form .form-container .form-section .form-inner .submit-button {
+  width: 16.75rem;
+  height: 3.25rem;
+  color: #FF8731;
+  border: 2px solid #FF8731;
+  border-radius: 9999px;
+  background: transparent;
+  cursor: pointer;
+}
+.register--container form .form-container .form-section .form-inner .submit-button:hover {
+  background-color: #FF8731;
+  color: white;
+}
+.register--container form .form-container .form-section .form-inner .login-prompt {
+  font-family: "Roboto", sans-serif;
+}
+.register--container form .form-container .form-section .form-inner .login-prompt span {
+  margin-right: 0.25rem;
+}
+.register--container form .form-container .form-section .form-inner .login-prompt .login-link {
+  color: blue;
+  text-decoration: underline;
+}
+.register--container form .form-container .form-section .form-inner .login-prompt .login-link:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=Register.css.map */

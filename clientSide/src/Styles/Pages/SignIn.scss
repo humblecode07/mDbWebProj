@@ -1,4 +1,4 @@
-.register--container {
+.signin--container {
    min-height: 41.25rem;
    color: black;
    display: flex;
@@ -9,7 +9,12 @@
    form {
      display: flex;
      flex-direction: column;
-     gap: 4rem;
+     gap: 1rem;
+ 
+     .error-message {
+       color: #f56565; // Tailwind's `text-red-500`
+       text-align: center;
+     }
  
      .form-container {
        width: 66.5625rem;
@@ -20,7 +25,7 @@
        z-index: 2;
        margin-top: 2.5625rem;
  
-       .text-section {
+       .welcome-message {
          width: 30.3125rem;
          display: flex;
          flex-direction: column;
@@ -29,21 +34,20 @@
          align-self: flex-end;
          color: white;
  
-         span {
-           &:first-child {
-             font-size: 3.125rem;
-           }
-           &:last-child {
-             font-size: 7.5rem;
+         .headline {
+           font-size: 3.125rem;
+         }
  
-             .highlight {
-               color: #FF8731;
-             }
+         .title {
+           font-size: 5rem;
+ 
+           .highlight {
+             color: #ff8731;
            }
          }
        }
  
-       .form-section {
+       .login-form {
          width: 32.8125rem;
          height: 35.875rem;
          color: white;
@@ -55,15 +59,15 @@
          align-items: center;
          background-color: rgba(0, 0, 0, 0.2);
  
-         .form-inner {
+         .form-content {
            width: 26.15625rem;
-           height: 29.875rem;
+           height: 25.4375rem;
            display: flex;
            flex-direction: column;
            align-items: center;
            gap: 3.375rem;
  
-           .title {
+           .form-title {
              font-family: 'Roboto', sans-serif;
              font-weight: bold;
              font-size: 1.75rem;
@@ -74,9 +78,8 @@
              height: 2.5625rem;
              border-bottom: 1px solid white;
              display: flex;
-             align-items: center;
  
-             .input-wrapper {
+             .input-container {
                display: flex;
                align-items: center;
                gap: 0.875rem;
@@ -84,8 +87,14 @@
  
                input {
                  width: 22.5rem;
-                 background: transparent;
+                 background-color: transparent;
                  outline: none;
+                 border: none;
+                 color: inherit;
+ 
+                 &::placeholder {
+                   color: inherit;
+                 }
                }
              }
            }
@@ -93,29 +102,24 @@
            .submit-button {
              width: 16.75rem;
              height: 3.25rem;
-             color: #FF8731;
-             border: 2px solid #FF8731;
-             border-radius: 9999px; // Full border radius
-             background: transparent;
+             color: #ff8731;
+             border: 2px solid #ff8731;
+             border-radius: 9999px; // Fully rounded
+             background: none;
              cursor: pointer;
-
+ 
              &:hover {
-               background-color: #FF8731;
+               background-color: #ff8731;
                color: white;
              }
            }
-
  
-           .login-prompt {
+           .signup-message {
              font-family: 'Roboto', sans-serif;
  
-             span {
-               margin-right: 0.25rem;
-             }
- 
-             .login-link {
-               color: blue;
-               text-decoration: underline;
+             .signup-link {
+               color: #2563eb; // Tailwind's `text-blue-600`
+               padding-left: 0.25rem;
  
                &:hover {
                  text-decoration: underline;
@@ -127,3 +131,4 @@
      }
    }
  }
+ 

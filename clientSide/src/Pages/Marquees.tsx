@@ -57,7 +57,7 @@ const Marquees = () => {
    if (error) return <div>Error fetching data: {error.message}</div>;
 
    return (
-      <section className="w-full flex flex-col absolute overflow-hidden">
+      <section className="section-container--marquee">
          {Array.from({ length: marqueeRow }).map((_, index) => {
             const movieCardPerRow = 5;
             const direction = index % 2 === 0 ? 'left' : 'right';
@@ -68,20 +68,19 @@ const Marquees = () => {
             const moviesForRow = marqueeSlides.slice(startIndex, endIndex);
 
             return (
-               <div key={index} className="flex gap-[0.6875rem] mt-[0.6875rem]">
+               <div key={index} className="row">
                   <motion.div
-                     className="flex"
+                     className="motion-container"
                      initial="initial"
                      animate="animate"
                      variants={marquee(direction, speed)}
                   >
-                     <div className="flex gap-[0.6875rem]">
+                     <div className="movie-group">
                         {moviesForRow.map((movie, movieIndex) => (
-                           <div key={movieIndex} className="flex">
+                           <div key={movieIndex} className="movie-card">
                               <img
                                  src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                                  alt={movie.title || "Movie Title"}
-                                 className="min-w-[22.25rem] h-[12.0625rem] object-cover"
                               />
                            </div>
                         ))}
@@ -89,31 +88,26 @@ const Marquees = () => {
                   </motion.div>
 
                   <motion.div
-                     className="flex"
+                     className="motion-container"
                      initial="initial"
                      animate="animate"
                      variants={marquee(direction, speed)}
                   >
-                     <div className="flex gap-[0.6875rem]">
+                     <div className="movie-group">
                         {moviesForRow.map((movie, movieIndex) => (
-                           <div key={movieIndex} className="flex">
+                           <div key={movieIndex} className="movie-card">
                               <img
                                  src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                                  alt={movie.title || "Movie Title"}
-                                 className="min-w-[22.25rem] h-[12.0625rem] object-cover"
                               />
                            </div>
                         ))}
                      </div>
                   </motion.div>
                </div>
-
             );
          })}
-         <div
-            className={`fixed inset-0 bg-black opacity-75 backdrop-blur-md z-[1] transition-opacity duration-500 ease-in-out`}
-            style={{ backdropFilter: 'blur(50px)' }}
-         ></div>
+         <div className="overlay"></div>
       </section>
    );
 };
