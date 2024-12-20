@@ -10,6 +10,8 @@ const VideoUploadModal = ({ isModalOpen, setIsModalOpen, videoDetails, setVideoD
       })
    }
 
+   console.log(videoDetails);
+
    return (
       isModalOpen && (
          <div className="edit-movie--modal">
@@ -66,6 +68,7 @@ const VideoUploadModal = ({ isModalOpen, setIsModalOpen, videoDetails, setVideoD
                      <label for="key">Source Key</label>
                      <input
                         type="text"
+                        name='key'
                         className="source-key-input"
                         placeholder="Enter source key..."
                         value={videoDetails.key}

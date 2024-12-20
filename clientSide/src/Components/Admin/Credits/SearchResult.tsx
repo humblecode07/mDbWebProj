@@ -13,7 +13,7 @@ const SearchResult = ({ data, onSelect }) => {
             className="profile-image"
             onError={(e) => {
                e.target.onerror = null;
-               e.target.src = IgopImg;
+               e.target.src = 'https://placehold.co/48x48';
             }}
          />
          <div className='profile-info'>

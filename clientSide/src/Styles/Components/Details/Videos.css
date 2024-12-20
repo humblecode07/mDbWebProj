@@ -74,4 +74,36 @@
 .details--videos--container .container .video-item section .video-metadata--two span {
   font-weight: 300;
   font-size: 0.9375rem;
+}
+
+.video--fullscreen-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video--fullscreen-modal iframe {
+  width: 80%;
+  height: 80%;
+}
+.video--fullscreen-modal button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+.video--fullscreen-modal button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }/*# sourceMappingURL=Videos.css.map */

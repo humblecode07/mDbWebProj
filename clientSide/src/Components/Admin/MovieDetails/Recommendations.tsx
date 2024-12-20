@@ -60,7 +60,12 @@ const Recommendations = ({ movieData }) => {
                   </figcaption>
                </div>
             ))}
-            {slideCard !== recommendations.length - 6 ? <CarouselButtons direction="right" slideDirection={nextSlide} /> : null}
+            {recommendations.length > 6
+               ? (slideCard !== recommendations.length - 6 &&
+                  <CarouselButtons direction="right" slideDirection={nextSlide} />
+               )
+               : null}
+
          </div>
       </div>
    )

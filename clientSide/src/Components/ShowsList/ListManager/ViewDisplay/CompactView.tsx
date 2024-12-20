@@ -23,7 +23,7 @@ const CompactView = ({ streams }) => {
             className='stream-link'
           >
             <img
-              src={stream.backdrop_path !== null ? `https://image.tmdb.org/t/p/w500` + stream.backdrop_path : MiguImg}
+              src={stream.backdrop_path !== null ? `https://image.tmdb.org/t/p/w500` + stream.backdrop_path : 'https://placehold.co/341x100'}
               alt={stream.original_title || stream.original_name}
               className='stream-image'
             />

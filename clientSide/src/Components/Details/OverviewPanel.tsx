@@ -53,6 +53,8 @@ const OverviewPanel = ({ data, isInfoVisible, panelRef, setIsInfoVisible, filter
       }
    }
 
+   console.log(data);
+
    return (
       <>
          <div

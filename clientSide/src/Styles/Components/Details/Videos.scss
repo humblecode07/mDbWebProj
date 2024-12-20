@@ -64,7 +64,7 @@
                   font-size: 1.09375rem;
                }
 
-               .video-metadata  {
+               .video-metadata {
                   display: flex;
                   gap: 0.375rem;
                   font-weight: 300;
@@ -84,6 +84,41 @@
                }
             }
          }
+      }
+   }
+}
+
+.video--fullscreen-modal {
+   position: fixed;
+   inset: 0;
+   background-color: rgba(0, 0, 0, 0.9);
+   z-index: 50;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   iframe {
+      width: 80%;
+      height: 80%;
+   }
+
+   button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: white;
+      font-size: 1.25rem;
+      font-weight: bold;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+
+      &:hover {
+         background-color: rgba(255, 255, 255, 0.1);
       }
    }
 }

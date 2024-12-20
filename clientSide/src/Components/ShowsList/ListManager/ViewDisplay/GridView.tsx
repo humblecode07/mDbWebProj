@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import MiguImg from '../../../../assets/Image/migu.jpg'
 import PlusIcon from '../../../../assets/Icons/PlusIcon'
 import InfoIcon from '../../../../assets/Icons/InfoIcon'
 import StarIcon from '../../../../assets/Icons/StarIcon'
@@ -19,7 +18,7 @@ const GridView = ({ streams, people }) => {
                      className='stream-card'
                   >
                      <img
-                        src={stream.poster_path !== null ? `https://image.tmdb.org/t/p/w500` + stream.poster_path : MiguImg}
+                        src={stream.poster_path !== null ? `https://image.tmdb.org/t/p/w500` + stream.poster_path : 'https://placehold.co/159x225'}
                         alt={stream.original_title || stream.name}
                         className='card-image'
                      />
@@ -68,7 +67,7 @@ const GridView = ({ streams, people }) => {
                      className='person-card'
                   >
                      <img
-                        src={person.profile_path !== null ? `https://image.tmdb.org/t/p/w500` + person.profile_path : MiguImg}
+                        src={person.profile_path !== null ? `https://image.tmdb.org/t/p/w500` + person.profile_path : 'https://placehold.co/159/225'}
                         alt={person.original_name}
                         className='card-image'
                      />

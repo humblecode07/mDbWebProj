@@ -99,8 +99,7 @@ const Register = () => {
                 Register
               </button>
               <span className="login-prompt">
-                Already have an account?
-                <NavLink to="/signin" className="login-link">
+                Already have an account? <NavLink to="/signin" className="login-link">
                   Login
                 </NavLink>
               </span>
