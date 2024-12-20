@@ -10,7 +10,7 @@ body,
 html {
   height: 100%;
   min-width: 20rem;
-  background-color: #ffffff;
+  background-color: #111111;
   display: flex;
   flex-direction: column;
 }
@@ -23,10 +23,6 @@ html {
 
 .scrollbar-none::-webkit-scrollbar {
   display: none;
-}
-
-main {
-  flex: 1;
 }
 
 .scrollbar-none {
