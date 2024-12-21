@@ -36,7 +36,7 @@ const Register = () => {
 
   return (
     <main className="register--container">
-      {/* <Marquees /> */}
+      <Marquees />
       <form onSubmit={handleSubmit} className="form">
         <div className="form-container">
           <div className="text-section">

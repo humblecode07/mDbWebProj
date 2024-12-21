@@ -60,6 +60,7 @@ const SignIn = () => {
 
   return (
     <main className='signin--container'>
+      <Marquees />
       <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
         {error && <p className="error-message">{error}</p>}
         <div className="form-container">

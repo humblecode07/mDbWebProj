@@ -9,7 +9,7 @@ const marquee = {
       x: "0%"
    },
    animate: {
-      x: "-100%",
+      x: "0%",
       transition: {
          duration: 30,
          ease: "linear",

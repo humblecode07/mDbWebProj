@@ -25,10 +25,10 @@ const fetchMoviesBackdrop = async (rows) => {
 
 const marquee = (direction, speed) => ({
    initial: {
-      x: direction === 'left' ? '-100%' : '0%',
+      x: direction === 'left' ? '0%' : '0%',
    },
    animate: {
-      x: direction === 'left' ? '0%' : '-100%',
+      x: direction === 'left' ? '0%' : '0%',
       transition: {
          duration: speed,
          ease: "linear",
