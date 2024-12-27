@@ -363,7 +363,7 @@ const AdminMovieDetails = () => {
 							<div key={department} className="admin-movie-details--department-container">
 								<h2 className="department-title">{department}</h2>
 								<ul className="members-list">
-									{members.map((member, index) => (
+									{members?.map((member, index) => (
 										<li key={index} className="member-item">
 											<img
 												className="profile-image"

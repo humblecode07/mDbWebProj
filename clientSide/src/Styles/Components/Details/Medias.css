@@ -40,30 +40,6 @@
   gap: 1.7rem;
 }
 
-img {
-  object-fit: contain;
-  cursor: pointer;
-  transition: opacity 0.3s;
-}
-img:hover {
-  opacity: 0.8;
-}
-img.w-14\.875 {
-  width: 14.875rem;
-}
-img.w-22\.5625 {
-  width: 22.5625rem;
-}
-img.h-9\.691375 {
-  height: 9.691375rem;
-}
-img.h-12\.691375 {
-  height: 12.691375rem;
-}
-img.h-22\.75 {
-  height: 22.75rem;
-}
-
 .fullscreen-modal {
   position: fixed;
   inset: 0;

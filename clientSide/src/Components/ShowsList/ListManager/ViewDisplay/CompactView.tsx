@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import MiguImg from '../../../../assets/Image/miguwallpaper.jpg'
 import StarIcon from '../../../../assets/Icons/StarIcon';
 import PlusIcon from '../../../../assets/Icons/PlusIcon';
 import InfoIcon from '../../../../assets/Icons/InfoIcon';

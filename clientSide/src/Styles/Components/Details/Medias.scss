@@ -42,34 +42,6 @@
   }
 }
 
-img {
-  object-fit: contain;
-  cursor: pointer;
-  transition: opacity 0.3s;
-
-  // Hover and transition effects
-  &:hover {
-    opacity: 0.8;
-  }
-
-  // Dynamic width and height classes
-  &.w-14\.875 {
-    width: 14.875rem;
-  }
-  &.w-22\.5625 {
-    width: 22.5625rem;
-  }
-  &.h-9\.691375 {
-    height: 9.691375rem;
-  }
-  &.h-12\.691375 {
-    height: 12.691375rem;
-  }
-  &.h-22\.75 {
-    height: 22.75rem;
-  }
-}
-
 // Full-screen modal styling
 .fullscreen-modal {
   position: fixed;
