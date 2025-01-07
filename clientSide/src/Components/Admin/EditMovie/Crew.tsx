@@ -33,7 +33,7 @@ const Crew = ({ movieData, setMovieData }) => {
         department: jobOccupation.department,
         job: jobOccupation.job
       }
-      
+
       await addCrewMember(movieId, data);
 
       setMovieData((prevData) => ({
@@ -76,40 +76,40 @@ const Crew = ({ movieData, setMovieData }) => {
 
   if (crewData) {
     return (
-      <div className="crew">
-        <div className="crew-header">
+      <div className="relative">
+        <div className="flex items-center justify-end mb-4">
           <button
             onClick={toggleAddCastMemberModal}
-            className="add-crew-button"
+            className="flex items-center justify-center gap-[.5rem] px-4 py-3 bg-[#CC511D] text-white rounded-md hover:bg-[#FF7031] transition duration-200"
           >
             <AddIcon />
-            <span>Add New Cast Member</span>
+            <span className='text-[.75rem] font-semibold'>Add New Cast Member</span>
           </button>
         </div>
-        <div className="crew-table">
-          <table>
+        <div className="overflow-x-auto">
+          <table className="min-w-full table-auto bg-[#111111] text-white rounded-lg">
             <thead>
-              <tr>
-                <th>Person</th>
-                <th>Job</th>
-                <th>Action</th>
+              <tr className="border-b border-[#444444]">
+                <th className="px-4 py-2 text-left">Person</th>
+                <th className="px-4 py-2 text-left">Job</th>
+                <th className="px-4 py-2 text-left">Action</th>
               </tr>
             </thead>
             <tbody>
               {crewData.map((crewMember, index) => (
-                <tr key={index}>
-                  <td>
+                <tr key={index} className="border-b border-[#444444] hover:bg-[#222222]">
+                  <td className="px-4 py-3 flex items-center gap-2">
                     <span>{crewMember.name || crewMember.original_name}</span>
                   </td>
-                  <td>{crewMember.job}</td>
-                  <td className="action-buttons">
+                  <td className="px-4 py-3">{crewMember.job}</td>
+                  <td className="px-4 py-3 flex gap-2">
                     <button
-                      className="edit-button"
+                      className="w-[1.5625rem] h-[1.5625rem] bg-[#CC511D] flex items-center justify-center rounded-full hover:bg-[#FF7031] transition duration-200"
                     >
                       <EditIcon />
                     </button>
                     <button
-                      className="delete-button"
+                      className="w-[1.5625rem] h-[1.5625rem] bg-[#FF3333] flex items-center justify-center rounded-full hover:bg-[#e50000] transition duration-200"
                       onClick={() => handleDeleteCrew(crewMember.id)}
                     >
                       <DeleteIconWhite />

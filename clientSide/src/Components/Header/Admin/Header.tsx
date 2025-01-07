@@ -7,7 +7,7 @@ import Eliv from '../../../assets/Image/evil.jpg'
 const Header = () => {
 
    return (
-      <header className='admin-header'>
+      <header className='w-full h-[7.5rem] bg-[#111111] flex justify-center items-center font-roboto text-[.875rem] relative'>
          <div className='w-[74.8125rem] flex flex-row items-center justify-between gap-[3.25rem]'>
             <AdminTskr />
             <div className='flex gap-[6rem] items-center'>

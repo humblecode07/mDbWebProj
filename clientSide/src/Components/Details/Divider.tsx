@@ -2,7 +2,7 @@ import React from 'react'
 
 const Divider = () => {
    return (
-      <div className='details--horizontal-line' />
+      <div className='h-[1px] w-full bg-white' />
    )
 }
 

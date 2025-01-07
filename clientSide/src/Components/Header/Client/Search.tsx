@@ -7,7 +7,7 @@ const fetchResults = async (value, setResults) => {
 		if (!value.trim()) {
 			setResults([]);
 			return;
-	  }
+		}
 
 		const [tmdbResponse, privateResponse] = await Promise.all([
 			axios.get(`https://api.themoviedb.org/3/search/multi`, {
@@ -51,7 +51,7 @@ const Search = ({ setResults }) => {
 
 	return (
 		<input
-			className='search' type="text"
+			className='w-full font-roboto text-[0.875rem] bg-transparent focus:outline-none dark:text-white' type="text"
 			placeholder='Search for movies, tv shows, or actors...'
 			value={search}
 			onChange={(e) => handleChange(e.target.value)}

@@ -8,9 +8,9 @@ const SearchResult = ({ data }) => {
    return (
       <Link
          to={`/${data.streamType}/${data.id}`}
-         className="search-result"
+         className="flex h-[7.8175rem] justify-center border-b-[1px] border-solid border-[#9D9D9D] hover:bg-[#C0C0C0] active:bg-color[#AFAFAF] dark:text-white dark:border-[#C9C9C9] dark:hover:bg-[#141C27] dark:active:bg-[#0F161E]"
       >
-         <div className="search-result-content">
+         <div className="flex gap-[1.0625rem] py-[.875rem]">
             <img
                className="search-result-image"
                src={`https://image.tmdb.org/t/p/w500${data.dataFour}`}
@@ -23,10 +23,10 @@ const SearchResult = ({ data }) => {
                   e.target.src = `${LOCALHOST}/images/${data.dataFour}`; // First fallback to your backend image
                }}
             />
-            <article className="search-result-details">
-               <span className="search-result-title">{data.dataOne}</span>
-               <span className="search-result-subtitle">{data.dataTwo}</span>
-               <p className="search-result-description">{data.dataThree}</p>
+            <article className="w-[17.3125rem] flex flex-col">
+               <span className="font-roboto font-medium text-[1rem] overflow-hidden truncate whitespace-nowrap">{data.dataOne}</span>
+               <span className="font-roboto font-light text-[.875rem] overflow-hidden truncate whitespace-nowrap">{data.dataTwo}</span>
+               <p className="font-roboto text-[.75rem] overflow-hidden truncate whitespace-normal line-clamp-3">{data.dataThree}</p>
             </article>
          </div>
       </Link>

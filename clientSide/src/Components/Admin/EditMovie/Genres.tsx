@@ -63,33 +63,34 @@ const Genres = ({ movieData, setMovieData }) => {
   }
 
   return (
-    <div className="genres">
-      <div className="genres-header">
+    <div className="relative">
+      <div className="flex items-center justify-end mb-4">
         <button
           onClick={toggleAddGenreModal}
-          className="add-genre-button"
+          className="flex items-center justify-center gap-[.5rem] px-4 py-3 bg-[#CC511D] text-white rounded-md hover:bg-[#FF7031] transition duration-200"
         >
           <AddIcon />
-          <span>Add Genre</span>
+          <span className='text-[.75rem] font-semibold'>Add Genre</span>
         </button>
       </div>
-      <div className="genres-table">
-        <table>
+      <div className="overflow-x-auto">
+        <table className="min-w-full table-auto bg-[#111111] text-white rounded-lg">
           <thead>
-            <tr>
-              <th>Genres</th>
-              <th>Action</th>
+            <tr className="flex justify-between border-b border-[#444444]">
+              <th className="px-4 py-2 text-left">Genres</th>
+              <th className="px-4 py-2 text-left">Action</th>
             </tr>
           </thead>
           <tbody>
             {genreData?.map((genre) => (
               <tr
                 key={`${genre.id}-${genre.name}`}
+                className="border-b border-[#444444] hover:bg-[#222222] flex justify-between"
               >
-                <td>{genre.name}</td>
-                <td>
+                <td className="px-4 py-2">{genre.name}</td>
+                <td className="px-4 py-3 flex gap-2">
                   <button
-                    className="delete-button"
+                    className="w-[1.5625rem] h-[1.5625rem] bg-[#FF3333] flex items-center justify-center rounded-full hover:bg-[#e50000] transition duration-200"
                     onClick={() => handleDeleteGenre(genre.name)}
                   >
                     <DeleteIconWhite />

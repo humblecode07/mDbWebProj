@@ -59,9 +59,9 @@ const ExternalIDs = ({ movieData }) => {
 
   return (
     <>
-      <div className="external-ids-container">
-        <div className="social-column">
-          <span className="section-title">Social</span>
+      <div className="w-[51.6875rem] flex gap-[0.6875rem]">
+        <div className="w-[25.5rem] flex flex-col gap-[1.25rem]">
+          <span className="font-bold text-[1.125rem]">Social</span>
           <ExternalIdInput
             label="Facebook"
             Icon={FacebookIcon}
@@ -84,8 +84,8 @@ const ExternalIDs = ({ movieData }) => {
             onChange={handleChangeExternalIds}
           />
         </div>
-        <div className="databases-column">
-          <span className="section-title">Other Databases</span>
+        <div className="w-[25.5rem] flex flex-col gap-[1.25rem]">
+          <span className="font-bold text-[1.125rem]">Other Databases</span>
           <ExternalIdInput
             label="IMDB ID"
             Icon={IMDbIcon}
@@ -102,9 +102,9 @@ const ExternalIDs = ({ movieData }) => {
           />
         </div>
       </div>
-      <div className="save-button-container">
+      <div className="w-[51.6875rem] flex gap-[.75rem] justify-end pt-[1.25rem]">
         <button
-          className="save-button"
+          className="h-[2.125rem] px-[1.5625rem] bg-[#CC511D] text-[0.875rem] font-bold rounded-[.625rem]"
           onClick={handleSaveExternalIds}
         >
           Save

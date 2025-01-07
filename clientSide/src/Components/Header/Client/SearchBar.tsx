@@ -7,8 +7,8 @@ const SearchBar = () => {
 	const [results, setResults] = useState([]);
 
 	return (
-		<div className='search-bar--container' >
-			<div className='search-bar--wrapper'>
+		<div className='relative' >
+			<div className='w-[24.9375rem] min-h-[2rem] flex items-center bg-[#D9D9D9] rounded-[2px] dark:bg-[#1C252F] ml-[2rem]'>
 				<SearchIcon />
 				<Search setResults={setResults} />
 			</div>

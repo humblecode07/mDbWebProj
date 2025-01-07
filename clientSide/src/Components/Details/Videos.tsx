@@ -34,76 +34,52 @@ const Videos = ({ data }) => {
 
    if (data) {
       return (
-         <div className="details--videos--container">
-            <ul className="ul-container">
-               {videoType.map((type) => (
-                  <li
-                     key={type}
-                     className="li-item"
-                     onClick={() => setSelectedType(type)}
-                  >
-                     <span>{type}</span>
-                     <span>{data[type] ? data[type].length : 0}</span>
-                  </li>
-               ))}
+         <div className='w-[66.5rem] flex py-[3.3125rem] gap-[3.6875rem]'>
+            <ul className='w-[15.9375rem] h-full flex flex-col flex-grow-0 gap-[1.1875rem] py-[2.5625rem] px-[1.625rem] rounded-md border-solid border-[#1A1A1A] border-[1px]'>
+               {videoType.map((type) => {
+                  return (
+                     <li
+                        key={type}
+                        className='w-[12.6875rem] font-light text-[0.9375rem] flex justify-between cursor-pointer'
+                        onClick={() => setSelectedType(type)}
+                     >
+                        <span>{type}</span>
+                        <span>{data[type] ? data[type].length : 0}</span>
+                     </li>
+                  )
+               })}
             </ul>
-            <div className="container">
+            <div className={`w-[46.875rem] h-full flex flex-col flex-grow-0 flex-wrap gap-[1.7rem]`}>
                {data[selectedType] && data[selectedType].length > 0 ? (
-                  data[selectedType].map((video, index) => {
-                     if (video) {
-                        return (
-                           <div className="video-item" key={index}>
-                              <img
-                                 src={`https://i.ytimg.com/vi/${video.key}/hqdefault.jpg`}
-                                 alt={video.name}
-                                 onClick={() => openVideoModal(video.key)} // Open video on thumbnail click
-                              />
-                              <section>
-                                 <div className="video-info">
-                                    <span className="video-name">{video.name}</span>
-                                    <div className="video-metadata">
-                                       <span>{video.type}</span>
-                                       <span>•</span>
-                                       <span>{convertDuration(video.youtubeData?.contentDetails?.duration)}</span>
-                                       <span>•</span>
-                                       <span>{formatDate(video.youtubeData.snippet.publishedAt)}</span>
-                                    </div>
-                                 </div>
-                                 <div className="video-metadata--two">
-                                    <YoutubeIcon />
-                                    <span>{video.youtubeData.snippet.channelTitle}</span>
-                                 </div>
-                              </section>
+                  data[selectedType].map((video, index) => (
+                     <div className='flex gap-[1.5625rem]' key={index}>
+                        <img
+                           src={`https://i.ytimg.com/vi/${video.key}/hqdefault.jpg`}
+                           className={`w-[22.5625rem] h-[12.691375rem] object-cover`}
+                           alt={video.name} // Always good to add alt text for accessibility
+                        />
+                        <section className='flex flex-col justify-between'>
+                           <div className='flex flex-col gap-[0.4375rem]'>
+                              <span className='font-bold text-[1.09375rem]'>{video.name}</span>
+                              <div className='flex gap-[0.375rem] font-light text-[0.9375rem]'>
+                                 <span>{video.type}</span>
+                                 <span>•</span>
+                                 <span>{convertDuration(video.youtubeData.contentDetails.duration)}</span>
+                                 <span>•</span>
+                                 <span>{formatDate(video.youtubeData.snippet.publishedAt)}</span>
+                              </div>
                            </div>
-                        );
-                     }
-                  })
+                           <div className='flex items-center gap-[0.6875rem] pb-[1rem]'>
+                              <YoutubeIcon />
+                              <span className='font-light text-[0.9375rem]'>{video.youtubeData.snippet.channelTitle}</span>
+                           </div>
+                        </section>
+                     </div>
+                  ))
                ) : (
                   <div>There are no English {selectedType?.toLocaleLowerCase()} added.</div>
                )}
             </div>
-
-            {/* Fullscreen Video Modal */}
-            {selectedVideo && (
-               <div className="fullscreen-modal" onClick={closeModal}>
-                  <button
-                     className="absolute top-4 right-4 text-white text-xl font-bold w-8 h-8 flex items-center justify-center hover:bg-white/10 rounded-full transition-colors"
-                     onClick={closeModal}
-                     aria-label="Close"
-                  >
-                     ×
-                  </button>
-                  <iframe
-                     width="100%"
-                     height="100%"
-                     src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
-                     frameBorder="0"
-                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                     allowFullScreen
-                     title="YouTube Video"
-                  />
-               </div>
-            )}
          </div>
       );
    }

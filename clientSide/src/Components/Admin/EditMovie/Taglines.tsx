@@ -56,38 +56,39 @@ const Taglines = ({ movieData, setMovieData }) => {
   }
 
   return (
-    <div className="taglines--container">
-      <div className="tagline-header">
+    <div className="relative">
+      <div className="flex items-center justify-end mb-4">
         <button
           onClick={toggleAddTaglineModal}
-          className="add-tagline-button"
+          className="flex items-center justify-center gap-[.5rem] px-4 py-3 bg-[#CC511D] text-white rounded-md hover:bg-[#FF7031] transition duration-200"
         >
           <AddIcon />
-          <span>Add Tagline</span>
+          <span className='text-[.75rem] font-semibold'>Add Tagline</span>
         </button>
       </div>
-      <div className="table-container">
-        <table>
+      <div className="overflow-x-auto">
+        <table className="min-w-full table-auto bg-[#111111] text-white rounded-lg">
           <thead>
-            <tr>
-              <th>Taglines</th>
-              <th>Action</th>
+            <tr className="flex justify-between border-b border-[#444444]">
+              <th className="px-4 py-2 text-left">Taglines</th>
+              <th className="px-4 py-2 text-left">Action</th>
             </tr>
           </thead>
           <tbody>
             {taglines?.map((tagline, index) => (
               <tr
                 key={index}
+                className="border-b border-[#444444] hover:bg-[#222222] flex justify-between"
               >
-                <td>{tagline}</td>
-                <td className="action-buttons">
+                <td className="px-4 py-2">{tagline}</td>
+                <td className="px-4 py-3 flex gap-2">
                   <button
-                    className="edit-button"
+                    className="w-[1.5625rem] h-[1.5625rem] bg-[#CC511D] flex items-center justify-center rounded-full hover:bg-[#FF7031] transition duration-200"
                   >
                     <EditIcon />
                   </button>
                   <button
-                    className="delete-button"
+                    className="w-[1.5625rem] h-[1.5625rem] bg-[#FF3333] flex items-center justify-center rounded-full hover:bg-[#e50000] transition duration-200"
                     onClick={() => handleDeleteTagline(tagline)}
                   >
                     <DeleteIconWhite />

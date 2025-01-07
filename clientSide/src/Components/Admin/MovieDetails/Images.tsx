@@ -69,33 +69,33 @@ const Images = ({ movieData }) => {
    console.log(media);
 
    return (
-      <div className='movie-details--images--container'>
-         <div className='header'>
-            <span className='title'>Images</span>
-            <div className='tabs'>
-               <div onClick={() => setSelectedImageType('posters')} className='tab'>
-                  <span className='tab-title'>Posters</span>
-                  <span className='tab-count'>{movieData.images.posters.length}</span>
+      <div className='w-full h-auto flex flex-col gap-[2.4375rem]'>
+         <div className='w-full h-[2.1875rem] flex items-center justify-between gap-[1rem]'>
+            <span className='text-[1.875rem] font-bold'>Images</span>
+            <div className='flex items-center gap-[2.375rem]'>
+               <div onClick={() => setSelectedImageType('posters')} className='flex gap-[.5rem] items-center cursor-pointer'>
+                  <span className='text-[1.125rem] font-bold'>Posters</span>
+                  <span className='text-[.875rem] text-[#B1B1B1] font-bold'>{movieData.images.posters.length}</span>
                </div>
-               <div onClick={() => setSelectedImageType('backdrops')} className='tab'>
-                  <span className='tab-title'>Backdrops</span>
-                  <span className='tab-count'>{movieData.images.backdrops.length}</span>
+               <div onClick={() => setSelectedImageType('backdrops')} className='flex gap-[.5rem] items-center cursor-pointer'>
+                  <span className='text-[1.125rem] font-bold'>Backdrops</span>
+                  <span className='text-[.875rem] text-[#B1B1B1] font-bold'>{movieData.images.backdrops.length}</span>
                </div>
-               <div onClick={() => setSelectedImageType('logos')} className='tab'>
-                  <span className='tab-title'>Logos</span>
-                  <span className='tab-count'>{movieData.images.logos.length}</span>
+               <div onClick={() => setSelectedImageType('logos')} className='flex gap-[.5rem] items-center cursor-pointer'>
+                  <span className='text-[1.125rem] font-bold'>Logos</span>
+                  <span className='text-[.875rem] text-[#B1B1B1] font-bold'>{movieData.images.logos.length}</span>
                </div>
-               <div className='divider'>
+               <div className='w-[32.875rem]'>
                   <DividerTwo />
                </div>
             </div>
          </div>
-         <div className='content'>
-            <ul className='language-list'>
+         <div className='w-full max-h-[35rem] flex gap-[1.5625rem]'>
+            <ul className='w-[16.6875rem] h-fit flex flex-col flex-grow-0 gap-[1.1875rem] py-[2.5625rem] px-[1.625rem] rounded-md border-solid border-[#1A1A1A] border-[1px]'>
                {Object.keys(media).map(language => (
                   <li
                      key={language}
-                     className='language-item'
+                     className='w-[12.6875rem] font-light text-[0.9375rem] flex justify-between cursor-pointer'
                      onClick={() => setSelectedLang(language)}
                   >
                      <span>{language}</span>
@@ -103,7 +103,7 @@ const Images = ({ movieData }) => {
                   </li>
                ))}
             </ul>
-            <div className={`image-grid scrollbar-none`}>
+            <div className={`w-full h-full flex flex-grow-0 flex-wrap gap-[1.0625rem] overflow-auto scrollbar-none`}>
                {selectedLang && media[selectedLang]?.length > 0 ? (
                   media[selectedLang].map((image, index) => (
                      <img

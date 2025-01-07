@@ -13,8 +13,8 @@ const SearchBar = ({ selectedPerson, setSelectedPerson, type }) => {
    console.log(selectedPerson)
 
    return (
-      <div className='person--search-bar'>
-         <label>{type === 'cast' ? "Cast" : "Crew"} Name</label>
+      <div>
+         <label className="block text-sm font-medium mb-2">{type === 'cast' ? "Cast" : "Crew"} Name</label>
          <div>
             <Search 
                setResults={setResults} 

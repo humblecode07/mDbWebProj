@@ -99,55 +99,58 @@ const ImageUploadModal = ({
 
   return (
     isModalOpen && (
-      <div className="modal-wrapper">
-        <div className="modal-content">
-          <div className="modal">
-            <div className="modal-header">
-              <div className="header-content">
+      <div className="absolute inset-0 z-[200] overflow-y-hidden">
+        <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+          <div className="inline-block align-bottom bg-[#1E1E1E] rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+            <div className="bg-[#1E1E1E] px-6 pt-6 pb-4">
+              <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold text-[#CC511D]">
                   Add {selectedImageType.charAt(0).toUpperCase() + selectedImageType.slice(1)}
                 </h2>
                 <button
                   onClick={() => setIsModalOpen(false)}
+                  className="text-white hover:text-[#CC511D] transition duration-200"
                 >
                   ✕
                 </button>
               </div>
-              <div className="images-modal--container">
+
+              <div className="space-y-4">
                 {error && (
-                  <div className="error-message">
+                  <div className="bg-red-600 bg-opacity-20 border border-red-600 text-red-300 p-3 rounded-md">
                     {error}
                   </div>
                 )}
-                <div className="file-upload-container">
+                <div className="border-2 border-dashed border-[#444444] rounded-lg p-6 text-center">
                   <input
                     type="file"
                     id="imageUpload"
                     accept="image/jpeg,image/png"
                     onChange={handleFileChange}
+                    className="hidden"
                   />
                   <label
                     htmlFor="imageUpload"
-
+                    className="cursor-pointer block"
                   >
                     {selectedFile ? (
                       <div>
-                        <p className="file-info">Selected File: {selectedFile.name}</p>
+                        <p className="text-white">Selected File: {selectedFile.name}</p>
                         {imageDimensions.width > 0 && (
-                          <p>
+                          <p className="text-[#888888] text-sm">
                             Dimensions: {imageDimensions.width}x{imageDimensions.height} pixels
                           </p>
                         )}
                         <img
                           src={URL.createObjectURL(selectedFile)}
                           alt="Preview"
-                          className="image-preview"
+                          className="max-h-[200px] mx-auto mt-4 rounded-lg"
                         />
                       </div>
                     ) : (
-                      <div className="empty-state">
+                      <div className="flex flex-col items-center justify-center">
                         <ImageIcon />
-                        <p>Click to Select {selectedImageType.charAt(0).toUpperCase() + selectedImageType.slice(1)}</p>
+                        <p className="text-white">Click to Select {selectedImageType.charAt(0).toUpperCase() + selectedImageType.slice(1)}</p>
                         {renderSizeGuidelines()}
                       </div>
                     )}
@@ -163,8 +166,8 @@ const ImageUploadModal = ({
                   </button>
                   <button
                     className={`px-4 py-2 text-white rounded-md transition duration-200 ${selectedFile && !error
-                        ? 'bg-[#CC511D] hover:bg-[#FF7031]'
-                        : 'bg-[#666666] cursor-not-allowed'
+                      ? 'bg-[#CC511D] hover:bg-[#FF7031]'
+                      : 'bg-[#666666] cursor-not-allowed'
                       }`}
                     onClick={handleUpload}
                     disabled={!selectedFile || !!error}

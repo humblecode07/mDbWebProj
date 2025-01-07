@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const NavigationMenu = () => {
 	return (
-		<ul className='navigation-menu'>
+		<ul className='flex gap-[1.75rem] items-center'>
 			<li>
 				<NavLink to="/movies">Movies</NavLink>
 			</li>

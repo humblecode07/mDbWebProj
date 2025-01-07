@@ -85,8 +85,8 @@ const PrimaryDetails = ({ movieData }) => {
 
   return (
     <>
-      <div className='primary-details--container'>
-        <div className="section">
+      <div className='flex flex-col gap-[1.25rem] pb-[5rem]'>
+        <div className="w-[51.6875rem] flex gap-[0.75rem]">
           <OriginalMovieLanguage
             primaryDetails={primaryDetails}
             setPrimaryDetails={setPrimaryDetails}
@@ -102,7 +102,7 @@ const PrimaryDetails = ({ movieData }) => {
             setInputValue={setInputValue}
           />
         </div>
-        <div className='section'>
+        <div className='w-[51.6875rem] flex gap-[0.75rem]'>
           <OriginalTitle
             primaryDetails={primaryDetails}
             setPrimaryDetails={setPrimaryDetails}
@@ -116,7 +116,7 @@ const PrimaryDetails = ({ movieData }) => {
           primaryDetails={primaryDetails}
           setPrimaryDetails={setPrimaryDetails}
         />
-        <div className='section'>
+        <div className='w-[51.6875rem] flex gap-[0.75rem]'>
           <MovieStatus
             primaryDetails={primaryDetails}
             setPrimaryDetails={setPrimaryDetails}
@@ -126,7 +126,7 @@ const PrimaryDetails = ({ movieData }) => {
             setPrimaryDetails={setPrimaryDetails}
           />
         </div>
-        <div className='section'>
+        <div className='w-[51.6875rem] flex gap-[0.75rem]'>
           <Video
             primaryDetails={primaryDetails}
             setPrimaryDetails={setPrimaryDetails}
@@ -136,7 +136,7 @@ const PrimaryDetails = ({ movieData }) => {
             setPrimaryDetails={setPrimaryDetails}
           />
         </div>
-        <div className='section'>
+        <div className='w-[51.6875rem] flex gap-[0.75rem]'>
           <Revenue
             primaryDetails={primaryDetails}
             setPrimaryDetails={setPrimaryDetails}
@@ -154,7 +154,7 @@ const PrimaryDetails = ({ movieData }) => {
           primaryDetails={primaryDetails}
           setPrimaryDetails={setPrimaryDetails}
         /> */}
-        <div className='section section--button'>
+        <div className='w-[51.6875rem] flex gap-[.75rem] justify-end'>
           <button
             className='h-[2.125rem] px-[1.5625rem] bg-[#CC511D] text-[0.875rem] font-bold rounded-[.625rem]'
             onClick={handleSubmit}

@@ -41,7 +41,7 @@ const CountrySearch = ({ setResults, releaseDate, setReleaseDate }) => {
   return (
     <input
       type="text"
-      className="country-search--input"
+      className="w-full bg-[#2C2C2C] border border-[#444444] rounded-md px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#CC511D]"
       placeholder="Search a country..."
       value={releaseDate.country.name}
       onChange={(e) => handleChange(e.target.value)}

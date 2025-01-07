@@ -15,13 +15,13 @@ const VerifyAndSave = ({ movieDetails }) => {
   };
 
   return (
-    <div className="verify-and-save">
-      <span className="title">Verify And Save</span>
-      <div className="details">
+    <div className="flex flex-col gap-[1.125rem]">
+      <span className="text-[1.5rem] font-bold">Verify And Save</span>
+      <div className="flex flex-col gap-[0.5rem]">
         {Object.entries(detailLabels).map(([key, label]) => (
-          <span key={key} className="detail">
+          <span key={key} className="font-bold text-[#939393]">
             {label}:{' '}
-            <span className="value">
+            <span className="font-normal text-white">
               {movieDetails[key] || 'N/A'}
             </span>
           </span>

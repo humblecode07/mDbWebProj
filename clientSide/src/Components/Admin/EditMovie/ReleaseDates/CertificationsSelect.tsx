@@ -35,17 +35,19 @@ const CertificationsSelect = ({ releaseDate, setReleaseDate }) => {
    }
 
    return (
-      <div className="certifications-select--container">
-         <label for="type">Type</label>
-         <div className='select--container'>
-            <div className='select--wrapper'>
+      <div>
+         <label for="type" className="block text-sm font-medium mb-2">Type</label>
+         <div className='w-full h-[2.3125rem] flex justify-center items-center bg-transparent border-solid border-[1px] border-white rounded-sm'>
+            <div className='w-[39.625rem]'>
                <select
                   name='type'
+                  className='w-full h-full bg-transparent text-white border-none outline-none text-[0.875rem] cursor-pointer'
                   onChange={handleChange}
                >
                   <option value="">Select Certification</option>
                   {selectedCertifications.map((cert, index) => (
                      <option
+                        className='bg-black text-white border-solid border-[1px] border-[#CC511D] rounded-sm'
                         key={index}
                         value={cert.certification}
                      >

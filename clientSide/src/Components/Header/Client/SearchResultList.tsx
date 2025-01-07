@@ -4,7 +4,7 @@ import SearchResult from './SearchResult';
 const SearchResultList = ({ results }) => {
 
   return (
-    <div className='search-result-list'>
+    <div className='w-full h-auto bg-[#D9D9D9] flex flex-col justify-center text-black rounded-[.125rem] mt-[.3rem] absolute z-[50] dark:bg-[#1C252F]'>
       {results.map((result, id) => {
         let searchData = {};
 

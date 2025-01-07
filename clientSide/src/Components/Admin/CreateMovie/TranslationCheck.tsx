@@ -6,13 +6,11 @@ const TranslationCheck = ({ translation }) => {
     : `The input for 'overview' was detected in a language other than English and was translated into ${translation.detectedLang.charAt(0).toUpperCase() + translation.detectedLang.slice(1)}.`;
 
   return (
-    <div className={`translation-check ${translation.isValid ? 'success' : 'failed'}`}>
-      <span className="title">
+    <div className='w-full flex flex-col gap-[1.125rem]'>
+      <span className='text-[1.25rem] font-bold'>
         Translation Check {translation.isValid ? 'Success' : 'Failed'}
       </span>
-      <span className="message">
-        {message}
-      </span>
+      <span>{message}</span>
     </div>
 
   );

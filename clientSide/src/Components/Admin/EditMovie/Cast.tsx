@@ -71,40 +71,40 @@ const Cast = ({ movieData, setMovieData }) => {
 
   if (castData) {
     return (
-      <div className="cast--container">
-        <div className="add-btn--container ">
+      <div className="relative">
+        <div className="flex items-center justify-end mb-4">
           <button
             onClick={toggleAddCastMemberModal}
-            className="add-btn"
+            className="flex items-center justify-center gap-[.5rem] px-4 py-3 bg-[#CC511D] text-white rounded-md hover:bg-[#FF7031] transition duration-200"
           >
             <AddIcon />
-            <span>Add New Cast Member</span>
+            <span className='text-[.75rem] font-semibold'>Add New Cast Member</span>
           </button>
         </div>
-        <div className="cast-table--container">
-          <table className="cast-table">
+        <div className="overflow-x-auto">
+          <table className="min-w-full table-auto bg-[#111111] text-white rounded-lg">
             <thead>
-              <tr className="cast-table--row">
-                <th className="cast-table--header">Person</th>
-                <th className="cast-table--header">Character</th>
-                <th className="cast-table--header">Action</th>
+              <tr className="border-b border-[#444444]">
+                <th className="px-4 py-2 text-left">Person</th>
+                <th className="px-4 py-2 text-left">Character</th>
+                <th className="px-4 py-2 text-left">Action</th>
               </tr>
             </thead>
             <tbody>
               {castData.map((castMember, index) => (
-                <tr key={index} className="cast-table--row">
-                  <td className="cast-table--data">
+                <tr key={index} className="border-b border-[#444444] hover:bg-[#222222]">
+                  <td className="px-4 py-3 flex items-center gap-2">
                     <span>{castMember.name}</span>
                   </td>
-                  <td className="cast-table--data">{castMember.character}</td>
-                  <td className="cast-table--data--action">
+                  <td className="px-4 py-3">{castMember.character}</td>
+                  <td className="px-4 py-3 flex gap-2">
                     <button
-                      className="btn btn--edit"
+                      className="w-[1.5625rem] h-[1.5625rem] bg-[#CC511D] flex items-center justify-center rounded-full hover:bg-[#FF7031] transition duration-200"
                     >
                       <EditIcon />
                     </button>
                     <button
-                      className="btn btn--delete"
+                      className="w-[1.5625rem] h-[1.5625rem] bg-[#FF3333] flex items-center justify-center rounded-full hover:bg-[#e50000] transition duration-200"
                       onClick={() => handleDeleteCast(castMember.id)}
                     >
                       <DeleteIconWhite />
@@ -116,23 +116,24 @@ const Cast = ({ movieData, setMovieData }) => {
           </table>
         </div>
         {isModalOpen && (
-          <div className="edit-movie--modal">
-            <div className="edit-movie--modal--container">
-              <div className="menu--container">
-                <h2>Add Cast Member</h2>
+          <div className="absolute top-0 left-1/2 z-[100]">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-2/2 bg-[#1E1E1E] text-white p-6 rounded-lg w-[43.75rem] shadow-2xl border border-[#CC511D]">
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-xl font-bold text-[#CC511D]">Add Cast Member</h2>
                 <button
                   onClick={() => {
                     setIsModalOpen(false);
                     setSelectedPerson(null);
                     setCharacterName('');
                   }}
+                  className="text-white hover:text-[#CC511D] transition duration-200"
                 >
                   ✕
                 </button>
               </div>
-              <div className="cast-modal-content">
+              <div className="space-y-4">
                 <SearchBar selectedPerson={selectedPerson} setSelectedPerson={setSelectedPerson} type={'cast'} />
-                <div className='character-input'>
+                <div>
                   <label className="block text-sm font-medium mb-2">Character Name</label>
                   <input
                     type="text"
@@ -143,19 +144,19 @@ const Cast = ({ movieData, setMovieData }) => {
                     required
                   />
                 </div>
-                <div className="modal-actions">
+                <div className="flex justify-end space-x-3 mt-6">
                   <button
                     onClick={() => {
                       setIsModalOpen(false);
                       setSelectedPerson(null);
                       setCharacterName('');
                     }}
-                    className="cancel-button"
+                    className="px-4 py-2 bg-[#444444] text-white rounded-md hover:bg-[#555555] transition duration-200"
                   >
                     Cancel
                   </button>
                   <button
-                    className="add-button"
+                    className="px-4 py-2 bg-[#CC511D] text-white rounded-md hover:bg-[#FF7031] transition duration-200"
                     onClick={() => handleAddCast()}
                   >
                     Add Cast Member

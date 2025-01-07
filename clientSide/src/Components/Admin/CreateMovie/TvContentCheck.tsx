@@ -32,8 +32,8 @@ const TvContentCheck = ({ movieDetails }) => {
 
   if (duplicateContent) {
     return (
-      <div className='movie-content-check'>
-        <span className='title'>
+      <div className='w-full flex flex-col gap-[1.125rem]'>
+        <span className='text-[1.5rem] font-bold'>
           TV Content Duplication Alert
         </span>
         {isSuccess && (
@@ -43,21 +43,21 @@ const TvContentCheck = ({ movieDetails }) => {
               : 'No duplicate TV content found. You may proceed :)'}
           </span>
         )}
-        <div className='content-wrapper'>
+        <div className='w-full flex flex-wrap gap-x-[3.75rem] gap-y-[0.5625rem]'>
           {duplicateContent.map((tvContent) => {
             return (
               <div
                 key={tvContent.id}
-                className='content-item scrollbar-none'
+                className='w-[23.9375rem] h-[7.5rem] flex items-center gap-[1.5625rem] text-[0.875rem] mb-[1rem] overflow-auto scrollbar-none'
               >
                 <img
                   className='w-[5rem] h-full'
                   src={`https://image.tmdb.org/t/p/original${tvContent.poster_path}`}
                   alt={tvContent.name}
                 />
-                <div className='content-details'>
-                  <span className='movie-title'>{tvContent.name}</span>
-                  <span className='cast'>
+                <div className='flex flex-col gap-[0.75rem]'>
+                  <span className='text-[#9C4BFF] font-bold underline'>{tvContent.name}</span>
+                  <span className='text-[#8D8D8D]'>
                     {tvContent.credits?.cast?.slice(0, 3).map((actor, index) => (
                       <>
                         {actor.name}

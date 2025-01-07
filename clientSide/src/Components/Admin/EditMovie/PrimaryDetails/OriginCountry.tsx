@@ -34,20 +34,20 @@ const OriginCountry = ({ primaryDetails, setPrimaryDetails, countries, filteredC
    };
 
    return (
-      <div className="origin-country--container">
+      <div className="w-[28.9375rem] flex flex-col gap-[0.5625rem] font-roboto">
          <label htmlFor="origin_country" className="text-[.875rem] font-bold">
             Origin Country
          </label>
-         <div className="input--wrapper">
-            <div className="selected-countries">
+         <div className="w-full h-full flex bg-transparent border-solid border-[1px] border-white rounded-sm relative">
+            <div className="flex items-center gap-2 flex-wrap p-1">
                {primaryDetails.origin_country.map((country) => (
                   <div
                      key={country}
-                     className="country-chip"
+                     className="bg-[#CC511D] text-white text-[.75rem] py-1 px-2 rounded-[.25rem] cursor-pointer text-wrap flex items-center"
                      onClick={() => handleRemoveCountry(country)}
                   >
                      {country}
-                     <span className="remove-icon">×</span>
+                     <span className="ml-1 font-bold">×</span>
                   </div>
                ))}
                <input
@@ -56,15 +56,16 @@ const OriginCountry = ({ primaryDetails, setPrimaryDetails, countries, filteredC
                   value={inputValue}
                   placeholder='Search...'
                   onChange={handleCountryInputChange}
+                  className="flex-grow bg-transparent text-white border-none outline-none px-2 text-[.875rem]"
                />
             </div>
 
             {filteredCountries.length > 0 && (
-               <div className="dropdown">
+               <div className="absolute top-[100%] left-0 w-full min-h-[200px] max-h-[300px] overflow-y-auto bg-black text-white border-[1px] border-[#CC511D] rounded-sm z-10">
                   {filteredCountries.map((country) => (
                      <div
                         key={country.iso_3166_1}
-                        className="dropdown--item"
+                        className="px-2 py-1 cursor-pointer hover:bg-[#CC511D] hover:text-white"
                         onClick={() => handleSelectCountry(country)}
                      >
                         {country.english_name}
