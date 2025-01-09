@@ -28,30 +28,30 @@ const UserRating = () => {
    };
 
    return (
-      <div className="user-rating-section">
-         <span className="user-rating-title">USER RATING</span>
-         <div className="user-rating-inputs">
-            <div className="user-rating-input-container">
+      <div className='text-white font-roboto flex flex-col gap-[0.875rem]'>
+         <span className='text-[#ff8731] font-bold text-[.75rem]'>USER RATING</span>
+         <div className='flex items-center gap-[.6rem]'>
+            <div className="w-[16.875rem] h-[2.5rem] border-2 border-white rounded-md flex items-center px-3 hover:border-[#ff8731] focus-within:border-[#ff8731] transition duration-300 ease-in-out">
                <input
                   type="number"
                   min="0"
                   max="10"
                   placeholder="0"
                   value={userScore.minScore}
-                  className="user-rating-input"
-                  onChange={(e) => handleUserScoreChange(e, "minScore")}
+                  className="w-full h-full text-[.75rem] bg-transparent text-white placeholder-gray-500 focus:outline-none"
+                  onChange={(e) => handleUserScoreChange(e, 'minScore')}
                />
             </div>
-            <span className="user-rating-separator">to</span>
-            <div className="user-rating-input-container">
+            <span className='text-[.75rem]'>to</span>
+            <div className="w-[16.875rem] h-[2.5rem] border-2 border-white rounded-md flex items-center px-3 hover:border-[#ff8731] focus-within:border-[#ff8731] transition duration-300 ease-in-out">
                <input
                   type="number"
                   min="0"
                   max="10"
                   placeholder="10"
                   value={userScore.maxScore}
-                  className="user-rating-input"
-                  onChange={(e) => handleUserScoreChange(e, "maxScore")}
+                  className="w-full h-full text-[.75rem] bg-transparent text-white placeholder-gray-500 focus:outline-none"
+                  onChange={(e) => handleUserScoreChange(e, 'maxScore')}
                />
             </div>
          </div>

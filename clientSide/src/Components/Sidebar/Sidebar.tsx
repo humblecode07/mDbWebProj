@@ -20,29 +20,46 @@ const Sidebar = () => {
   }
 
   return (
-    <div className='sidebar'>
-      <section className='sidebar__section sidebar__section--top'>
+    <div className='w-[5.1875rem] min-h-[34.315rem] h-[76.85dvh] rounded-[.75rem] flex flex-col items-center justify-between bg-gradient-to-b from-[#CC511D] to-black'>
+      <section className='flex flex-col gap-[.525rem] pt-[2.375rem]'>
         <NavLink
-          className='sidebar__button'
+          className='w-[3rem] h-[3rem] flex items-center justify-center rounded-full 
+                hover:bg-[#CC511D] transition-all duration-200 ease-in-out'
           to={'/admin/movie'}
         >
           <MovieIcon />
         </NavLink>
-        <button className='sidebar__button'>
+        <button
+          className='w-[3rem] h-[3rem] flex items-center justify-center rounded-full 
+                hover:bg-[#CC511D] transition-all duration-200 ease-in-out'
+        >
           <TvShowIcon />
         </button>
-        <button className='sidebar__button'>
+        <button
+          className='w-[3rem] h-[3rem] flex items-center justify-center rounded-full 
+                hover:bg-[#CC511D] transition-all duration-200 ease-in-out'
+        >
           <PeopleIcon />
         </button>
-        <button className='sidebar__button'>
+        <button
+          className='w-[3rem] h-[3rem] flex items-center justify-center rounded-full 
+                hover:bg-[#CC511D] transition-all duration-200 ease-in-out'
+        >
           <UserIcon />
         </button>
       </section>
-      <section className='sidebar__section sidebar__section--bottom'>
-        <button className='sidebar__button'>
+      <section className='flex flex-col gap-[.525rem] pb-[2.375rem]'>
+        <button
+          className='w-[3rem] h-[3rem] flex items-center justify-center rounded-full 
+                hover:bg-[#CC511D] transition-all duration-200 ease-in-out'
+        >
           <SettingsIcon />
         </button>
-        <button className='sidebar__button' onClick={handleLogoutUser}>
+        <button
+          className='w-[3rem] h-[3rem] flex items-center justify-center rounded-full 
+                hover:bg-[#CC511D] transition-all duration-200 ease-in-out'
+          onClick={() => handleLogoutUser()}
+        >
           <LogoutIcon />
         </button>
       </section>

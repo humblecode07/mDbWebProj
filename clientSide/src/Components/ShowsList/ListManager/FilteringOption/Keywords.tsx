@@ -32,24 +32,24 @@ const Keywords = () => {
   }
 
   return (
-    <div className='fo-keywords--container'>
-      <span className="keyword-title">KEYWORDS</span>
-      <div className="keyword-container">
-        <div className="keyword-input-wrapper">
+    <div className='text-white font-roboto flex flex-col gap-2'>
+      <span className='text-[#ff8731] font-bold text-[0.875rem]'>KEYWORDS</span>
+      <div className='flex flex-col gap-2 w-[16.875rem]'>
+        <div className="flex flex-wrap gap-2 items-center p-2 border-2 border-white rounded-md hover:border-[#ff8731] focus-within:border-[#ff8731] transition duration-300 ease-in-out">
           {selectedKeywords.map((keyword) => (
-            <div key={keyword.id} className="keyword-tag">
+            <div key={keyword.id} className="bg-[#ff8731] text-white px-2 py-1 rounded text-xs">
               {keyword.name}
             </div>
           ))}
           <SearchKeywords setKeywordResults={setKeywordResult} />
         </div>
         {keywordResult.length > 0 && (
-          <ul className="keyword-result">
+          <ul className='flex flex-col max-h-40 overflow-auto mt-2 bg-gray-800 border border-gray-600 rounded-md'>
             {keywordResult.map((keyword) => (
               <li
                 key={keyword.id}
                 onClick={() => handleSelectedKeywordsChange(keyword.id, keyword.name)}
-                className={`keyword-item ${selectedKeywords.some(kw => kw.id === keyword.id) ? 'selected' : ''}`}
+                className={`cursor-pointer p-2 hover:bg-[#ff8731] text-[0.875rem] hover:text-white ${selectedKeywords.some(kw => kw.id === keyword.id) ? 'text-[#ff8731]' : 'text-white'}`}
               >
                 {keyword.name}
               </li>

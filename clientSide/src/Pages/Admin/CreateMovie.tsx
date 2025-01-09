@@ -140,12 +140,12 @@ const CreateMovie = () => {
    };
 
    return (
-      <div className="create-movie--form-container">
+      <div className='w-[51.6875rem] flex flex-col gap-[1.8125rem] pb-[5rem]'>
          {renderStep()}
-         <div className="button-group">
+         <div className='w-full flex gap-[.75rem] justify-end'>
             {state.step > 1 && (
                <button
-                  className="button"
+                  className='h-[2.125rem] px-[1.5625rem] bg-[#CC511D] text-[0.875rem] font-bold rounded-[.625rem] self-end'
                   onClick={handlePrev}
                >
                   Back
@@ -153,16 +153,18 @@ const CreateMovie = () => {
             )}
             {state.step < 6 && (
                <button
-                  className={`button ${state.step === 2 && !state.translation.isValid ? 'disabled' : ''}`}
+                  className={`h-[2.125rem] px-[1.5625rem] bg-[#CC511D] text-[0.875rem] font-bold rounded-[.625rem] 
+                  ${state.step === 2 && !state.translation.isValid ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                   onClick={handleNext}
                   disabled={state.step === 2 && !state.translation.isValid}
                >
                   Next
                </button>
             )}
+
             {state.step === 6 && (
                <button
-                  className="button"
+                  className='h-[2.125rem] px-[1.5625rem] bg-[#CC511D] text-[0.875rem] font-bold rounded-[.625rem]'
                   onClick={handleSubmit}
                >
                   Submit

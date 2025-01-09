@@ -88,83 +88,88 @@ const DetailModal = ({ id, exitModal }) => {
    }
 
    return (
-      <div className='modal-overlay'>
-         <div className='modal-background' />
-         <div className='modal-container'>
-            <div className='modal-content'>
-               <div className='modal-header'>
+      <div className='w-screen h-screen top-0 left-0 right-0 bottom-0 fixed z-[10] flex items-center justify-center '>
+         <div className='w-screen h-screen top-0 left-0 right-0 bottom-0 fixed bg-[#111111] opacity-50' />
+         <div className='w-[41.5rem] h-[22.5rem] bg-[#1b1b1b] z-[10] relative rounded-[10px] overflow-auto'>
+            <div className='w-full h-full flex flex-col gap-[1.625rem] p-[1.5rem]'>
+               <div className='flex w-full gap-[1.1875rem]'>
                   <img
                      src={`https://image.tmdb.org/t/p/w500${streamDetails.poster_path}`}
                      alt={streamDetails.title}
-                     className='poster-image'
+                     className='w-[4.5rem] h-[6.625rem] object-cover rounded-[0.625rem]'
                   />
-                  <div className='header-details'>
-                     <div className='title-section'>
-                        <span className='stream-title'>{streamDetails.title}</span>
+                  <div className='w-full flex flex-col gap-[.2rem] font-roboto'>
+                     <div className='flex items-center justify-between w-full'>
+                        <span className='text-[1.5rem] font-bold'>{streamDetails.title}</span>
                         <button
-                           className='close-button'
+                           className='h-[2rem] w-[2rem] bg-[#1C252F] flex items-center justify-center rounded-full'
                            onClick={() => exitModal(null)}
                         >
                            <XIcon />
                         </button>
                      </div>
-                     <div className='metadata'>
+                     <div className='flex gap-[1.5rem] text-[0.875rem]'>
                         <span>{streamDetails.release_date}</span>
                         <span>{streamDetails.runtime}</span>
                         <span>{streamDetails.certification}</span>
                      </div>
-                     <div className='genres'>
-                        {streamDetails.genres.map((genre, index) => (
-                           <span key={index}>{genre}</span>
-                        ))}
+                     <div className='flex items-center gap-[1.5rem] text-[0.875rem]'>
+                        {streamDetails.genres.map((genre, index) => {
+                           return (
+                              <span key={index}>{genre}</span>
+                           )
+                        })}
                      </div>
-                     <div className='ratings'>
-                        <div className='rating-item'>
+                     <div className='flex gap-[2.625rem] text-[1rem] font-bold'>
+                        <div className='flex gap-[0.3625rem]'>
                            <StarIcon />
                            <span>{streamDetails.vote_average}</span>
                         </div>
-                        <div className='rating-item'>
+                        <div className='flex gap-[0.3625rem]'>
                            <StarOutline />
                            <span>0</span>
                         </div>
                      </div>
                   </div>
                </div>
-               <div className='modal-description'>
+               <div className='flex flex-col gap-[0.8125rem] text-[0.875rem]'>
                   <p>{streamDetails.overview}</p>
                   {streamType === "movie" && (
-                     <div className='director-info'>
-                        <span className='director-label'>Director</span>
+                     <div className='flex gap-[1.0625rem]'>
+                        <span className='font-bold text-[#9F9F9F]'>Director</span>
                         <a
                            href={`https://www.google.com/search?q=${streamDetails.director}`}
                            target="_blank"
                            rel="noopener noreferrer"
-                           className='director-link'
+                           className='text-blue-500 underline hover:text-blue-700'
                         >
                            {streamDetails.director}
                         </a>
                      </div>
                   )}
-                  <div className='cast-info'>
-                     <span className='cast-label'>{streamType === "movie" ? "Stars" : "Casts"}</span>
-                     {streamDetails.actors.map((actor, index) => (
-                        <span key={index} className='cast-list'>{actor}</span>
-                     ))}
+                  <div className='flex gap-[1.0625rem]'>
+                     <span className='font-bold text-[#9F9F9F]'>{streamType === "movie" ? "Stars" : "Casts"}</span>
+                     {streamDetails.actors.map(actor => {
+                        return (
+                           <span className='flex-1'>{actor}</span>
+                        )
+                     })}
                   </div>
-                  <div className='action-buttons'>
+                  <div className='flex gap-[0.5rem] pb-[2rem]'>
                      <a
                         href={streamDetails.trailer === null ? '#' : `${streamDetails.trailer}`}
                         target={streamDetails.trailer === null ? '_self' : '_blank'}
                         rel="noopener noreferrer"
                         onClick={streamDetails.trailer === null ? (e) => e.preventDefault() : null}
-                        className={`trailer-button ${streamDetails.trailer === null ? 'disabled' : ''}`}
+                        className={`w-[18.75rem] h-[2.25rem] bg-[#1C252F] flex justify-center items-center gap-[0.553rem] rounded-full 
+                     ${streamDetails.trailer === null ? 'pointer-events-none cursor-not-allowed opacity-50' : 'hover:bg-gray-700'}`}
                      >
                         <PlayIcon />
                         <span className='font-bold'>Trailer</span>
                      </a>
-                     <button className='watchlist-button'>
+                     <button className='w-[18.75rem] h-[2.25rem] bg-[#1C252F] flex justify-center items-center gap-[0.553rem] rounded-full'>
                         <PlusIcon />
-                        <span className='watchlist-text'>Watchlist</span>
+                        <span className='font-bold text-[#3D81E7]'>Watchlist</span>
                      </button>
                   </div>
                </div>

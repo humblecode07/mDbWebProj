@@ -65,58 +65,58 @@ const WatchProvider = () => {
    }
 
    return (
-      <div className='watch-provider--container'>
-         <div className="watch-providers-section">
-            <span className="watch-providers-title">WATCH PROVIDERS</span>
-            <div className="dropdown-container">
+      <div className='text-white font-roboto flex flex-col gap-[0.875rem]'>
+         <div className='flex items-center gap-[1.6875rem]'>
+            <span className='text-[#ff8731] font-bold text-[.75rem]'>WATCH PROVIDERS</span>
+            <div className='relative'>
                <div
-                  className="dropdown-button"
+                  className='w-[12.125rem] h-[2rem] bg-[#1C252F] flex items-center justify-between px-[1rem] rounded-[5px] cursor-pointer select-none'
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                >
-                  <span className="dropdown-label">{selectedCountry.name}</span>
+                  <span className='text-[.75rem]'>{selectedCountry.name}</span>
                   <ArrowIcon />
                </div>
                {isDropdownOpen && (
-                  <div className="dropdown-list">
+                  <div className='w-[12.125rem] max-h-[12rem] bg-[#1C252F] rounded-[5px] mt-[0.5rem] absolute overflow-auto z-[3]'>
                      {countries.map((country) => {
                         return (
                            <div
                               key={country.iso_3166_1}
-                              className="dropdown-item"
+                              className='px-[1rem] py-[0.5rem] text-[.75rem] cursor-pointer hover:bg-[#ff8731] rounded-[5px] select-none'
                               onClick={() => handleCountrySelect(country)}
                            >
                               {country.english_name}
                            </div>
-                        );
+                        )
                      })}
                   </div>
                )}
             </div>
          </div>
-         <ul className="watch-provider-list">
+         <ul className='flex gap-[1.375rem] flex-wrap'>
             {watchProvider.map((data) => {
                const isSelected = filters.watchProviders.moviePlatform.includes(data.provider_id);
 
                return (
                   <li
                      key={data.provider_id}
-                     className={`watch-provider-item ${isSelected ? 'selected' : ''}`}
+                     className={`w-[3.125rem] h-[3.125rem] cursor-pointer rounded-[0.625rem] select-none ${isSelected ? 'bg-[#ff8731] border-2 border-[#ff8731]' : 'bg-[#1C252F]'} transition duration-300 ease-in-out`}
                      onClick={() => handleMovieProviderToggle(data)}
                   >
-                     <div className={`provider-icon-container ${isSelected ? 'selected' : 'not-selected'}`}>
+                     <div className={`relative w-full h-full flex items-center justify-center ${isSelected ? 'opacity-100' : 'opacity-50'}`}>
                         <img
                            src={`https://image.tmdb.org/t/p/original${data.logo_path}`}
                            alt=""
-                           className="rounded-[0.625rem]"
+                           className='rounded-[0.625rem]'
                         />
                         {isSelected && (
-                           <div className="check-icon-container">
+                           <div className='absolute inset-0 flex items-center justify-center'>
                               <CheckIcon />
                            </div>
                         )}
                      </div>
                   </li>
-               );
+               )
             })}
          </ul>
       </div>

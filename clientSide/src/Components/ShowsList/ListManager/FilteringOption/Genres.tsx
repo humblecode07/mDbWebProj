@@ -37,16 +37,17 @@ const Genres = () => {
   }
 
   return (
-    <div className="genre-container">
-      <span className="genre-title">GENRES</span>
-      <div className="genre-buttons">
+    <div className='text-white font-roboto flex flex-col gap-[0.875rem]'>
+      <span className='text-[#ff8731] font-bold text-[.75rem]'>GENRES</span>
+      <div className='flex flex-wrap gap-[0.6875rem]'>
         {genres.map((genre) => {
           const isSelected = localGenres.includes(genre.id);
 
           return (
             <button
               key={genre.id}
-              className={`genre-button ${isSelected ? 'selected' : ''}`}
+              className={`px-[1rem] py-[0.4375rem] rounded-full text-[.75rem] ${isSelected ? 'bg-[#ff8731]' : 'bg-[#1C252F] hover:bg-[#2d3748]'
+                } hover:scale-105 transition-transform`}
               onClick={() => handleGenreToggle(genre.id)}
             >
               {genre.name}
@@ -55,7 +56,6 @@ const Genres = () => {
         })}
       </div>
     </div>
-
   )
 }
 

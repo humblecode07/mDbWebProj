@@ -42,34 +42,33 @@ const Language = () => {
   }
 
   return (
-    <div className="fo-language--container">
-      <span className="language-title">LANGUAGE</span>
-      <div className="language-dropdown-container">
+    <div className='text-white font-roboto flex flex-col gap-[0.875rem]'>
+      <span className='text-[#ff8731] font-bold text-[.75rem]'>LANGUAGE</span>
+      <div className='relative'>
         <div
-          className="language-dropdown"
+          className='w-[16.375rem] h-[2rem] bg-[#1C252F] flex items-center justify-between px-[1rem] rounded-[5px] cursor-pointer select-none'
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
-          <span className="dropdown-text">{originalLanguage}</span>
+          <span className='text-[.75rem]'>{originalLanguage}</span>
           <ArrowIcon />
         </div>
         {isDropdownOpen && (
-          <div className="language-options">
-            {languages.map((language) => (
-              <div
-                key={language.iso_639_1}
-                className="language-option"
-                onClick={() =>
-                  handleLanguageSelect(language.iso_639_1, language.english_name)
-                }
-              >
-                {language.english_name}
-              </div>
-            ))}
+          <div className='w-[16.375rem] max-h-[12rem] bg-[#1C252F] rounded-[5px] mt-[0.5rem] absolute overflow-auto z-[3]'>
+            {languages.map((language) => {
+              return (
+                <div
+                  key={language.iso_639_1}
+                  className='px-[1rem] py-[0.5rem] text-[.75rem] cursor-pointer hover:bg-[#ff8731] rounded-[5px] select-none'
+                  onClick={() => handleLanguageSelect(language.iso_639_1, language.english_name)}
+                >
+                  {language.english_name}
+                </div>
+              )
+            })}
           </div>
         )}
       </div>
     </div>
-
   )
 }
 

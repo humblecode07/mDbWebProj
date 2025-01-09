@@ -53,9 +53,9 @@ const PeopleList = () => {
 
    return (
       <>
-         <main className="people-list--main-container">
+         <main className='text-white flex flex-col font-roboto'>
             <Marquee display={"people"} />
-            <div className="content">
+            <div className='w-[66.5625rem] flex justify-between'>
                <GridView people={people} />
             </div>
          </main>

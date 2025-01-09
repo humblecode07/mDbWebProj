@@ -130,19 +130,21 @@ const TvDetails = () => {
 
   return (
     <>
-      <main className="tv-details--main-container">
+      <main className='text-white flex flex-col gap-0 font-roboto p-0'>
         <section
-          className="hero-section"
+          className='w-full h-[52.9375rem] bg-cover bg-center relative flex justify-center'
           style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${response.backdrop_path})` }}
         >
-          <div className="overlay"></div>
-          <div className="content">
+          <div className="absolute z-1 inset-0 bg-black opacity-90"></div>
+          <div className='relative z-2 flex w-[66.5625rem] pt-[3.3125rem] gap-[1.125rem]'>
             <ShowCollage data={showCollageData} />
             <Overview data={overviewData} />
-          </div>
+          </ div>
         </section>
-        <section className="details-section">
-          <section className="left-column">
+        <section
+          className='w-[66.5625rem] flex gap-[2rem] pb-[2.875rem] pt-[1.3125rem]'
+        >
+          <section className='flex flex-col gap-[1.8125rem]'>
             <Casts data={credits} />
             <Media data={medias} />
           </section>

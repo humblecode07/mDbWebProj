@@ -108,39 +108,39 @@ const AdminMovieDetails = () => {
 	console.log(data);
 
 	return (
-		<div className="admin-movie-details-container">
-			<div className='hero-section'>
-				<div className='backdrop-container'>
-					<div className='backdrop-gradient'></div>
+		<div className="w-[66.1875rem] h-auto flex flex-col gap-[2rem] font-roboto pb-[5rem]">
+			<div className='w-full h-[30.6875rem] relative'>
+				<div className='w-full h-[26.6875rem] absolute z-[5]'>
+					<div className='absolute inset-0 bg-gradient-to-b from-[rgba(17,17,17,0)] to-[rgba(17,17,17,1)]'></div>
 					<img
-						className='backdrop-image'
+						className='w-full h-full object-cover rounded-[1rem]'
 						src={`http://localhost:3000/images/${data.backdrop_path}`}
 						alt={data.original_title || data.title}
 					/>
 					<NavLink
 						to="edit"
-						className="edit-button"
+						className="h-[3.0625rem] absolute top-0 right-0 mt-[1.8125rem] mr-[1.8125rem] px-[1.375rem] flex items-center justify-center gap-[0.625rem] rounded-full bg-[#CC511D] text-white font-medium shadow-md hover:bg-[#FF6B35] hover:scale-105 transition-transform duration-200 hover:shadow-lg"
 					>
 						<EditIcon />
 						<span>Edit Movie</span>
 					</NavLink>
 				</div>
-				<div className='movie-info-container'>
-					<div className='poster-container'>
+				<div className='w-[60.0625rem] h-[16.375rem] absolute bottom-0 z-[7] flex gap-[1.625rem] px-[3.0625rem]'>
+					<div className='w-[11.8125rem] h-[16.375rem] rounded-[.75rem]'>
 						<img
-							className='poster-image'
+							className='w-full h-full object-cover rounded-[1rem]'
 							src={`http://localhost:3000/images/${data.poster_path}`}
 							alt={data.original_title || data.title}
 						/>
 					</div>
-					<div className='movie-details scrollbar-none'>
-						<span className='title'>{data.title || data.original_title}</span>
-						<div className='movie-metadata'>
-							<span className='certification'>{data.certifications}</span>
+					<div className='w-[46.6875rem] flex flex-col overflow-auto scrollbar-none'>
+						<span className='font-bold text-[2rem]'>{data.title || data.original_title}</span>
+						<div className='flex gap-[1.3125rem] items-center'>
+							<span className='border border-white border-solid px-[5px] py-[2px]'>{data.certifications}</span>
 							<span>
 								{data.release_date}
 							</span>
-							<div className='genres'>
+							<div>
 								{data.genres.map((genre, index) => (
 									<span key={index}>
 										{genre}{index < data.genres.length - 1 && ", "}
@@ -148,40 +148,40 @@ const AdminMovieDetails = () => {
 								))}
 							</div>
 						</div>
-						<div className='rating-section'>
-							<div className='rating-details'>
+						<div className='flex gap-[1.5rem] pt-[.875rem]'>
+							<div className='flex gap-[0.3125rem] items-center'>
 								<StarLIcon />
-								<div className='rating-numbers'>
-									<div className='rating-wrapper'>
-										<span className='vote-average'>{data.vote_average}</span>
-										<span className='vote-count'>{data.vote_count}</span>
+								<div className='flex gap-[0.1875rem]'>
+									<div className='flex flex-col leading-[1]'>
+										<span className='text-[1.25rem] font-bold'>{data.vote_average}</span>
+										<span className='text-[0.75rem] text-[#8F8F8F] font-semibold'>{data.vote_count}</span>
 									</div>
-									<span className='max-rating'>/10</span>
+									<span className='font-semibold text-[#8F8F8F]'>/10</span>
 								</div>
 							</div>
-							<div className='action-buttons'>
-								<div className='rate-button'>
+							<div className='flex gap-[1.5rem]'>
+								<div className='flex gap-[0.375rem] items-center'>
 									<StarOutlineLIcon />
-									<span>Rate</span>
+									<span className='text-[#396BEA] font-semibold'>Rate</span>
 								</div>
-								<div className='icon-buttons'>
-									<button>
+								<div className='flex gap-[1.5625rem]'>
+									<button className='w-[1.875rem] h-[1.875rem] flex items-center justify-center bg-[#1C252F] rounded-full'>
 										<WatchListSIcon />
 									</button>
-									<button>
+									<button className='w-[1.875rem] h-[1.875rem] flex items-center justify-center bg-[#1C252F] rounded-full'>
 										<HeartIcon />
 									</button>
 								</div>
 							</div>
 						</div>
-						<span className='tagline'>{data.tagline}</span>
-						<span className='overview'>{data.overview}</span>
+						<span className='font-light italic text-[.875rem] pt-[0.5625rem]'>{data.tagline}</span>
+						<span className='text-[.875rem] pt-[0.5625rem]'>{data.overview}</span>
 					</div>
 				</div>
 			</div>
-			<div className='video-trailer-section'>
+			<div className='w-full h-[20rem] flex gap-[1.77875rem] flex-shrink-0'>
 				<iframe
-					className='trailer-iframe'
+					className='rounded-[1rem] flex-shrink-0'
 					width="568.54"
 					height="320"
 					src={data.trailer || 'https://craftypixels.com/placeholder-image/594x334/999799/31317d'}
@@ -190,66 +190,65 @@ const AdminMovieDetails = () => {
 					referrerPolicy="strict-origin-when-cross-origin"
 					allowFullScreen
 				/>
-				<div className='data-container scrollbar-none'>
+				<div className='w-[30.0625rem] h-auto flex flex-col overflow-y-auto scrollbar-none'>
 					<DividerTwo />
-					<div className="details-container">
-						<div className="info-row">
-							<span className="label">Original Title</span>
+					<div className='flex flex-col gap-[0.9375rem] py-[0.9375rem]'>
+						<div className='flex gap-[1.4375rem]'>
+							<span className='font-bold'>Original Title</span>
 							<span>{data.original_title}</span>
 						</div>
 					</div>
 					<DividerTwo />
-					<div className="director-container">
-						<span className="label">Director</span>
+					<div className='flex gap-[1.4375rem] py-[0.9375rem]'>
+						<span className='font-bold'>Director</span>
 						{data.director ? (
-							<a className="link">{data.director}</a>
+							<a className='text-[#4397FA]'>{data.director}</a>
 						) : (
-							<span className="na">N/A</span>
+							<span className='text-[#ff8731]'>N/A</span>
 						)}
 					</div>
 					<DividerTwo />
-					<div className="writers-container">
-						<span className="label">Writers</span>
-						<div className="writers-list">
+					<div className='flex gap-[1.4375rem] py-[0.9375rem]'>
+						<span className='font-bold'>Writers</span>
+						<div className='flex gap-[.875rem]'>
 							{data.writers && data.writers.length > 0 ? (
 								data.writers.map((writer, index) => (
-									<React.Fragment key={index}>
-										<span className="writer">
-											<a className="link">{writer}</a>
+									<>
+										<span key={index} className='flex items-center'>
+											<a className='text-[#4397FA]'>{writer}</a>
 										</span>
 										{index < data.writers.length - 1 && <span> • </span>}
-									</React.Fragment>
+									</>
 								))
 							) : (
-								<span className="na">N/A</span>
+								<span className='text-[#ff8731]'>N/A</span>
 							)}
 						</div>
 					</div>
 					<DividerTwo />
-					<div className="stars-container">
-						<div className="info-row">
-							<span className="label">Stars</span>
-							<div className="stars-list">
-								{data.stars && data.stars.length > 0 ? (
-									data.stars.map((star, index) => (
-										<React.Fragment key={index}>
-											<span className="star">
-												<a className="link">{star}</a>
+					<div className='flex flex-col gap-[0.9375rem] py-[0.9375rem]'>
+						<div className='flex gap-[1.4375rem]'>
+							<span className='font-bold'>Stars</span>
+							<div className='flex flex-wrap gap-[.875rem]'>
+								{data.stars && data.stars.length > 0
+									? data.stars.map((star, index) => (
+										<>
+											<span key={index} className='flex items-center'>
+												<a className='text-[#4397FA] text-wrap'>{star}</a>
 											</span>
 											{index < data.stars.length - 1 && <span> • </span>}
-										</React.Fragment>
+										</>
 									))
-								) : (
-									<span className="na">N/A</span>
-								)}
+									: <span className='text-[#ff8731]'>N/A</span>
+								}
 							</div>
 						</div>
 					</div>
 					<DividerTwo />
-					<div className="links-container">
-						<div className="info-row">
-							<span className="label">Links</span>
-							<div className="links-list">
+					<div className='flex flex-col gap-[0.9375rem] py-[0.9375rem]'>
+						<div className='flex gap-[1.4375rem] items-center'>
+							<span className='font-bold'>Links</span>
+							<div className='flex gap-[1rem] items-center'>
 								{data.external_ids.facebook_id || data.external_ids.twitter_id || data.external_ids.instagram_id || data.external_ids.wikidata || data.external_ids.imdb_id || data.homepage ? (
 									<>
 										{data.external_ids.facebook_id && (
@@ -284,97 +283,95 @@ const AdminMovieDetails = () => {
 										)}
 									</>
 								) : (
-									<span className="na">N/A</span>
+									<span className='text-[#ff8731]'>N/A</span>
 								)}
 							</div>
 						</div>
 					</div>
 					<DividerTwo />
-					<div className="status-container">
-						<div className="info-row">
-							<span className="label">Status</span>
-							<span className="status">{data.status}</span>
+					<div className='flex flex-col gap-[0.9375rem] py-[0.9375rem]'>
+						<div className='flex gap-[1.4375rem]'>
+							<span className='font-bold'>Status</span>
+							<span className='text-[#12AD18]'>{data.status}</span>
 						</div>
 					</div>
 					<DividerTwo />
-					<div className="budget-container">
-						<div className="info-row">
-							<span className="label">Budget</span>
-							{data.budget !== "$0.00" ? (
-								<span>{data.budget}</span>
-							) : (
-								<span className="na">N/A</span>
-							)}
+					<div className='flex flex-col gap-[0.9375rem] py-[0.9375rem]'>
+						<div className='flex gap-[1.4375rem]'>
+							<span className='font-bold'>Budget</span>
+							{data.budget !== "$0.00"
+								? <span>{data.budget}</span>
+								: <span className='text-[#ff8731]'>N/A</span>
+							}
 						</div>
 					</div>
 					<DividerTwo />
-					<div className="revenue-container">
-						<div className="info-row">
-							<span className="label">Revenue</span>
-							{data.revenue !== "$0.00" ? (
-								<span>{data.revenue}</span>
-							) : (
-								<span className="na">N/A</span>
-							)}
+					<div className='flex flex-col gap-[0.9375rem] py-[0.9375rem]'>
+						<div className='flex gap-[1.4375rem]'>
+							<span className='font-bold'>Revenue</span>
+							{data.revenue !== "$0.00"
+								? <span>{data.revenue}</span>
+								: <span className='text-[#ff8731]'>N/A</span>
+							}
 						</div>
 					</div>
 					<DividerTwo />
 				</div>
 			</div>
-			<div className='cast-crew-section'>
-				<div className='cast-container scrollbar-none'>
-					<div className='section-header'>
-						<span className='section-title'>Cast</span>
-						<span className='.section-count'>{data.credits.cast.length}</span>
-						<div className='divider-width--one'>
+			<div className='w-full h-[35.5625rem] flex gap-[1.5rem]'>
+				<div className='w-[32.3125rem] h-full flex flex-col gap-[2rem] overflow-auto scrollbar-none'>
+					<div className='w-full h-[2.1875rem] flex items-center gap-[1rem]'>
+						<span className='text-[1.875rem] font-bold'>Cast</span>
+						<span className='text-[#B1B1B1] text-[.875rem]'>{data.credits.cast.length}</span>
+						<div className='w-[25rem]'>
 							<DividerTwo />
 						</div>
 					</div>
-					<ul className='member-list scrollbar-none'>
+					<ul className='h-full flex flex-col gap-[2rem] overflow-auto scrollbar-none'>
 						{data.credits.cast.map((member, index) => {
 							return (
-								<li key={index} className='member-item'>
+								<li key={index} className='flex gap-[1.1875rem]'>
 									<img
-										className='member-image'
+										className='w-[4.125rem] h-[4.125rem] rounded-full object-cover'
 										src={member.profile_path
 											? `https://image.tmdb.org/t/p/original${member.profile_path}`
 											: 'https://placehold.co/66x66'}
 										alt={member.name}
 									/>
-									<div className='member-details'>
-										<span className='member-name'>{member.name}</span>
-										<span className='member-role'>{member.character}</span>
+									<div className='flex flex-col justify-center'>
+										<span className='font-bold'>{member.name}</span>
+										<span className='text-[#8E8E8E]'>{member.character}</span>
 									</div>
 								</li>
 							)
 						})}
 					</ul>
 				</div>
-				<div className='crew-container'>
-					<div className='section-header'>
-						<span className='section-title'>Crew</span>
-						<span className='section-count'>{data.crew_count}</span>
-						<div className='divider-width--one'>
+				<div className='w-[32.3125rem] h-[35.5625rem] flex flex-col gap-[2rem]'>
+					<div className='w-full h-[2.1875rem] flex items-center gap-[1rem]'>
+						<span className='text-[1.875rem] font-bold'>Crew</span>
+						<span className='text-[#B1B1B1] text-[.875rem]'>{data.crew_count}</span>
+						<div className='w-[25rem]'>
 							<DividerTwo />
 						</div>
 					</div>
-					<div className='member-list scrollbar-none'>
+					<div className='h-full flex flex-col gap-[2rem] overflow-auto scrollbar-none'>
 						{Object.entries(data.credits.crew).map(([department, members]) => (
-							<div key={department} className="admin-movie-details--department-container">
-								<h2 className="department-title">{department}</h2>
-								<ul className="members-list">
-									{members?.map((member, index) => (
-										<li key={index} className="member-item">
+							<div key={department} className='flex flex-col gap-[.875rem]'>
+								<h2 className='text-[1rem] text-[#9E9E9E] font-bold'>{department}</h2>
+								<ul className='flex flex-col gap-[0.5625rem]'>
+									{members.map((member, index) => (
+										<li key={index} className='flex gap-[1.1875rem]'>
 											<img
-												className="profile-image"
+												className='w-[4.125rem] h-[4.125rem] rounded-full object-cover'
 												src={member.profile_path
 													? `https://image.tmdb.org/t/p/original${member.profile_path}`
 													: 'https://placehold.co/66x66'}
 												alt={member.name}
 											/>
-											<div className="member-info">
-												<span className="member-name">{member.name}</span>
-												<span className="member-job">{member.job}</span>
+											<div className='flex flex-col justify-center'>
+												<span className='font-bold'>{member.name}</span>
+												<span className='text-[#8E8E8E]'>{member.job}</span>
 											</div>
 										</li>
 									))}

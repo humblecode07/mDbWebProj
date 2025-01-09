@@ -53,47 +53,48 @@ const Certification = () => {
   }
 
   return (
-    <div className='fo-certification--container'>
-      <div className='wrapper'>
-        <span className='filter-title'>CERTIFICATION</span>
-        <div className='item-container'>
-          <div
-            className="dropdown-container"
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          >
-            <span className='dropdown-text'>{certCountry}</span>
-            <ArrowIcon />
-          </div>
-          {isDropdownOpen && (
-            <div className='dropdown-menu'>
-              {Object.keys(certifications).map((country) => (
-                <div
-                  key={country}
-                  className='dropdown-item'
-                  onClick={() => handleCertCountry(country)}
-                >
-                  {country}
-                </div>
-              ))}
-            </div>
-          )}
+    <div className='text-white font-roboto flex flex-col gap-[0.875rem]'>
+    <div className='flex items-center gap-[1.6875rem]'>
+      <span className='text-[#ff8731] font-bold text-[.75rem]'>CERTIFICATION</span>
+      <div className='relative'>
+        <div
+          className='w-[5.125rem] h-[2rem] bg-[#1C252F] flex items-center justify-between px-[1rem] rounded-[5px] cursor-pointer select-none'
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+        >
+          <span className='text-[.75rem]'>{certCountry}</span>
+          <ArrowIcon />
         </div>
-      </div>
-      <div className="certification-container">
-        {certifications[certCountry]?.map((cert, index) => {
-          const isSelected = filters.certification?.rating?.includes(cert.certification);
-          return (
-            <button
-              key={index}
-              className={`certification-button ${isSelected ? 'selected' : ''}`}
-              onClick={() => handleCertifications(cert.certification)}
-            >
-              <span>{cert.certification}</span>
-            </button>
-          );
-        })}
+        {isDropdownOpen && (
+          <div className='absolute mt-2 bg-[#1C252F] rounded-[5px] w-full h-[15rem] overflow-auto z-10 text-[.75rem]'>
+            {Object.keys(certifications).map((country) => (
+              <div
+                key={country}
+                className='px-4 py-2 cursor-pointer hover:bg-gray-700'
+                onClick={() => handleCertCountry(country)}
+              >
+                {country}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
+    <div className='flex flex-wrap gap-[1.6875rem]'>
+      {certifications[certCountry]?.map((cert, index) => {
+        const isSelected = filters.certification?.rating?.includes(cert.certification);
+        return (
+          <button
+            key={index}
+            className={`px-[1rem] py-[0.4375rem] rounded-full text-[.75rem] ${isSelected ? 'bg-[#ff8731]' : 'bg-[#1C252F] hover:bg-[#2d3748]'
+              } hover:scale-105 transition-transform`}
+            onClick={() => handleCertifications(cert.certification)}
+          >
+            <span>{cert.certification}</span>
+          </button>
+        );
+      })}
+    </div>
+  </div>
   );
 };
 

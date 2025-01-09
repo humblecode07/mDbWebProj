@@ -21,18 +21,13 @@ const TvList = () => {
 
    return (
       <>
-         <main className="tv-list--main-container">
+         <main className='text-white flex flex-col font-roboto'>
             <Marquee display={"tv shows"} />
             <ContextTvShows.Provider value={{ streamType: 'tv', filters, handleFilterChange, setCurrentPage }}>
-               <div className="content">
-                  <div className="filtering-options">
+               <div className='w-[66.5625rem] flex justify-between'>
+                  <div className='flex items-center gap-[2.5625rem]'>
                      <FilteringOption />
-                     <SortByOption
-                        stream="tv"
-                        selectedSorting={selectedSortBy}
-                        setSelectedSorting={setSelectedSortBy}
-                        resetCurrentPage={setCurrentPage}
-                     />
+                     <SortByOption stream="tv" selectedSorting={selectedSortBy} setSelectedSorting={setSelectedSortBy} resetCurrentPage={setCurrentPage} />
                   </div>
                   <DisplayViewOption setSelectedView={setSelectedView} resetCurrentPage={setCurrentPage} />
                </div>

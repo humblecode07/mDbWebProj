@@ -100,7 +100,7 @@ const MovieImages = () => {
   if (medias) {
     return (
       <>
-        <main className='details--movie-images--container'>
+        <main className='text-white flex flex-col gap-0 font-roboto p-0'>
           <Section data={medias.section} />
           <Medias data={medias.media} />
         </main>

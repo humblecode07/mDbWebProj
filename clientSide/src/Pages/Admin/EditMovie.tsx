@@ -60,16 +60,20 @@ const EditMovie = () => {
    // console.log(movieData);
 
    return (
-      <div className="edit-movie-container">
-         <span className="edit-movie-title">
+      <div className="w-[66.1875rem] relative flex flex-col gap-[1.25rem]">
+         <span className="text-[1.5rem] font-bold">
             Edit {movieData.title || movieData.original_title}
          </span>
-         <div className="tab-container" ref={scrollRef}>
-            <div className="tab-list">
+         <div
+            className="w-[51.6875rem] h-[2.375rem] flex items-center border-solid border-[1px] border-[#CC511D] rounded-full text-[.75rem] overflow-x-auto scrollbar-none"
+            ref={scrollRef}
+         >
+            <div className="flex w-max h-full text-nowrap">
                {tabContent.map((tab, index) => (
                   <div
                      key={tab.name}
-                     className={`tab-item ${selectedTab === tab.name ? 'active' : ''}`}
+                     className={`h-full flex items-center justify-center px-[1.75rem] rounded-full cursor-pointer ${selectedTab === tab.name ? 'bg-[#CC511D] text-white' : 'bg-transparent text-white'
+                        }`}
                      onClick={() => handleTabClick(tab, index)}
                   >
                      <span>{tab.name}</span>
@@ -77,15 +81,15 @@ const EditMovie = () => {
                ))}
             </div>
          </div>
-         <div className="content-container">
+         <div className="h-full relative mt-4 overflow-hidden">
             <div
-               className="content-slider"
+               className="transition-transform duration-500 flex"
                style={{
                   transform: `translateX(-${activeIndex * 100}%)`,
                }}
             >
                {tabContent.map((tab) => (
-                  <div key={tab.name} className="content-item">
+                  <div key={tab.name} className="w-full min-w-full">
                      {tab.component}
                   </div>
                ))}

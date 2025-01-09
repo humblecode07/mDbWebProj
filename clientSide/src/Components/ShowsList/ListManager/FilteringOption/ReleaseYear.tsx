@@ -35,31 +35,28 @@ const ReleaseYear = () => {
   console.log(releaseYear)
 
   return (
-    <div className="release-year-section">
-      <span className="release-year-title">
-        {streamType === "movie" ? "RELEASE YEAR" : "AIR RELEASE YEAR"}
-      </span>
-      <div className="release-year-inputs">
-        <div className="release-year-input-container">
+    <div className='text-white font-roboto flex flex-col gap-[0.875rem]'>
+      <span className='text-[#ff8731] font-bold text-[.75rem]'>{streamType === "movie" ? "RELEASE YEAR" : "AIR RELEASE YEAR"}</span>
+      <div className='flex items-center gap-[.6rem]'>
+        <div className="w-[16.875rem] h-[2.5rem] border-2 border-white rounded-md flex items-center px-3 hover:border-[#ff8731] focus-within:border-[#ff8731] transition duration-300 ease-in-out">
           <input
-            type="date"
-            className="release-year-input"
+            type="number"
+            className="w-full h-full text-[.75rem] bg-transparent text-white placeholder-gray-500 focus:outline-none"
             value={releaseYear.gteYear}
-            onChange={(e) => handleReleaseYearChange(e, "gteYear")}
+            onChange={(e) => handleReleaseYearChange(e, 'gteYear')}
           />
         </div>
-        <span className="release-year-separator">to</span>
-        <div className="release-year-input-container">
+        <span className='text-[.75rem]'>to</span>
+        <div className="w-[16.875rem] h-[2.5rem] border-2 border-white rounded-md flex items-center px-3 hover:border-[#ff8731] focus-within:border-[#ff8731] transition duration-300 ease-in-out">
           <input
-            type="date"
-            className="release-year-input"
+            type="number"
+            className="w-full h-full text-[.75rem] bg-transparent text-white placeholder-gray-500 focus:outline-none"
             value={releaseYear.lteYear}
-            onChange={(e) => handleReleaseYearChange(e, "lteYear")}
+            onChange={(e) => handleReleaseYearChange(e, 'lteYear')}
           />
         </div>
       </div>
     </div>
-
   )
 }
 
