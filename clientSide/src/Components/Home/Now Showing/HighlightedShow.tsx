@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import StarIcon from '../../../assets/Icons/StarIcon';
 import WatchlistIconTwo from '../../../assets/Icons/WatchlistIconTwo';
 import { WatchTrailerButton } from '../../Button/Buttons';
+import { NavLink } from 'react-router-dom';
 
 const HighlightedShow = ({ movieData }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -20,7 +21,8 @@ const HighlightedShow = ({ movieData }) => {
   return (
     <div className="highlighted-show-container">
       {movieData.map((data, index) => (
-        <div
+        <NavLink
+          to={`movies/${data.id}-${data.title.replace(/\s+/g, "-").toLowerCase()}`}
           key={index}
           className={`highlighted-show-slide ${currentSlide === index ? 'active' : 'inactive'}`}
         >
@@ -61,7 +63,7 @@ const HighlightedShow = ({ movieData }) => {
               </div>
             </figcaption>
           </div>
-        </div>
+        </NavLink>
       ))}
     </div>
   )

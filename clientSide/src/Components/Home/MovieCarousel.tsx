@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { CarouselButtons, WatchlistButton } from '../Button/Buttons';
 import StarOutline from '../../assets/Icons/StarOutline';
 import StarIcon from '../../assets/Icons/StarIcon';
+import { NavLink } from 'react-router-dom';
 
 const MovieCarousel = ({ section, query }) => {
    let MOVIE_API = ``;
@@ -54,7 +55,11 @@ const MovieCarousel = ({ section, query }) => {
       <div className='carousel-container'>
          {slideCard !== 0 ? <CarouselButtons direction="left" slideDirection={prevSlide} /> : null}
          {movieTrend.slice(slideCard, slideCard + cardsToShow).map((data, index) => (
-            <div className='card' key={index}>
+            <NavLink
+               to={`${data.title ? 'movies' : 'tv'}/${data.id}-${(data.title || data.name).replace(/\s+/g, "-").toLowerCase()}`} 
+               className='card' 
+               key={index}
+            >
                <img
                   src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                   alt={data.title || data.name}
@@ -76,7 +81,7 @@ const MovieCarousel = ({ section, query }) => {
                   </span>
                   <WatchlistButton />
                </figcaption>
-            </div>
+            </NavLink>
          ))}
          {slideCard !== movieTrend.length - 6 ? <CarouselButtons direction="right" slideDirection={nextSlide} /> : null}
       </div>

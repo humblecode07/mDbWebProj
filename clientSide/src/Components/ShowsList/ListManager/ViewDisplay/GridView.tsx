@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PlusIcon from '../../../../assets/Icons/PlusIcon'
 import InfoIcon from '../../../../assets/Icons/InfoIcon'
 import StarIcon from '../../../../assets/Icons/StarIcon'
+import MiguImg from '../../../../assets/Image/migu.jpg'
 import StarOutline from '../../../../assets/Icons/StarOutline'
 import DetailModal from './DetailModal'
 

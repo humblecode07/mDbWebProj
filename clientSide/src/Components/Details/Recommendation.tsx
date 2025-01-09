@@ -2,10 +2,14 @@ import React from 'react'
 import StarIcon from '../../assets/Icons/StarIcon'
 import PlusIcon from '../../assets/Icons/PlusIcon'
 import InfoIcon from '../../assets/Icons/InfoIcon'
+import { NavLink } from 'react-router-dom';
 
 const Recommendation = ({ data }) => {
   if (data) {
     const recommendations = data.recommendations.results || data.recommendations;
+
+    const pathSegments = location.pathname.split("/");
+    const mediaType = pathSegments[1];
 
     return (
       <section className="w-[22.6875rem] flex flex-col gap-[1.4375rem]">
@@ -14,7 +18,11 @@ const Recommendation = ({ data }) => {
         </span>
         <div className="flex flex-col gap-[1rem]">
           {recommendations && recommendations.slice(0, 7).map((recommendation) => (
-            <div key={recommendation.id} className="flex gap-[1rem]">
+            <NavLink
+              to={`/${mediaType}/${recommendation.id}-${(recommendation.title || recommendation.name).replace(/\s+/g, "-").toLowerCase()}`} 
+              key={recommendation.id} 
+              className="flex gap-[1rem]"
+            >
               <img
                 className="w-[8.125rem] h-[11.375rem]"
                 src={`https://media.themoviedb.org/t/p/w220_and_h330_face${recommendation.poster_path}`}
@@ -43,7 +51,7 @@ const Recommendation = ({ data }) => {
                   </button>
                 </div>
               </div>
-            </div>
+            </NavLink>
           ))}
         </div>
       </section>

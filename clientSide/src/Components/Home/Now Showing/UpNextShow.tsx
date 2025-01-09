@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import StarIcon from '../../../assets/Icons/StarIcon'
+import { NavLink } from 'react-router-dom';
 
 const UpNextShow = ({ movieData }) => {
   const [currentStartIndex, setCurrentStartIndex] = useState(0);
@@ -23,7 +24,6 @@ const UpNextShow = ({ movieData }) => {
     ...movieData.slice(0, cardsToShow)
   ];
 
-
   return (
     <div className="up-next-container">
       <span className="up-next-title">Up next</span>
@@ -31,7 +31,11 @@ const UpNextShow = ({ movieData }) => {
         {seamlessLoopUpNextCards
           .slice(currentStartIndex + 1, currentStartIndex + cardsToShow + 1)
           .map((data, index) => (
-            <div key={index} className="up-next-card">
+            <NavLink 
+              to={`movies/${data.id}-${data.title.replace(/\s+/g, "-").toLowerCase()}`}
+              key={index} 
+              className="up-next-card"
+            >
               <img
                 src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
                 alt={data.title}
@@ -56,7 +60,7 @@ const UpNextShow = ({ movieData }) => {
                   </div>
                 </div>
               </figcaption>
-            </div>
+            </NavLink>
           ))}
       </div>
     </div>

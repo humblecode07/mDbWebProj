@@ -3,6 +3,7 @@ import StarIcon from '../../../../assets/Icons/StarIcon';
 import PlusIcon from '../../../../assets/Icons/PlusIcon';
 import InfoIcon from '../../../../assets/Icons/InfoIcon';
 import DetailModal from './DetailModal';
+import MiguImg from '../../../../assets/Image/migu.jpg'
 import { Link } from 'react-router-dom';
 
 const CompactView = ({ streams }) => {
